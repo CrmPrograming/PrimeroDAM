@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-01" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="Alumno" created="2019-10-29" changedby="Alumno" changed="2019-10-29" origin="Structorizer 3.30-01" text="&#34;BuscarPalabra&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var texto: char[]&#34;,&#34;var palabra: char[]&#34;,&#34;var sPalabra: String&#34;,&#34;var i: int &#60;- 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;&#62; Introduzca el texto a analizar: &#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;&#34;&#34;Leemos el texto como char[]&#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;&#62; Introduzca la palabra a buscar: &#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT sPalabra&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;&#34;&#34;Asignamos a 'palabra' el valor de sPalabra como char[]&#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<while text="&#34;length(palabra) + 1 &#60; length(texto) &amp;&amp; !(palabra[0] == texto[i] &amp;&amp; palabra[1] == texto[i+1] &amp;&amp; palabra[2] == texto[i+2])&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qWhile>
+				<instruction text="&#34;i &#60;- i + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qWhile>
+		</while>
+		<alternative text="&#34;palabra[0] == texto[i] &amp;&amp; palabra[1] == texto[i+1] &amp;&amp; palabra[2] == texto[i+2]&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<instruction text="&#34;OUTPUT &#34;&#34;&#62; La palabra fue encontrada en la posición &#34;&#34; + i&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;OUTPUT &#34;&#34;&#62; No se encontró la palabra en el texto dado&#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qFalse>
+		</alternative>
+	</children>
+</root>

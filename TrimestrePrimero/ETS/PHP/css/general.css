@@ -1,0 +1,50 @@
+/* Estilo General */
+body {background-color: #faece5;}        
+h1, h2 {text-decoration: underline;}        
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+        
+/* Estilo del formulario */
+        
+form p {
+    font-size: large;
+    font-weight: bold;
+}
+        
+form {
+    display: inline-block;
+    padding: 10px;
+    background-color: #fadecf;
+    border-radius: 10px;
+    border: 2px solid #edc5af;
+}
+        
+form li {
+    list-style: none;
+    padding: 5px;
+}
+        
+form div {
+    background-color: #faece5;
+    padding: 5px;
+}
+        
+input[type=submit] {cursor: pointer;}
+        
+/* Estilo de las cajas */
+.cajaGeneral {text-align: center;}
+.cajaNumero {            
+    width: 30px;
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+}
+
+.cajaNumero:nth-child(even) { background-color: #ef9393;}
+.cajaNumero:nth-child(even):hover { background-color: #e11d1d;}
+.cajaNumero:nth-child(odd) { background-color: #94efbb;}
+.cajaNumero:nth-child(odd):hover { background-color: #1de172;}

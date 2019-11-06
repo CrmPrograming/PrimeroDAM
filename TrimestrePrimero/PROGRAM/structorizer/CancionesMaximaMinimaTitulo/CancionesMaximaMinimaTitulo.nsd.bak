@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="alumno" created="2019-10-07" changedby="Alumno" changed="2019-10-14" origin="Structorizer 3.29-13" text="&#34;CancionesMaximaMinimaTitulo&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var minutosMaximo: int &#60;- -1&#34;,&#34;var segundosMaximo: int &#60;- -1&#34;,&#34;var mejorConversionMaxima: int &#60;- -1&#34;,&#34;var minutosMinimo: int &#60;- 60&#34;,&#34;var segundosMinimo: int &#60;- 60&#34;,&#34;var mejorConversionMinima: int &#60;- 99999999999&#34;,&#34;var actualMinutos: int&#34;,&#34;var actualSegundos: int&#34;,&#34;var actualCancionConvertida: int &#60;- 0&#34;,&#34;var tituloMinima: string &#60;- &#34;&#34;&#34;&#34;&#34;,&#34;var tituloMaxima: string &#60;- &#34;&#34;&#34;&#34;&#34;,&#34;var tituloActual: string &#60;- &#34;&#34;&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;const SEGUNDOS_MINUTO: int &#60;- 60&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;const CONDICION_PARADA: string &#60;- &#34;&#34;&#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;&#62; Bienvenido. Introduzca las canciones según se le vaya pidiendo o pulse Enter para acabar.&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;# Introduzca el título de la canción: &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT tituloActual&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;- Introduzca la canción (minutos): &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT actualMinutos&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;+ Introduzca la canción (segundos): &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT actualSegundos&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<while text="&#34;tituloActual != CONDICION_PARADA&#34;" comment="" color="ffffff" disabled="0">
+			<qWhile>
+				<instruction text="&#34;OUTPUT &#34;&#34;- Introduzca la canción (minutos): &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;INPUT actualMinutos&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;OUTPUT &#34;&#34;+ Introduzca la canción (segundos): &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;INPUT actualSegundos&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;actualCancionConvertida &#60;- (actualMinutos * SEGUNDOS_MINUTO) + actualSegundos&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;actualCancionConvertida &#62; mejorConversionMaxima&#34;" comment="" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;mejorConversionMaxima &#60;- actualCancionConvertida&#34;,&#34;minutosMaximo &#60;- actualMinutos&#34;,&#34;segundosMaximo &#60;- actualSegundos&#34;,&#34;tituloMaxima &#60;- tituloActual&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse color="ffffff">
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;actualCancionConvertida &#60; mejorConversionMinima&#34;" comment="" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;mejorConversionMinima &#60;- actualCancionConvertida&#34;,&#34;minutosMinimo &#60;- actualMinutos&#34;,&#34;segundosMinimo &#60;- actualSegundos&#34;,&#34;tituloMinima &#60;- tituloActual&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse color="ffffff">
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;OUTPUT &#34;&#34;# Introduzca el título de la canción: &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;INPUT tituloActual&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qWhile>
+		</while>
+		<alternative text="&#34;minutosMaximo = -1 &amp;&amp; minutosMinimo = SEGUNDOS_MINUTO&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<instruction text="&#34;OUTPUT &#34;&#34;\n&#62; No se introdujo ninguna canción&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;OUTPUT &#34;&#34;&#62; Canción más larga: \&#34;&#34;%s\&#34;&#34; [%02d:%02d]\n&#34;&#34;, tituloMaxima, minutosMaximo, segundosMaximo&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;OUTPUT &#34;&#34;&#62; Canción más corta: %s [%02d:%02d]\n&#34;&#34;, tituloMinima, minutosMinimo, segundosMinimo&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qFalse>
+		</alternative>
+	</children>
+</root>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.29-13" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="alumno" created="2019-10-01" changedby="alumno" changed="2019-10-01" origin="Structorizer 3.29-13" text="&#34;Ecuacion2Grado&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var discriminante: double &#60;- 0d&#34;,&#34;var a: double &#60;- 0d&#34;,&#34;var b: double &#60;- 0d&#34;,&#34;var c: double &#60;- 0d&#34;" comment="&#34;Declaración inicial de las variables a usar&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;Input &#34;&#34;A = &#34;&#34;, a&#34;,&#34;Input &#34;&#34;B = &#34;&#34;, b&#34;,&#34;Input &#34;&#34;C = &#34;&#34;, c&#34;" comment="&#34;Pedimos los datos por teclado&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<alternative text="&#34;a != 0d&#34;" comment="&#34;Comprobamos qué tipo de ecuación es&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<instruction text="&#34;discriminante &#60;- b * b - 4 * a * c&#34;" comment="&#34;Calculamos el discriminante&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;discriminante &#62; 0d&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;Output ((-b + Math.sqrt(discriminante)) / (2 * a))&#34;,&#34;Output ((-b - Math.sqrt(discriminante)) / (2 * a))&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<alternative text="&#34;discriminante = 0d&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;Output (-b / (2 * a))&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;Output &#34;&#34;Resultado de tipo complejo&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qTrue>
+			<qFalse>
+				<alternative text="&#34;b != 0d&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;Output (-c / b)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<alternative text="&#34;c != 0d&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;Output &#34;&#34;No hay solución&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;Output &#34;&#34;Infinitas soluciones&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qFalse>
+		</alternative>
+	</children>
+</root>

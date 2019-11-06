@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.29-13" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="danip" created="2019-10-24" changedby="profesor" changed="2019-10-25" origin="Structorizer 3.30-01" text="&#34;CaracteresFrase&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var fraseIntroducida : String&#34;,&#34;var ArrayCadena : char[]&#34;,&#34;var caracter : char&#34;,&#34;var contador : int&#34;,&#34;var i: int&#34;,&#34;var j: int&#34;" comment="" color="80ff80" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;Introduzca una frase&#34;&#34;&#34;,&#34;OUTPUT &#34;&#34;El programa enumerará los caracteres de la frase&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT fraseIntroducida&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<alternative text="&#34;longitud fraseIntroducida != 0&#34;" comment="" color="ffffff" disabled="0">
+			<qTrue>
+				<instruction text="&#34;ArrayCadena &#60;- fraseIntroducida&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;contador=1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<for text="&#34;for j &#60;- 1 to Longitud ArrayCadena-1&#34;" comment="" counterVar="j" startValue="1" endValue="Longitud ArrayCadena-1" stepConst="1" style="COUNTER" color="ffff80" disabled="0">
+					<qFor>
+						<alternative text="&#34;ArrayCadena[j] = ArrayCadena[0]&#34;" comment="" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;contador=contador+1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse color="ffffff">
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+				<instruction text="&#34;OUTPUT ArrayCadena[i]+ &#34;&#34; &#34;&#34; +contador&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<for text="&#34;for i &#60;- 1 to Longitud ArrayCadena-1&#34;" comment="" counterVar="i" startValue="1" endValue="Longitud ArrayCadena-1" stepConst="1" style="COUNTER" color="ffff80" disabled="0">
+					<qFor>
+						<alternative text="&#34;ArrayCadena[i] != ArrayCadena[0]&#34;" comment="&#34;ArrayCadena[i] es un char aun no contabilizado&#34;" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;caracter &#60;- ArrayCadena[i]&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;contador &#60;- 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+								<for text="&#34;for j &#60;- i+1 to Longitud ArrayCadena-1&#34;" comment="&#34;&#34;" counterVar="j" startValue="i+1" endValue="Longitud ArrayCadena-1" stepConst="1" style="COUNTER" color="ffff80" disabled="0">
+									<qFor>
+										<alternative text="&#34;ArrayCadena[j] = caracter&#34;" comment="" color="ffffff" disabled="0">
+											<qTrue>
+												<instruction text="&#34;contador=contador+1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+												<instruction text="&#34;ArrayCadena[j]&#60;-ArrayCadena[0]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+											</qTrue>
+											<qFalse color="ffffff">
+											</qFalse>
+										</alternative>
+									</qFor>
+								</for>
+								<instruction text="&#34;OUTPUT ArrayCadena[i]+ &#34;&#34; &#34;&#34; +contador&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse color="ffffff">
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+			</qTrue>
+			<qFalse color="ffffff">
+			</qFalse>
+		</alternative>
+	</children>
+</root>
