@@ -1,26 +1,11 @@
 
-
 /**
  * 
  * @author César Ravelo Martínez
- * @version 2.0
+ * @version 1.0
  */
-public class Funciones {
-
-	/**
-	 * Función encargada de devolver la media de los valores almacenados en el
-	 * vector dado como parámetro
-	 * @param v Listado de valores a comprobar
-	 * @return Media calculada de los valores dados
-	 */
-	public static float media(float[] v) {
-		int i;
-		float suma = 0f;
-		for (i = 0; i < v.length; i++)
-			suma += v[i];
-		return (suma / v.length);
-	}
-
+public class Geometria {
+	
 	/**
 	 * Dados un punto P y un listado de puntos representados en dos vectores,
 	 * devuelve como resultado la posición asociada al punto más cercano de P
@@ -63,24 +48,5 @@ public class Funciones {
 	 */
 	public static double distancia(int px, int py, int qx, int qy) {
 		return Math.sqrt(Math.pow(px - qx, 2) + Math.pow(py - qy, 2));
-	}
-	
-	/**
-	 * Método main principal de la aplicación
-	 * @param args Valores de entrada de la aplicación
-	 */
-	public static void main(String[] args) {
-		// Código para la función media
-//		float[] valores = { 2f, 5f, 1f, 7f, 6f, 2f };
-//		System.out.printf("> La media de los valores dados es %f", media(valores));
-		
-		int[] coordX = {3,  2, -5, 1};
-		int[] coordY = {4, -5,  4, 1};
-		int pX = -5;
-		int pY = 5;
-		int coord = puntoCercano(pX, pY, coordX, coordY);
-		System.out.printf("> El punto más cercano es: (%d, %d)\n", coordX[coord], coordY[coord]);
-		
-	}
-
+	}	
 }
