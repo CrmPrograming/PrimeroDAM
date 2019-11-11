@@ -1,3 +1,4 @@
+package program.funciones;
 
 public class Funciones {
 	
