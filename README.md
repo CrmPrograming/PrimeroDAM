@@ -7,7 +7,8 @@ en las siguientes secciones:
 * **ETS**
     * PHP
 * **PROGRAM**
-    * programas
+    * TrimestrePrimero
+    * TrimestrePrimeroModular
     * structorizer
 
 Se irán actualizando las distintas secciones conforme transcurra el curso.
