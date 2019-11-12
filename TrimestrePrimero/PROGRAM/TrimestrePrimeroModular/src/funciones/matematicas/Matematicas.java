@@ -20,4 +20,58 @@ public class Matematicas {
 			suma += v[i];
 		return (suma / v.length);
 	}
+	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve la media de los ingresos
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 * @return	Media de los ingresos
+	 */
+	public static float mediaIngresos(int[][] balance) {
+		final int INGRESOS = 0;
+		int trim;
+		float result = 0f;
+		
+		for (trim = 0; trim < balance.length; trim++)
+			result += balance[trim][INGRESOS];
+		
+		return result / balance.length;
+	}
+	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve la media de los gastos
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 * @return	Media de los gastos
+	 */
+	public static float mediaGastos(int[][] balance) {
+		final int GASTOS = 1;
+		int trim;
+		float result = 0f;
+		
+		for (trim = 0; trim < balance.length; trim++)
+			result += balance[trim][GASTOS];
+		
+		return result / balance.length;
+	}
+	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve el balance total, siendo la diferencia entre los ingresos totales
+	 * y los gastos totales
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 * @return	Balance total
+	 */
+	public static int totalBalance(int[][] balance) {		
+		final int INGRESOS = 0;
+		final int GASTOS = 1;
+		int trim;
+		int result = 0;
+		
+		for (trim = 0; trim < balance.length; trim++)
+			result += balance[trim][INGRESOS] - balance[trim][GASTOS]; 
+		
+		return result;
+	}
+	
 }
