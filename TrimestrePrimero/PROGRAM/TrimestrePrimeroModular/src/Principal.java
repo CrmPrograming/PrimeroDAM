@@ -41,10 +41,10 @@ public class Principal {
 	 * Calcula balances para valores ya estipulados
 	 */
 	public static void calcularBalances() {
-		int[][] balance = {{50, 2},
-				   {8, 11},
-				   {66, 43}, 
-				   {23, 11}};		
+		int[][] balance = {{50, 20},
+				   {100, 50},
+				   {35, 20}, 
+				   {80, 40}};		
 		int i = 0;
 		System.out.printf("%8s ", "INGRESOS");
 		for (i = 0; i < balance.length; i++) {
