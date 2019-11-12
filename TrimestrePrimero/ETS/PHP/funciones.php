@@ -63,7 +63,7 @@
         
         // En caso de que entre en el rango de $a y $b,
         // insertamos el número 2 ya que nuestro vector
-        // en este punto contiene sólo números primos
+        // en este punto contiene sólo números impares
         $pos1 = array_search(1, $primos); 
         if (is_int($pos1))
             array_splice($primos, $pos1 + 1, 0, [2]);
