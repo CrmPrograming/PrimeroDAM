@@ -1,0 +1,33 @@
+
+.colNavegacion {
+
+	border: 2px solid black;
+}
+
+.colCuerpo {
+	border: 2px solid black;
+}
+
+.colNavegacion, .colCuerpo {
+	padding: 15px;
+}
+
+/* ESTILO COLUMNA NAVEGACIÓN*/
+
+.pieFoto {
+	background-color: black;
+	text-transform: uppercase;
+	color: white;
+	font-weight: bold;
+}
+
+.card {
+	
+}
+
+/* ESTILO FOOTER */
+footer {
+	color: white;
+	background-color: #565656;
+	padding: 15px;
+}
