@@ -78,3 +78,38 @@ GO
 SELECT * FROM residencias
 	WHERE codUniversidad <> 'ULoren'
 GO
+
+-- 16. Visualiza todas las residencias que su precio sea null
+SELECT * FROM residencias
+	WHERE precioMensual IS NULL
+GO
+
+-- 17. Visualiza todas las residencias que su director este a null y el precio este entre 500 y 2000
+SELECT * FROM residencias
+	WHERE nombreDirector IS NULL AND precioMensual BETWEEN 500 AND 2000 
+GO
+
+-- 18, Visualiza las universidades que tienen alguna residencia, por lo tanto los codigos de universidades que están en la tabla residencias.
+SELECT codUniversidad FROM residencias
+GO
+
+-- 19. Igual al anterior pero que no aparezcan repetidas
+SELECT DISTINCT codUniversidad FROM residencias
+GO
+
+-- 20. Visualiza los codigos de las residencias que tienen alguna estancia. Sin que se repitan estos códigos. Ordenado por el codigo en orden descendente
+SELECT DISTINCT codResidencia FROM estancias 
+	ORDER BY codResidencia DESC
+GO
+
+-- 21. Visualiza todo los diferentes precios que tienen las residencias. Solo queremos ver los precios, ordenado en orden descendente.
+SELECT DISTINCT precioMensual FROM residencias
+	ORDER BY precioMensual DESC
+GO
+
+-- 22.
+
+-- 23. Visualiza el nombre de la residencia y el precio. Ordenado por precio descendente y nombre ascendente
+SELECT nomResidencia, precioMensual FROM residencias
+	ORDER BY precioMensual DESC, nomResidencia ASC
+GO
