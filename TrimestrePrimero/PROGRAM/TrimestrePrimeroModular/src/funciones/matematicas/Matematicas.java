@@ -74,4 +74,42 @@ public class Matematicas {
 		return result;
 	}
 	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * muestra una tabla con cada dato junto con los totales correspondientes
+	 * 
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 */
+	public static void mostrarTabla(int[][] balance) {
+		final int INGRESOS = 0, GASTOS = 1;
+		int i;
+		int[] beneficios = new int[balance.length];
+		int totalIngresos = 0, totalGastos = 0;		
+		
+		// Mostramos los ingresos obtenidos de cada trimestre
+		System.out.printf("%8s ", "INGRESOS");
+		for (i = 0; i < balance.length; i++) {
+			System.out.printf("|%+5d ", balance[i][INGRESOS]);
+			totalIngresos += balance[i][INGRESOS];
+			beneficios[i] = balance[i][INGRESOS] - balance[i][GASTOS];
+		}
+		System.out.printf("|%+5d\n", totalIngresos);		
+		
+		// Mostramos los gastos generados de cada trimestre
+		System.out.printf(" %-7s ", "GASTOS");
+		for (i = 0; i < balance.length; i++) {
+			System.out.printf("|%+5d ", balance[i][GASTOS]);
+			totalGastos += balance[i][GASTOS];
+		}		
+		System.out.printf("|%+5d\n", totalGastos);
+		
+		System.out.println("----------------------------------------------");
+		
+		// Mostramos los totales
+		System.out.printf("  %-6s ", "TOTAL");		
+		for (i = 0; i < balance.length; i++) 
+			System.out.printf("|%+5d ", beneficios[i]);		
+		System.out.printf("|%+5d ", totalIngresos - totalGastos);
+	}
+	
 }

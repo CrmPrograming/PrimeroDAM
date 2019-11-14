@@ -48,12 +48,12 @@ public class Principal {
 		int i = 0;
 		System.out.printf("%8s ", "INGRESOS");
 		for (i = 0; i < balance.length; i++) {
-			System.out.printf("|%3d  ", balance[i][0]);
+			System.out.printf("|%4d ", balance[i][0]);
 		}
 		System.out.printf("|%+.2f\n", Matematicas.mediaIngresos(balance));
 		System.out.printf(" %-7s ", "GASTOS");
 		for (i = 0; i < balance.length; i++) {
-			System.out.printf("|%3d  ", balance[i][1]);
+			System.out.printf("|%4d ", balance[i][1]);
 		}
 		System.out.printf("|%+.2f\n", Matematicas.mediaGastos(balance));
 		System.out.println("-----------------------------------------");
@@ -65,12 +65,18 @@ public class Principal {
 	 * @param args Valores de entrada de la aplicación
 	 */
 	public static void main(String[] args) {
+		int[][] balance = {{50, 20},
+				   {100, 50},
+				   {35, 20}, 
+				   {80, 40}};
 //		calcularMedia();
 		
 //		calcularDistancia1();
 //		calcularDistancia2();
 		
-		calcularBalances();
+//		calcularBalances();
+		
+		Matematicas.mostrarTabla(balance);
 		
 	}		
 }
