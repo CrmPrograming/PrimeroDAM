@@ -1,14 +1,10 @@
 /* ESTILO GLOBAL */
 body {
-	padding: 5%;
-}
-
-.colCuerpo {
-	border: 2px solid black;
+	/*padding: 5%;*/
 }
 
 .colNavegacion, .colCuerpo {
-	padding: 15px;
+	padding: 1em;
 }
 
 /* CLASES GLOBALES */
@@ -19,7 +15,7 @@ body {
 	text-align: center;	
 }
 
-/* ESTILO COLUMNA NAVEGACIÓN*/
+/* ESTILO COLUMNA NAVEGACIÓN */
 
 .pieFoto {
 	background-color: black;
@@ -43,7 +39,7 @@ body {
 }
 
 .indiceSecciones {
-	padding-top: 5%;
+	padding-top: 1em;
 }
 
 .indiceSecciones li {
@@ -55,9 +51,38 @@ body {
 	padding-right: 0.5em;
 }
 
+/* ESTILO COLUMNA CUERPO */
+
+.tituloNombre {
+	display: block;
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
+.tituloSeccion {
+	font-size: 1.3em;	
+}
+
+.tituloSubSeccion {
+	font-size: 1.1em;
+}
+
+.tituloSeccion, .tituloSubSeccion {
+	display: block;	
+	font-weight: bold;
+}
+
+article > section {
+	padding-bottom: 1.5em;
+}
+
+section p {
+	font-size: 1.1em;
+}
+
 /* ESTILO FOOTER */
 footer {
 	color: white;
 	background-color: #565656;
-	padding: 15px;
+	padding: 1em;
 }

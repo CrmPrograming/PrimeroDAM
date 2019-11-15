@@ -25,7 +25,7 @@
       <div class="row">
 
         <!-- Columna Navegación -->
-        <div class="col-md-3 colNavegacion">          
+        <div class="col-md-2 offset-md-2 colNavegacion">
           <div class="row justify-content-center">
             <!-- Foto -->
             <div class="col-md-12">
@@ -50,14 +50,14 @@
               <div class="col-md-12 card">
                 <span class="tituloMenor">Índice</span>
                 <ul>
-                  <li><a href=""><span>1</span>Sección A</a></li>
-                  <li><a href=""><span>2</span>Sección B</a>
+                  <li><a href="#seccionA"><span>1</span>Sección A</a></li>
+                  <li><a href="#seccionB"><span>2</span>Sección B</a>
                     <ul>
-                      <li><a href=""><span>2.1</span>Sección B1</a>
-                        <li><a href=""><span>2.2</span>Sección B2</a>
+                      <li><a href="#seccionB1"><span>2.1</span>Sección B1</a>
+                        <li><a href="#seccionB2"><span>2.2</span>Sección B2</a>
                     </ul>
                   </li>
-                  <li><a href=""><span>3</span>Sección C</a></li>
+                  <li><a href="#seccionC"><span>3</span>Sección C</a></li>
                 </ul>
               </div>
             </div>
@@ -65,8 +65,36 @@
         </div>
 
         <!-- Columna Cuerpo -->
-        <div class="col-md-9 colCuerpo">
-          <p>COL CUERPO</p>
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">NOMBRE DE LA PERSONA</span>
+          <span class="tituloFecha">(1950 - 1998)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Sección A</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam excepturi voluptatum blanditiis adipisci quisquam incidunt accusamus exercitationem mollitia ducimus, quidem, laboriosam perferendis expedita, ea odit dolore ab temporibus. Nisi, autem?</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Sección B</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae aspernatur, ratione voluptatum a, quam voluptate quibusdam reiciendis cupiditate quia fugiat earum, vero eveniet reprehenderit. Minima, dolores recusandae aut porro quam.
+              </p>
+              <section>
+                <span id="seccionB1" class="tituloSubSeccion">Sección B1</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo omnis aut odit soluta corporis consequuntur, qui recusandae facilis minima asperiores, voluptatibus veritatis culpa esse inventore, temporibus ut error reiciendis hic!</p>
+              </section>
+              <section>
+                <span id="seccionB2" class="tituloSubSeccion">Sección B2</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo omnis aut odit soluta corporis consequuntur, qui recusandae facilis minima asperiores, voluptatibus veritatis culpa esse inventore, temporibus ut error reiciendis hic!</p>
+              </section>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Sección C</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolores fuga quos cupiditate quam repellat veniam placeat magni, architecto natus quae, esse ut ipsam! Magnam dolor totam numquam dolores quia.
+              </p>
+            </section>
+            
+          </article>
         </div>
 
       </div>
