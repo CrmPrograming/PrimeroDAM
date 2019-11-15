@@ -14,7 +14,7 @@ int main(void) {
 	// Petición de los datos por teclado al usuario
 	printf("> Introduzca el primer valor del rango: ");
 	scanf("%d", &a);
-	printf("> Introduzca el primer valor del rango: ");
+	printf("> Introduzca el segundo valor del rango: ");
 	scanf("%d", &b);
 
 	obtenerPrimos(a, b);
@@ -40,6 +40,7 @@ void obtenerPrimos(int x, int y) {
 			printf("%d ", valores[i]);
 		else {
 			// Comprobamos si el valor actual es primo
+			// buscando algún valor por el cual sea divisible
 			j = 2;
 			while (j <= sqrt(valores[i]) && valores[i] % j != 0)
 				j++;
