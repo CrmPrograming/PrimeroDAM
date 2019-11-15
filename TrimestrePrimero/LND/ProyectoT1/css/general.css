@@ -1,7 +1,6 @@
-
-.colNavegacion {
-
-	border: 2px solid black;
+/* ESTILO GLOBAL */
+body {
+	padding: 5%;
 }
 
 .colCuerpo {
@@ -12,17 +11,48 @@
 	padding: 15px;
 }
 
+/* CLASES GLOBALES */
+
+.tituloMenor {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: center;	
+}
+
 /* ESTILO COLUMNA NAVEGACIÓN*/
 
 .pieFoto {
 	background-color: black;
 	text-transform: uppercase;
 	color: white;
-	font-weight: bold;
+	font-size: 1em;
 }
 
-.card {
-	
+.resumen {
+	padding-left: 0;
+	margin: auto;
+}
+
+.resumen span {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.resumen li {
+	list-style: none;
+}
+
+.indiceSecciones {
+	padding-top: 5%;
+}
+
+.indiceSecciones li {
+	list-style: none;	
+}
+
+.indiceSecciones ul span {
+	color: black;
+	padding-right: 0.5em;
 }
 
 /* ESTILO FOOTER */
