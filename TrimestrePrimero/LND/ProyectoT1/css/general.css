@@ -27,23 +27,31 @@ body {
 .resumen {
 	padding-left: 0;
 	margin: auto;
+	text-align: center;
+	padding-bottom: 1em;
+	padding-top: 1em;
 }
 
-.resumen span {
-	font-weight: bold;
-	font-size: 1.2em;
-}
-
-.resumen li {
-	list-style: none;
+/* TODO: Cambiar color a tono más apagado respecto el fondo; */
+.resumen dt {
+	font-weight: normal;
+	font-size: 0.8em;
 }
 
 .indiceSecciones {
 	padding-top: 1em;
 }
 
+.indiceSecciones > div {
+	padding-top: 1rem;
+}
+
 .indiceSecciones li {
 	list-style: none;	
+}
+
+.indiceSecciones ul {
+	padding-left: 1em;
 }
 
 .indiceSecciones ul span {
