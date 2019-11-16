@@ -15,6 +15,26 @@ body {
 	text-align: center;	
 }
 
+/* ESTILO NAVBAR */
+
+#navbarGlobal .nav-link {
+	padding-bottom: 0.1em;
+}
+
+#navbarGlobal .nav-item {
+	border-bottom: 0.15em solid #343a40;
+	-webkit-transition: all 0.3s ease-in;;
+	-moz-transition: all 0.3s ease-in;;
+	-o-transition: all 0.3s ease-in;;
+	transition: all 0.3s ease-in;
+}
+
+/* TODO Cambiar color verde a color correspondiente de la paleta*/
+#navbarGlobal .nav-item:hover {	
+	border-bottom: 0.15em solid green;
+	
+}
+
 /* ESTILO COLUMNA NAVEGACIÓN */
 
 .pieFoto {
@@ -93,4 +113,5 @@ footer {
 	color: white;
 	background-color: #565656;
 	padding: 1em;
+	font-weight: bold;
 }

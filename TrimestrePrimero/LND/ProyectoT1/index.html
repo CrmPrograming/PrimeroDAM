@@ -3,11 +3,13 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Plantilla</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-    <title>Plantilla</title>
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
 
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/general.css">
@@ -17,7 +19,25 @@
   <body>
     
     <!-- Barra de navegación -->
-    <nav class="nav">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true">Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
     </nav>
 
     <!-- Contenedor Principal -->
@@ -25,7 +45,7 @@
       <div class="row">
 
         <!-- Columna Navegación -->
-        <div class="col-md-2 offset-md-2 colNavegacion">
+        <aside class="col-md-2 offset-md-2 colNavegacion">
           <div class="row justify-content-center">
             <!-- Foto -->
             <div class="col-md-12">
@@ -36,6 +56,7 @@
             <!-- Datos básicos -->
             <div class="col-md-12">
               <div class="col-md-12 card">
+                <span class="tituloMenor">Datos Básicos</span>
                 <dl class="resumen">
                   <dt>Dato 1</dt>
                   <dd>Desc Dato1</dd>
@@ -68,7 +89,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </aside>
 
         <!-- Columna Cuerpo -->
         <div class="col-md-6 colCuerpo">
@@ -107,7 +128,7 @@
     </div>
 
     <footer class="container-fluid text-center">
-      <p>TODO: FOOTER</p>
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
     </footer>
     
     <!-- Librerías JQuery y Bootstrap -->
