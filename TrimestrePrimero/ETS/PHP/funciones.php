@@ -47,7 +47,7 @@
         
         // Recorremos el listado de valores
         // quedándonos sólo con los valores primos
-        for ($i = 0; $i < TAM_IMPAR; $i++) {
+        for ($i = 0; $i < TAM_IMPAR; $i++) {            
             if ($impar[$i] == 1)
                 $primos[] = $impar[$i];
             else {
@@ -73,6 +73,20 @@
         if ($a == 2)
             array_splice($primos, 0, 0, [2]);
         return ($primos);        
+    }
+
+    // Devuelve los valores de la serie de Fibonacci desde
+    // 0 hasta el valor dado
+    function fibonacci($a) {
+        $valores = [1, 1];
+        $i = 2;
+        
+        while (($valores[$i-1] + $valores[$i-2]) <= $a) {
+            $valores[] = $valores[$i-1] + $valores[$i-2];
+            $i++;
+        }        
+        
+        return ($valores);        
     }
 
 ?>
