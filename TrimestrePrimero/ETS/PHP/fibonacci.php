@@ -11,7 +11,7 @@
    <form action="fibonacci.php" method="get">
        <div class="formulario">
             <p>
-                Inserte los extremos del rango para mostrar los resultados
+                Inserte el valor a buscar en la Serie de Fibonacci
             </p>
             <ul>
                 <li>Valor a: <input type="text" name="a" value="15" placeholder="15"/></li>                

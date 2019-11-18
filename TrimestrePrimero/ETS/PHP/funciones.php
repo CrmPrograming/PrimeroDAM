@@ -76,7 +76,7 @@
     }
 
     // Devuelve los valores de la serie de Fibonacci desde
-    // 0 hasta el valor dado
+    // el primer término de la serie hasta el valor dado
     function fibonacci($a) {
         $valores = [1, 1];
         $i = 2;
