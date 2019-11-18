@@ -131,4 +131,54 @@ public class Matematicas {
 		return totales;
 	}
 	
+	public static void mostrarHTML(int[][] balance) {
+		final int INGRESOS = 0, GASTOS = 1, TRIMESTRES = 4;
+		int i;
+		int[] beneficios = new int[balance.length];
+		int totalIngresos = 0, totalGastos = 0;
+		String tablaHTML = "<table border='1'>\n";
+
+		// Mostramos la cabecera
+		tablaHTML += "\t<tr>\n";
+		tablaHTML += "\t\t<th>DATOS</th>";
+		
+		for (i = 0; i < TRIMESTRES; i++)
+			tablaHTML += "<th>" + (i + 1) + "º</th>";
+		tablaHTML += "<th>TOTAL</th>\n";
+		tablaHTML += "\t</tr>\n";
+		
+		// Mostramos los ingresos
+		tablaHTML += "\t<tr>\n";
+		tablaHTML += "\t\t<td>INGRESOS</td>";
+		for (i = 0; i < TRIMESTRES; i++) {
+			tablaHTML += "<td>" + balance[i][INGRESOS] + "</td>";
+			totalIngresos += balance[i][INGRESOS];
+		}
+		tablaHTML += "<td>"+ totalIngresos + "</td>\n";
+		tablaHTML += "\t</tr>\n";
+		
+		// Mostramos los gastos
+		tablaHTML += "\t<tr>\n";
+		tablaHTML += "\t\t<td>GASTOS</td>";
+		for (i = 0; i < TRIMESTRES; i++) {
+			tablaHTML += "<td>" + balance[i][GASTOS] + "</td>";
+			totalGastos += balance[i][GASTOS];
+		}
+		tablaHTML += "<td>"+ totalGastos + "</td>\n";
+		tablaHTML += "\t</tr>\n";
+		
+		
+		// Mostramos los beneficios
+		beneficios = totales(balance);
+		tablaHTML += "\t<tr>\n";
+		tablaHTML += "\t\t<td>TOTAL</td>";
+		for (i = 0; i < beneficios.length; i++)
+			tablaHTML += "<td>" + beneficios[i] + "</td>";
+		tablaHTML += "<td>" + (totalIngresos - totalGastos) + "</td>\n";
+		tablaHTML += "\t</tr>\n"; 
+		
+		tablaHTML += "</table>";
+		System.out.println(tablaHTML);
+	}
+	
 }

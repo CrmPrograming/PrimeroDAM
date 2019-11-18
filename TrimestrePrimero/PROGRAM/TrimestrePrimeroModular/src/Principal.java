@@ -81,5 +81,7 @@ public class Principal {
 		
 		Salida.mostrar(Matematicas.totales(balance));
 		
+		Matematicas.mostrarHTML(balance);
+		
 	}		
 }
