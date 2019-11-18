@@ -84,21 +84,20 @@ public class Matematicas {
 		final int INGRESOS = 0, GASTOS = 1;
 		int i;
 		int[] beneficios = new int[balance.length];
-		int totalIngresos = 0, totalGastos = 0;		
+		int totalIngresos = 0, totalGastos = 0;
 		
 		// Mostramos los ingresos obtenidos de cada trimestre
 		System.out.printf("%8s ", "INGRESOS");
 		for (i = 0; i < balance.length; i++) {
-			System.out.printf("|%+5d ", balance[i][INGRESOS]);
-			totalIngresos += balance[i][INGRESOS];
-			beneficios[i] = balance[i][INGRESOS] - balance[i][GASTOS];
+			System.out.printf("|%5d ", balance[i][INGRESOS]);
+			totalIngresos += balance[i][INGRESOS];			
 		}
 		System.out.printf("|%+5d\n", totalIngresos);		
 		
 		// Mostramos los gastos generados de cada trimestre
 		System.out.printf(" %-7s ", "GASTOS");
 		for (i = 0; i < balance.length; i++) {
-			System.out.printf("|%+5d ", balance[i][GASTOS]);
+			System.out.printf("|%5d ", balance[i][GASTOS]);
 			totalGastos += balance[i][GASTOS];
 		}		
 		System.out.printf("|%+5d\n", totalGastos);
@@ -106,10 +105,30 @@ public class Matematicas {
 		System.out.println("----------------------------------------------");
 		
 		// Mostramos los totales
+		beneficios = totales(balance);
 		System.out.printf("  %-6s ", "TOTAL");		
 		for (i = 0; i < balance.length; i++) 
 			System.out.printf("|%+5d ", beneficios[i]);		
-		System.out.printf("|%+5d ", totalIngresos - totalGastos);
+		System.out.printf("|%+5d\n", totalIngresos - totalGastos);
+	}
+	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve una tabla con la diferencia total de cada trimestre
+	 * 
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 * @return Tabla de enteros con la diferencia calculada
+	 */
+	public static int[] totales(int[][] balance) {
+		final int INGRESOS = 0, GASTOS = 1;
+		int[] totales = new int[balance.length];
+		int i;
+		
+		// Calculamos la diferencia de ingresos-gastos de cada trimestre
+		for (i = 0; i < totales.length; i++)
+			totales[i] = balance[i][INGRESOS] - balance[i][GASTOS];
+		
+		return totales;
 	}
 	
 }

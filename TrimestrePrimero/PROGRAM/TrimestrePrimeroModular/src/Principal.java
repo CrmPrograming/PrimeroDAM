@@ -1,3 +1,4 @@
+import funciones.Salida;
 import funciones.matematicas.Geometria;
 import funciones.matematicas.Matematicas;
 
@@ -77,6 +78,8 @@ public class Principal {
 //		calcularBalances();
 		
 		Matematicas.mostrarTabla(balance);
+		
+		Salida.mostrar(Matematicas.totales(balance));
 		
 	}		
 }
