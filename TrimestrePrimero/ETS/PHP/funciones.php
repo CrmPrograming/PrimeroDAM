@@ -78,13 +78,13 @@
     // Devuelve los valores de la serie de Fibonacci desde
     // el primer término de la serie hasta el valor dado
     function fibonacci($a) {
-        $valores = [1, 1];
+        $valores = [0, 1];
         $i = 2;
         
         while (($valores[$i-1] + $valores[$i-2]) <= $a) {
             $valores[] = $valores[$i-1] + $valores[$i-2];
             $i++;
-        }        
+        }
         
         return ($valores);        
     }

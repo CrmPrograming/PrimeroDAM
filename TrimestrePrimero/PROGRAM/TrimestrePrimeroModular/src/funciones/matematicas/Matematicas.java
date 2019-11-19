@@ -131,53 +131,69 @@ public class Matematicas {
 		return totales;
 	}
 	
+	/**
+	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
+	 * muestra la tabla en formato HTML
+	 * 
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 */
 	public static void mostrarHTML(int[][] balance) {
 		final int INGRESOS = 0, GASTOS = 1, TRIMESTRES = 4;
 		int i;
 		int[] beneficios = new int[balance.length];
 		int totalIngresos = 0, totalGastos = 0;
-		String tablaHTML = "<table border='1'>\n";
+		
+		final String TAG_TABLA_ABRIR = "<table border='1'>",
+				TAG_TABLA_CERRAR = "</table>",
+				TAG_TH_ABRIR = "<th>",
+				TAG_TH_CERRAR = "</th>",				
+				TAG_TR_ABRIR = "<tr>",
+				TAG_TR_CERRAR = "</tr>",
+				TAG_TD_ABRIR = "<td>",
+				TAG_TD_CERRAR = "</td>";
+		
+		String tablaHTML = TAG_TABLA_ABRIR + "\n";
 
 		// Mostramos la cabecera
-		tablaHTML += "\t<tr>\n";
-		tablaHTML += "\t\t<th>DATOS</th>";
+		tablaHTML += "\t" + TAG_TR_ABRIR + "\n";
+		tablaHTML += "\t\t" + TAG_TH_ABRIR  + "DATOS" + TAG_TH_CERRAR;
 		
 		for (i = 0; i < TRIMESTRES; i++)
-			tablaHTML += "<th>" + (i + 1) + "º</th>";
-		tablaHTML += "<th>TOTAL</th>\n";
-		tablaHTML += "\t</tr>\n";
+			tablaHTML += TAG_TH_ABRIR + (i + 1) + "º" + TAG_TH_CERRAR;
+		tablaHTML += TAG_TH_ABRIR + "TOTAL" + TAG_TH_CERRAR + "n";
+		tablaHTML += "\t"+ TAG_TR_CERRAR +"\n";
 		
 		// Mostramos los ingresos
-		tablaHTML += "\t<tr>\n";
-		tablaHTML += "\t\t<td>INGRESOS</td>";
+		tablaHTML += "\t" + TAG_TR_ABRIR + "\n";
+		tablaHTML += "\t\t" + TAG_TD_ABRIR + "INGRESOS" + TAG_TD_CERRAR;
 		for (i = 0; i < TRIMESTRES; i++) {
-			tablaHTML += "<td>" + balance[i][INGRESOS] + "</td>";
+			tablaHTML += TAG_TD_ABRIR + balance[i][INGRESOS] + TAG_TD_CERRAR;
 			totalIngresos += balance[i][INGRESOS];
 		}
-		tablaHTML += "<td>"+ totalIngresos + "</td>\n";
-		tablaHTML += "\t</tr>\n";
+		tablaHTML += TAG_TD_ABRIR + totalIngresos + TAG_TD_CERRAR + "\n";
+		tablaHTML += "\t" + TAG_TR_CERRAR + "\n";
 		
 		// Mostramos los gastos
-		tablaHTML += "\t<tr>\n";
-		tablaHTML += "\t\t<td>GASTOS</td>";
+		tablaHTML += "\t" + TAG_TR_ABRIR + "\n";
+		tablaHTML += "\t\t" + TAG_TD_ABRIR + "GASTOS" + TAG_TD_CERRAR;
 		for (i = 0; i < TRIMESTRES; i++) {
-			tablaHTML += "<td>" + balance[i][GASTOS] + "</td>";
+			tablaHTML += TAG_TD_ABRIR + balance[i][GASTOS] + TAG_TD_CERRAR;
 			totalGastos += balance[i][GASTOS];
 		}
-		tablaHTML += "<td>"+ totalGastos + "</td>\n";
-		tablaHTML += "\t</tr>\n";
+		tablaHTML += TAG_TD_ABRIR + totalGastos + TAG_TD_CERRAR + "\n";
+		tablaHTML += "\t" + TAG_TR_CERRAR + "\n";
 		
 		
 		// Mostramos los beneficios
 		beneficios = totales(balance);
-		tablaHTML += "\t<tr>\n";
-		tablaHTML += "\t\t<td>TOTAL</td>";
+		tablaHTML += "\t" + TAG_TR_ABRIR + "\n";
+		tablaHTML += "\t\t" + TAG_TD_ABRIR + "TOTAL" + TAG_TD_CERRAR;
 		for (i = 0; i < beneficios.length; i++)
-			tablaHTML += "<td>" + beneficios[i] + "</td>";
-		tablaHTML += "<td>" + (totalIngresos - totalGastos) + "</td>\n";
-		tablaHTML += "\t</tr>\n"; 
+			tablaHTML += TAG_TD_ABRIR + beneficios[i] + TAG_TD_CERRAR;
+		tablaHTML += TAG_TD_ABRIR + (totalIngresos - totalGastos) + TAG_TD_CERRAR + "\n";
+		tablaHTML += "\t" + TAG_TR_CERRAR + "\n"; 
 		
-		tablaHTML += "</table>";
+		tablaHTML += TAG_TABLA_CERRAR;
 		System.out.println(tablaHTML);
 	}
 	
