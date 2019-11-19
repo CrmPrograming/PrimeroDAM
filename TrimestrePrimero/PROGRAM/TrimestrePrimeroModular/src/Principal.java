@@ -1,3 +1,4 @@
+import funciones.Ajedrez;
 import funciones.Salida;
 import funciones.Vectores;
 import funciones.matematicas.Geometria;

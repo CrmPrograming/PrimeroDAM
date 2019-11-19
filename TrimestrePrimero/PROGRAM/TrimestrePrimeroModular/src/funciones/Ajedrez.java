@@ -1,3 +1,4 @@
+package funciones;
 
 public class Ajedrez {
 	
