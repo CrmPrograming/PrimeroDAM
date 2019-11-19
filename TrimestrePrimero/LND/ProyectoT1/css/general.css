@@ -27,6 +27,14 @@ a:hover {color: #CC6E55;}
 
 .colNavegacion, .colCuerpo {padding: 1em;}
 
+* {
+	font-family: 'Merriweather', serif;
+}
+
+.navbar-brand, .nav-link, .tituloMenor, .resumen > dt, .tituloNombre, .tituloFecha, .tituloSeccion, .tituloSubSeccion {
+	font-family: 'Calistoga', cursive;
+}
+
 /* CLASES GLOBALES */
 
 .tituloMenor {
