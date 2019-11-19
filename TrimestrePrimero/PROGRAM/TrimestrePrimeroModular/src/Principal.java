@@ -1,4 +1,5 @@
 import funciones.Salida;
+import funciones.Vectores;
 import funciones.matematicas.Geometria;
 import funciones.matematicas.Matematicas;
 
@@ -31,6 +32,9 @@ public class Principal {
 		System.out.printf("> El punto más cercano es: (%d, %d)\n", coordX[coord], coordY[coord]);
 	}
 	
+	/**
+	 * Calcula la distancia entre puntos para valores ya estipulados
+	 */
 	public static void calcularDistancia2() {
 		int[] p = {-5, 5};
 		int[][] puntos = {{3, 4}, {2, -5}, {-5, 4}, {1, 1}};
@@ -80,8 +84,23 @@ public class Principal {
 		Matematicas.mostrarTabla(balance);
 		
 		Salida.mostrar(Matematicas.totales(balance));
+		System.out.println(Salida.arrayToString(Matematicas.totales(balance)));
 		
 		Matematicas.mostrarHTML(balance);
 		
+		int[] a = {2, 6, 7, 9};
+		int[] b = {1, 4, 5, 11};
+		Salida.mostrar(Vectores.merge(a, b));
+		
+		
+		char[][] tablero = new char[8][8];
+		char[] fichas = {'A', 'T', 'C', 'p', 'P'};
+		int[][] posiciones = {{5, 7},
+							  {5, 3},
+							  {4, 7},
+							  {2, 6},
+							  {3, 1}};
+		Ajedrez.cargarPartida(tablero, fichas, posiciones);
+		Ajedrez.mostrar(tablero);
 	}		
 }

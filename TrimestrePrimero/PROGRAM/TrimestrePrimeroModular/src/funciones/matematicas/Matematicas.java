@@ -146,7 +146,7 @@ public class Matematicas {
 		final String TAG_TABLA_ABRIR = "<table border='1'>",
 				TAG_TABLA_CERRAR = "</table>",
 				TAG_TH_ABRIR = "<th>",
-				TAG_TH_CERRAR = "</th>",				
+				TAG_TH_CERRAR = "</th>",
 				TAG_TR_ABRIR = "<tr>",
 				TAG_TR_CERRAR = "</tr>",
 				TAG_TD_ABRIR = "<td>",
