@@ -160,7 +160,7 @@ public class Matematicas {
 		
 		for (i = 0; i < TRIMESTRES; i++)
 			tablaHTML += TAG_TH_ABRIR + (i + 1) + "º" + TAG_TH_CERRAR;
-		tablaHTML += TAG_TH_ABRIR + "TOTAL" + TAG_TH_CERRAR + "n";
+		tablaHTML += TAG_TH_ABRIR + "TOTAL" + TAG_TH_CERRAR + "\n";
 		tablaHTML += "\t"+ TAG_TR_CERRAR +"\n";
 		
 		// Mostramos los ingresos
