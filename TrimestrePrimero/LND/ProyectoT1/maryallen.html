@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Mary Allen Wilkes</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+  
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/MaryAllen.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Mary Allen Wilkes</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Datos Básicos</span>
+                <dl class="resumen">
+                  <dt>Nacimiento</dt>
+                  <dd>25 de septiembre de 1937</dd>
+                  <dt>Nacionalidad</dt>
+                  <dd>Estadounidense</dd>
+                  <dt>Lugar donde estudio</dt>
+                  <dd>Harvard</dd>
+                  <dt>Estudios</dt>
+                  <dd>Informatica y filosofia</dd>
+                  <dt>Ocupacion</dt>
+                  <dd>Informatica, ingeniera y abogada</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Biografia</a></li>
+                  <li><a href="#seccionB"><span>2</span>Estudios</a>
+                    <ul>
+                      <li><a href="#seccionB1"><span>2.1</span>Publicaciones</a>
+                        <li><a href="#seccionB2"><span>2.2</span>Primera computadora privada </a>
+                    </ul>
+                  
+                  <li><a href="#seccionC"><span>3</span>Informatica</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">Mary Allen Wilkes</span>
+          <span class="tituloFecha">(1937 - Actualidad)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Biografia</span>
+              <p>Mary Allen Wilkes es una abogada estadounidense, antigua programadora e ingeniera de hardware. En el mundo computacional destaca por haber sido la primera persona en usar una computadora en casa y por sus aportaciones en el LINC</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Estudios</span>
+              <p>Se graduó de la carrera de filosofía, de la universidad de Wellesley, en 1959 tras lo cual, supuestamente por una apuesta con un profesor antiguo de geografía, decide ingresar al mundo de la programación.2​ Trabajó en los laboratorios Lincoln en el Instituto Tecnológico de Massachusetts y después en la Universidad de Washington. En 1975 decide abandonar el mundo computacional y estudiar derecho en la universidad de Harvard, profesión que practicó hasta retirarse.
+              </p>
+              <section>
+                <span id="seccionB1" class="tituloSubSeccion">Publicaciones</span>
+                <p>Mary Allen Wilkes es la autora del libro LAP6 Handbok y coautora del libro Progrmando en Linc junto a wesley A.Clark</p>
+              </section>
+              <section>
+                <span id="seccionB2" class="tituloSubSeccion">Primera computadora privada</span>
+                <p>En 1965 Mary Allen fue la primera en crear9​ y trabajar con una computadora privada desde su casa, lo cual hace que se le considere la primera usuaria de una estas computadoras.10​ Los gabinetes de la computadora tenían el tamaño aproximado de un refrigerador, 12 bits de memoria cuya capacidad le permitía grabar de 1024 a 2048 palabras.</p>
+              </section>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Informatica</span>
+              <p>De 1959 a 1963, mientras trabajaba en el MIT, tuvo la oportunidad de trabajar con computadoras como la IBM 709 y la TX-2.3​ En ese tiempo estuvo diseñando diversos sistemas operativos para LINC, en inglés Laboratory Instrument Computer, con el nombre de LAP, en inglés LINC Assembly Program, hasta evolucionar al LAP6.
+
+El LAP6 servía de sistema operativo y como lenguaje ensamblador para LINC; además era el primer sistema operativo que estaba entre el hardware de la computadora y los programas. Tenía un ensamblador y un editor, pensado en que fuera usado más bien por usuarios que no tenían conocimientos de programación.4​ Para 1970 el LAP6 por, aproximadamente, 2000 usuarios en 11 países.5​
+
+Al poco tiempo de haber diseñado el LAP6 deja el MIT para unirse al Laboratorio de Sistemas Computacionales de la Universidad de Washington en St. Louis, donde participó en el proyecto de sistemas macro modulares6​diseñó un macro módulo múltiple. Junto con Wesley A. Clark y Charles Molnar, mejoraron el diseño de la LINC: Clark se enfocaba en el diseño, Molnar los circuitos eléctricos y las cintas.
+              </p>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
