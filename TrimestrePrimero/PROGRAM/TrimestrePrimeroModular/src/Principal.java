@@ -1,8 +1,5 @@
-import funciones.Ajedrez;
-import funciones.Salida;
-import funciones.Vectores;
-import funciones.matematicas.Geometria;
-import funciones.matematicas.Matematicas;
+import funciones.*;
+import funciones.matematicas.*;
 
 /**
  * 
@@ -71,27 +68,27 @@ public class Principal {
 	 * @param args Valores de entrada de la aplicación
 	 */
 	public static void main(String[] args) {
-		int[][] balance = {{50, 20},
-				   {100, 50},
-				   {35, 20}, 
-				   {80, 40}};
-//		calcularMedia();
-		
-//		calcularDistancia1();
-//		calcularDistancia2();
-		
-//		calcularBalances();
-		
-		Matematicas.mostrarTabla(balance);
-		
-		Salida.mostrar(Matematicas.totales(balance));
-		System.out.println(Salida.arrayToString(Matematicas.totales(balance)));
-		
-		Matematicas.mostrarHTML(balance);
-		
-		int[] a = {2, 6, 7, 9};
-		int[] b = {1, 4, 5, 11};
-		Salida.mostrar(Vectores.merge(a, b));
+//		int[][] balance = {{50, 20},
+//				   {100, 50},
+//				   {35, 20}, 
+//				   {80, 40}};
+////		calcularMedia();
+//		
+////		calcularDistancia1();
+////		calcularDistancia2();
+//		
+////		calcularBalances();
+//		
+//		Matematicas.mostrarTabla(balance);
+//		
+//		Salida.mostrar(Matematicas.totales(balance));
+//		System.out.println(Salida.arrayToString(Matematicas.totales(balance)));
+//		
+//		Matematicas.mostrarHTML(balance);
+//		
+//		int[] a = {2, 6, 7, 9};
+//		int[] b = {1, 4, 5, 11};
+//		Salida.mostrar(Vectores.merge(a, b));
 		
 		
 		char[][] tablero = new char[8][8];
