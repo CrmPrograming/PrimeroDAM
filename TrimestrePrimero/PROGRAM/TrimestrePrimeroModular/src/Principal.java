@@ -90,8 +90,9 @@ public class Principal {
 //		int[] b = {1, 4, 5, 11};
 //		Salida.mostrar(Vectores.merge(a, b));
 		
-		
+		int i, filaFicha = 5, columnaFicha = 7;
 		char[][] tablero = new char[8][8];
+		char[] victimas;
 		char[] fichas = {'A', 'T', 'C', 'p', 'P'};
 		int[][] posiciones = {{5, 7},
 							  {5, 3},
@@ -100,5 +101,15 @@ public class Principal {
 							  {3, 1}};
 		Ajedrez.cargarPartida(tablero, fichas, posiciones);
 		Ajedrez.mostrar(tablero);
+		System.out.println();
+		victimas = Ajedrez.explorar(tablero, filaFicha, columnaFicha);
+		
+		if (victimas.length > 0) {
+			for (i = 0; i < victimas.length; i++)
+				System.out.print(victimas[i] + " ");
+			System.out.println();
+		} else {
+			System.out.println("> No hay fichas al alcance");
+		}
 	}		
 }

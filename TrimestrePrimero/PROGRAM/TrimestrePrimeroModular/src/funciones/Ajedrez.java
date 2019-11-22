@@ -51,5 +51,93 @@ public class Ajedrez {
 		}
 		
 	}
+	
+	public static char[] explorar(char[][] tablero, int i, int j) {
+		char[] victimas = new char[0];
+		
+		// Identificamos la ficha a analizar
+		switch (tablero[i][j]) {
+			// Alfiles
+			case 'A':
+			case 'a':
+				victimas = explorarAlfil(tablero, i, j);
+				break;
+				
+			// Torres
+			case 'T':
+			case 't':
+				victimas = explorarTorre(tablero, i, j);
+				break;
+			
+			// Rey
+			case 'R':
+			case 'r':
+				
+				break;
+				
+			// Dama
+			case 'D':
+			case 'd':
+				victimas = explorarTorre(tablero, i, j);
+				victimas = juntarVectores(victimas, explorarAlfil(tablero, i, j));
+				break;		
+		}
+		
+		return (victimas);
+	}
+	
+	public static char[] explorarTorre(char[][] tablero, int i, int j) {
+		String enemigas = "";
+		int fila, columna;
+		
+		// Buscamos fichas por fila
+		for (fila = 0; fila < i; fila++)
+			if (tablero[fila][j] != ' ')
+				enemigas += tablero[fila][j];
+		
+		for (fila = i+1; fila < tablero.length; fila++)
+			if (tablero[fila][j] != ' ')
+				enemigas += tablero[fila][j];
+		
+		// Buscamos fichas por columna
+		for (columna = 0; columna < j; columna++)
+			if (tablero[i][columna] != ' ')
+				enemigas += tablero[i][columna];
+		
+		for (columna = i+1; columna < tablero.length; columna++)
+			if (tablero[i][columna] != ' ')
+				enemigas += tablero[i][columna];
+		
+		return (enemigas.toCharArray());
+	}
+	
+	public static char[] explorarAlfil(char[][] tablero, int i, int j) {
+		String enemigas = "";
+		int fila, columna, diferencia = j - i;
+		
+		// Comprobamos la primera diagonal
+		for (fila = 0; diferencia + fila < i; fila++)
+			if (tablero[fila][diferencia + fila] != ' ')
+				enemigas += tablero[fila][diferencia + fila];
+		
+		for (fila = i+1; diferencia + fila < tablero.length; fila++)
+			if (tablero[fila][diferencia + fila] != ' ')
+				enemigas += tablero[fila][diferencia + fila];
+		
+		// Comprobamos la segunda diagonal
+		for (columna = 0; diferencia + columna < j; columna++)
+			if (tablero[i + diferencia][columna] != ' ')
+				enemigas += tablero[i + diferencia][columna];
+		
+		for (columna = i+1; diferencia + columna < tablero.length; columna++)
+			if (tablero[i + diferencia][columna] != ' ')
+				enemigas += tablero[i + diferencia][columna];
+		
+		return (enemigas.toCharArray());
+	}
+	
+	public static char[] juntarVectores(char[] a, char[] b) {
+		return (a.toString() + b.toString()).toCharArray();
+	}
 
 }
