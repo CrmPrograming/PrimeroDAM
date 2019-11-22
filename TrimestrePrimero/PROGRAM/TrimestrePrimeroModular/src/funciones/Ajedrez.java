@@ -78,9 +78,9 @@ public class Ajedrez {
 			// Dama
 			case 'D':
 			case 'd':
-				victimas = explorarTorre(tablero, i, j);
+				victimas = explorarTorre(tablero, i, j);				
 				victimas = juntarVectores(victimas, explorarAlfil(tablero, i, j));
-				break;		
+				break;
 		}
 		
 		return (victimas);
@@ -124,9 +124,10 @@ public class Ajedrez {
 			if (tablero[fila][diferencia + fila] != ' ')
 				enemigas += tablero[fila][diferencia + fila];
 		
+		// TODO Revisar
 		// Comprobamos la segunda diagonal
 		for (columna = 0; diferencia + columna < j; columna++)
-			if (tablero[i + diferencia][columna] != ' ')
+			if (tablero[columna][columna] != ' ')
 				enemigas += tablero[i + diferencia][columna];
 		
 		for (columna = i+1; diferencia + columna < tablero.length; columna++)
@@ -137,7 +138,16 @@ public class Ajedrez {
 	}
 	
 	public static char[] juntarVectores(char[] a, char[] b) {
-		return (a.toString() + b.toString()).toCharArray();
+		char[] c = new char[a.length + b.length];
+		int i;
+		
+		for (i = 0; i < a.length; i++)
+			c[i] = a[i];
+		
+		for (i = 0; i < b.length; i++)
+			c[i + a.length] = b[i];
+		
+		return c;
 	}
 
 }
