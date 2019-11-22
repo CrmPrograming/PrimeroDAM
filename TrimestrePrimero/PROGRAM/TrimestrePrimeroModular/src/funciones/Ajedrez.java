@@ -33,12 +33,13 @@ public class Ajedrez {
 	 * @param t Tablero a mostrar
 	 */
 	public static void mostrar(char[][] t) {
+		final int ASCII_A = 97;
 		int i, j;
 		
 		// Mostramos las coordenadas del segundo índice
 		System.out.print("   ");
 		for (i = 0; i < t.length; i++)
-			System.out.print((i + 1) + " ");
+			System.out.print(((char)(i + ASCII_A)) + " ");
 		System.out.println("");
 		
 		// Mostramos los valores
