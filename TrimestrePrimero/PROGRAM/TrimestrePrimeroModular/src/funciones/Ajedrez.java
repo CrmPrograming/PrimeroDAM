@@ -1,7 +1,7 @@
 package funciones;
 
-public class Ajedrez {
-	
+public class Ajedrez {	
+
 	/**
 	 * Dada una tabla de 8x8, un vector con fichas de ajedrez y una tabla con las
 	 * posiciones asociadas a las fichas, modifica la tabla t colocando las fichas
@@ -15,7 +15,8 @@ public class Ajedrez {
 		int i, j;
 		final int X = 0;
 		final int Y = 1;
-		final char CASILLA_VACIA = ' ';
+		final char VACIA = ' ';
+		final char CASILLA_VACIA = VACIA;
 		
 		// Rellenamos la tabla a caracter vacío
 		for (i = 0; i < t.length; i++)
@@ -89,23 +90,24 @@ public class Ajedrez {
 	public static char[] explorarTorre(char[][] tablero, int i, int j) {
 		String enemigas = "";
 		int fila, columna;
+		final char VACIA = ' ';
 		
 		// Buscamos fichas por fila
 		for (fila = 0; fila < i; fila++)
-			if (tablero[fila][j] != ' ')
+			if (tablero[fila][j] != VACIA)
 				enemigas += tablero[fila][j];
 		
 		for (fila = i+1; fila < tablero.length; fila++)
-			if (tablero[fila][j] != ' ')
+			if (tablero[fila][j] != VACIA)
 				enemigas += tablero[fila][j];
 		
 		// Buscamos fichas por columna
 		for (columna = 0; columna < j; columna++)
-			if (tablero[i][columna] != ' ')
+			if (tablero[i][columna] != VACIA)
 				enemigas += tablero[i][columna];
 		
 		for (columna = i+1; columna < tablero.length; columna++)
-			if (tablero[i][columna] != ' ')
+			if (tablero[i][columna] != VACIA)
 				enemigas += tablero[i][columna];
 		
 		return (enemigas.toCharArray());
@@ -113,26 +115,50 @@ public class Ajedrez {
 	
 	public static char[] explorarAlfil(char[][] tablero, int i, int j) {
 		String enemigas = "";
-		int fila, columna, diferencia = j - i;
+		int fila, columna;
+		final int LIMITE = tablero.length - 1,  DIFERENCIA = j - i, DESPLAZAMIENTO = i + j;
+		final char VACIA = ' ';
 		
-		// Comprobamos la primera diagonal
-		for (fila = 0; diferencia + fila < i; fila++)
-			if (tablero[fila][diferencia + fila] != ' ')
-				enemigas += tablero[fila][diferencia + fila];
 		
-		for (fila = i+1; diferencia + fila < tablero.length; fila++)
-			if (tablero[fila][diferencia + fila] != ' ')
-				enemigas += tablero[fila][diferencia + fila];
+		// Subdiagonal superior izquierda
+		fila = i - 1;
+		columna = DIFERENCIA + fila;
+		while (fila >= 0 && columna >= 0) {
+			if (tablero[fila][columna] != VACIA)
+				enemigas += tablero[fila][columna];
+			fila--;
+			columna = DIFERENCIA + fila;
+		}
 		
-		// TODO Revisar
-		// Comprobamos la segunda diagonal
-		for (columna = 0; diferencia + columna < j; columna++)
-			if (tablero[columna][columna] != ' ')
-				enemigas += tablero[i + diferencia][columna];
+		// Subdiagonal inferior derecha
+		fila = i + 1;
+		columna = DIFERENCIA + fila;
+		while (fila <= LIMITE && columna <= LIMITE) {
+			if (tablero[fila][columna] != VACIA)
+				enemigas += tablero[fila][columna];
+			fila++;
+			columna = DIFERENCIA + fila;
+		}
 		
-		for (columna = i+1; diferencia + columna < tablero.length; columna++)
-			if (tablero[i + diferencia][columna] != ' ')
-				enemigas += tablero[i + diferencia][columna];
+		// Subdiagonal inferior izquierda
+		fila = i + 1;
+		columna = DESPLAZAMIENTO - fila;
+		while (fila <= LIMITE && columna >= 0) {
+			if (tablero[fila][columna] != VACIA)
+				enemigas += tablero[fila][columna];
+			fila++;
+			columna = DESPLAZAMIENTO - fila;
+		}
+		
+		// Subdiagonal superior derecha
+		fila = i - 1;
+		columna = DESPLAZAMIENTO - fila;
+		while (fila >= 0 && columna <= LIMITE) {
+			if (tablero[fila][columna] != VACIA)
+				enemigas += tablero[fila][columna];
+			fila--;
+			columna = DESPLAZAMIENTO - fila;
+		}		
 		
 		return (enemigas.toCharArray());
 	}
