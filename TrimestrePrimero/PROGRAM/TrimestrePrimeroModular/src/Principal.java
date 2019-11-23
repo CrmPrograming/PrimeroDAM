@@ -90,16 +90,17 @@ public class Principal {
 //		int[] b = {1, 4, 5, 11};
 //		Salida.mostrar(Vectores.merge(a, b));
 		
-		int i, filaFicha = 4, columnaFicha = 4;
+		int i, filaFicha = 3, columnaFicha = 0;
 		char[][] tablero = new char[8][8];
 		char[] victimas;
-		char[] fichas = {'A', 'T', 'C', 'p', 'P', 'd'};
+		char[] fichas = {'A', 'T', 'C', 'p', 'P', 'd', 'r'};
 		int[][] posiciones = {{5, 7},
 							  {5, 3},
 							  {4, 7},
 							  {2, 6},
 							  {3, 1},
-							  {4, 4}};
+							  {4, 4},
+							  {3, 0}};
 		Ajedrez.cargarPartida(tablero, fichas, posiciones);
 		Ajedrez.mostrar(tablero);
 		System.out.println();

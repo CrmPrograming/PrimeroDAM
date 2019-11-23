@@ -53,6 +53,16 @@ public class Ajedrez {
 		
 	}
 	
+	/**
+	 * Dado un tablero con una partida de ajedrez y una posición del mismo,
+	 * determina todas las fichas a tiro (aliadas y enemigas) de la ficha en
+	 * la posición establecida según sus movimientos característicos.
+	 * 
+	 * @param tablero Vector representativo del tablero de ajedrez
+	 * @param i		  Coordenada x de la ficha dada
+	 * @param j       Coordenada y de la ficha dada
+	 * @return        Devuelve el listado de fichas a tiro
+	 */
 	public static char[] explorar(char[][] tablero, int i, int j) {
 		char[] victimas = new char[0];
 		
@@ -73,20 +83,28 @@ public class Ajedrez {
 			// Rey
 			case 'R':
 			case 'r':
-				
+				victimas = explorarRey(tablero, i, j);
 				break;
 				
 			// Dama
 			case 'D':
 			case 'd':
-				victimas = explorarTorre(tablero, i, j);				
-				victimas = juntarVectores(victimas, explorarAlfil(tablero, i, j));
+				victimas = explorarDama(tablero, i, j);
 				break;
 		}
 		
 		return (victimas);
 	}
 	
+	/**
+	 * Método encargado de determinar las fichas a tiro
+	 * según los movimientos de una torre
+	 * 
+	 * @param tablero Vector representativo del tablero de ajedrez
+	 * @param i		  Coordenada x de la ficha dada
+	 * @param j       Coordenada y de la ficha dada
+	 * @return		  Devuelve el listado de fichas a tiro
+	 */
 	public static char[] explorarTorre(char[][] tablero, int i, int j) {
 		String enemigas = "";
 		int fila, columna;
@@ -113,6 +131,15 @@ public class Ajedrez {
 		return (enemigas.toCharArray());
 	}
 	
+	/**
+	 * Método encargado de determinar las fichas a tiro
+	 * según los movimientos de un alfil
+	 * 
+	 * @param tablero Vector representativo del tablero de ajedrez
+	 * @param i		  Coordenada x de la ficha dada
+	 * @param j       Coordenada y de la ficha dada
+	 * @return		  Devuelve el listado de fichas a tiro
+	 */
 	public static char[] explorarAlfil(char[][] tablero, int i, int j) {
 		String enemigas = "";
 		int fila, columna;
@@ -163,13 +190,67 @@ public class Ajedrez {
 		return (enemigas.toCharArray());
 	}
 	
+	/**
+	 * Método encargado de determinar las fichas a tiro
+	 * según los movimientos de una dama
+	 * 
+	 * @param tablero Vector representativo del tablero de ajedrez
+	 * @param i		  Coordenada x de la ficha dada
+	 * @param j       Coordenada y de la ficha dada
+	 * @return		  Devuelve el listado de fichas a tiro
+	 * @see juntarVectores
+	 * @see explorarTorre
+	 * @see explorarAlfil
+	 */
+	public static char[] explorarDama(char[][] tablero, int i, int j) {
+		return (juntarVectores(explorarTorre(tablero, i, j), explorarAlfil(tablero, i, j)));
+	}
+	
+	/**
+	 * Método encargado de determinar las fichas a tiro
+	 * según los movimientos de un rey
+	 * 
+	 * @param tablero Vector representativo del tablero de ajedrez
+	 * @param i		  Coordenada x de la ficha dada
+	 * @param j       Coordenada y de la ficha dada
+	 * @return		  Devuelve el listado de fichas a tiro
+	 */
+	public static char[] explorarRey(char[][] tablero, int i, int j) {
+		String enemigas = "";
+		int fila, columna;
+		final int LIMITE_SUPERIOR = (i > 0)?i - 1:0;
+		final int LIMITE_INFERIOR = (i == tablero.length - 1)?tablero.length - 1:i + 1;
+		final int LIMITE_IZQUIERDO = (j > 0)?j - 1:0;
+		final int LIMITE_DERECHO = (j == tablero.length - 1)?tablero.length - 1:j + 1;
+		final char VACIA = ' ';
+		
+		for (fila = LIMITE_SUPERIOR; fila <= LIMITE_INFERIOR; fila++) {
+			for (columna = LIMITE_IZQUIERDO; columna <= LIMITE_DERECHO; columna++) {				
+				if (tablero[fila][columna] != VACIA && !(fila == i && columna == j))
+					enemigas += tablero[fila][columna];
+			}
+		}
+		
+		return (enemigas.toCharArray());
+	}
+	
+	/**
+	 * Dados dos vectores de tipo char, devuelve un vector formado por
+	 * los valores de ambos vectores, primero los de a y luego los de b
+	 * 
+	 * @param a Primer vector de char
+	 * @param b Segundo vector de char
+	 * @return Vector unificado
+	 */
 	public static char[] juntarVectores(char[] a, char[] b) {
 		char[] c = new char[a.length + b.length];
 		int i;
 		
+		// Insertamos primero los valores de a
 		for (i = 0; i < a.length; i++)
 			c[i] = a[i];
 		
+		// Insertamos los valores de b tras los de a
 		for (i = 0; i < b.length; i++)
 			c[i + a.length] = b[i];
 		
