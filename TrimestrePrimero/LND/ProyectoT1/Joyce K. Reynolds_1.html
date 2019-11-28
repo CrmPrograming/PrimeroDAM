@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Joyce K. Reynolds</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </style>
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/Blog-ProfileA.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Joyce K. Reynolds</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Datos Personales</span>
+                <dl class="resumen">
+                  <dt>Dato 1</dt>
+                  <dd>Estadounidense</dd>
+                  <dt>Dato 2</dt>
+                  <dd>Pionera en Internet</dd>
+                  <dt>Dato 3</dt>
+                  <dd>Muerte por Cancer</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Sección A:Estudios y Profeción</a></li>
+                  <li><a href="#seccionB"><span>2</span>Sección B:Trayectoria Profecional</a>
+                  <li><a href="#seccionC"><span>3</span>Sección C:Organismos y Galardones</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">JOYCE K. REYNOLDS</span>
+          <span class="tituloFecha">(N.S.S. - 2015)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Sección A:Estudios y Profeción</span>
+              <p>Científica en computación, tiene títulos de licenciatura y maestría de la Universidad del Sur de California. Ella ha estado activa en el desarrollo de los protocolos subyacentes a Internet.</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Sección B:Trayectoria Profecional</span>
+              <p> En particular, es autora o coautora de muchas RFC; especialmente aquellos que introducen y especifican el protocolo Telnet. Sirvió como parte del equipo editorial de la serie Solicitud de comentarios de 1987 a 2006, y también realizó la función de la IANA con Jon Postel hasta que fue transferida a ICANN, y trabajó con ICANN en este cargo hasta 2001, mientras era empleada de ISI Como Directora de Área del área de Servicios al Usuario, fue miembro del Grupo de Dirección de Ingeniería de Internet del IETF desde 1990 hasta marzo de 1998 y recibió la placa de reconocimiento del servicio de Internet Society (ISOC) por "contribuciones sobresalientes al IETF". Junto con Bob Braden, recibió el Premio Postel 2006 en reconocimiento a sus servicios en Internet. Ella se menciona, junto con una breve biografía, en RFC 1336, Who's Who in the Internet (1992).
+              </p>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Sección C:Organismos y Galardones</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolores fuga quos cupiditate quam repellat veniam placeat magni, architecto natus quae, esse ut ipsam! Magnam dolor totam numquam dolores quia.
+              </p>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

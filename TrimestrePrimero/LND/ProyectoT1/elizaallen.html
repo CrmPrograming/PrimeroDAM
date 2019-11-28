@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Plantilla</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/francesElizabethAllen.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Frances Elizabeth Allen</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Información personal</span>
+                <dl class="resumen">
+                  <dt>Apodo</dt>
+                  <dd>Fran</dd>
+                  <dt>Fecha de nacimiento</dt>
+                  <dd>4 de agosto de 1932 (87 años)</dd>
+                  <dt>Lugar de nacimiento</dt>
+                  <dd>Peru (Estados Unidos)</dd>
+                  <dt>Educación</dt>
+                  <dd>Universidad de Michigan College de Literatura, Ciencias y las Artes de la 
+Universidad de Albany </dd>
+                  <dt>Trabajos</dt>
+                  <dd>Informática teórica, profesora de universidad e ingeniera</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Conceptos Generales</a></li>
+                  <li><a href="#seccionB"><span>2</span>Carrera</a>
+                  <li><a href="#seccionC"><span>3</span>Premios y Honores</a></li>   
+                    <ul>
+                      <li><a href="#seccionB1"><span>3.1</span>Año 2000</a>
+                        <li><a href="#seccionB2"><span>3.2</span>Año 2002</a>
+                            <li><a href="#seccionB3"><span>3.3</span>Año 2006</a>
+                                <li><a href="#seccionB4"><span>3.4</span>Año 2009</a>
+                    </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">Frances Elizabeth Allen</span>
+          <span class="tituloFecha">4 de Agosto de 1932</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Conceptos Generales</span>
+              <p>Frances Elizabeth "Fran" Allen es una informática estadounidense, pionera en el campo de optimizar compiladores. Sus logros incluyen trabajo en compiladores, optimización de código, y computación paralela. También tuvo un rol importante en la creación de lenguajes de programación y códigos de seguridad para la Agencia de Seguridad Nacional Americana.</p>
+              <p>Allen es socio del IEEE y la Asociación de los Sistemas Informáticos (ACM) tambien forma parte de la Junta de Telecomunicaciones e Informática y el consejo consultivo del sector dedicado a la Informática y las TIC de la Fundación de Ciencia Nacional Americana. Es miembro de la [ Academia Nacional de Ingeniería ] y la Sociedad Filosófica Americana. [Cita necesaria] Fue elegida socia de la Academia americana de Artes y Ciencias en 1994.</p>
+            </section>
+            
+             <section>
+              <span id="seccionC" class="tituloSeccion">Carrera</span>
+              <p>Allen creció en una granja en Peru, Nueva York y obtuvo un Máster en Matemáticas por la Universidad Estatal para Profesores de Nueva York (actual Universidad Estatal de Nueva York en Albany) en 1954. Gane un M.Sc. Grado en matemáticas en la Universidad de Míchigan en 1957 y empezó enseñar en Perú, Nueva York. Endeudada por sus estudios universitarios, se unió a IBM el 15 de julio de 1957, planeado quedarse sólo hasta pagar sus deudas, pero acabó por quedarse los 45 años que le quedaban de carrera.</p>
+            </section>
+            
+            <section>
+              <span id="seccionB" class="tituloSeccion">Premios y Honores</span>
+              <section>
+                <span id="seccionB1" class="tituloSubSeccion">Año 2000</span>
+                <p>Fue nombrada Socia del Museo Histórico de Ordenadores, "por sus contribuciones por optimizar la programación y compilar para ordenadores paralelos."</p>
+              </section>
+              <section>
+                <span id="seccionB2" class="tituloSubSeccion">Año 2002</span>
+                <p>Ese año se retiró de IBM y ganó el Premio Augusta Ada Lovelace de la Asociación para Mujeres Informáticas.</p>
+              </section>
+              <section>
+                <span id="seccionB3" class="tituloSubSeccion">Año 2006</span>
+                <p>Recibio el premio Turing convirtiendose así en la primera mujer en ganar el premio de cuarenta años de historia, el cual está considerado el equivalente del Premio Nobel para computar y es otorgado por la Asociación de los Sistemas Informáticos.</p>
+              </section>
+              <section>
+                <span id="seccionB4" class="tituloSubSeccion">Año 2009</span>
+                <p>Este año le fue otorgado un Doctorado Honorario de Ciencia de la Universidad McGill por sus "contribuciones pioneras a la teoría y práctica de optimizar técnicas de compilación que forjó la base para optimizar compiladores modernos y la ejecución paralela automática".</p>
+              </section>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

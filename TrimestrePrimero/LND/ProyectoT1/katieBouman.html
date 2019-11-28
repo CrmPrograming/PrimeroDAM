@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Plantilla</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </style>
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/katie.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Katie Bouman</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Información personal</span>
+                <dl class="resumen">
+                  <dt>Nombre de nacimiento</dt>
+                  <dd>Katherine Louise Bouman</dd>
+                  <dt>Nacimiento</dt>
+                  <dd>Nació 1989 en West Lafayette (Estados Unidos)</dd>
+                  <dt>Nacionalidad</dt>
+                  <dd>Estadounidense</dd>
+                  <dt>Lengua materna</dt>
+                  <dd>Inglés</dd>
+                  <dt>Ocupación</dt>
+                  <dd>Informática teórica e ingeniera eléctrica</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Introducción</a></li>
+                  <li><a href="#seccionB"><span>2</span>Estudios y trayectoria profesional</a></li>
+                  <li><a href="#seccionC"><span>3</span>Continuous High-resolution Image Reconstruction using Patch priors, CHIRP</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">Katie Bouman</span>
+          <span class="tituloFecha">(1989 - Actualidad)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Introducción</span>
+              <p>Katherine Louise Bouman (Indiana, Estados Unidos, 9 de mayo de 1989)1​ es una científica de la computación que investiga en nuevos sistemas para formación de imágenes por ordenador. Forma parte del proyecto Event Horizon Telescope, y su contribución al desarrollo y a la aplicación del algoritmo llamado Continuous High-resolution Image Reconstruction using Patch priors, —CHIRP— ha sido una pieza clave para la reconstrucción de la primera imagen de un agujero negro.</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Estudios y trayectoria profesional</span>
+              <p>Estudió en West Lafayette Junior-Senior High School. Tras graduarse en 2007 estudió Ingeniería Eléctrica en la Universidad de Míchigan, graduándose summa cum laude en 2011. En 2013 obtuvo la licenciatura en Ingeniería Eléctrica y Ciencias de la Computación en el Instituto de Tecnología de Massachusetts. Su tesis de licenciatura, «Estimating Material Properties of Fabric through the observation of Motion», fue galardonada con el Premio Ernst Guillemin a la Mejor Tesis en 2014. En 2017 obtuvo su doctorado en el mismo instituto con su tesis «Extreme imaging via physical model inversion: seeing around corners and imaging black holes». Antes de recibirlo impartió una charla basada en su tesis en el canal de vídeo TED, titulada «How to Take a Picture of a Black Hole» —«Cómo tomar una fotografía de un agujero negro»—.
+              <br><br>
+              Se unió al proyecto Black Hole Initiative del Centro de astrofísica Harvard-Smithsonian como becaria postdoctoral. En el Instituto de Tecnología de Massachusetts fue miembro del Haystack Observatory. Consiguió una beca de posgrado de la Fundación Nacional para la Ciencia.
+              <br><br>
+              Ha escrito artículos para la revista inglesa Astronomy Now.
+              <br><br>
+              Está previsto que en junio de 2019 empiece a trabajar como profesora adjunta de ciencias de la computación y matemáticas en el Instituto de Tecnología de California, donde también se está construyendo un laboratorio diseñado para facilitar su trabajo sobre imágenes avanzadas por computador.
+              </p>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Continuous High-resolution Image Reconstruction using Patch priors, CHIRP</span>
+              <p>Bouman tuvo las primeras noticias del proyecto Event Horizon Telescope cuando aún era estudiante de secundaria en West Lafayette Junior-Senior High School. Este proyecto se creó con el objetivo de obtener por primera vez una imagen del entorno de un agujero negro, en concreto de Sagitario A*, un agujero negro supermasivo situado en la Vía Láctea, usando ondas de radio, ya que éstas atraviesan el polvo galáctico sin ser afectadas por él.
+              <br><br>
+              Para salvar el obstáculo de la resolución angular, que necesitaría un receptor del tamaño de la Tierra, se usaron ocho telescopios distribuidos por su superficie que recopilaron datos simultáneamente, pero era necesario crear un sistema que corrigiese y contrarrestase las distorsiones introducidas por la diferente situación de cada telescopio y las condiciones atmosféricas, y rellenase los huecos de información.
+              <br><br>
+              En 2013, con veintitrés años, Katherine Bouman se unió al proyecto como investigadora júnior. Su rol consistía en colaborar en el desarrollo del algoritmo que permitiera convertir los datos recopilados en una imagen coherente. Ella diseñó la mayor parte de ese algoritmo, llamado Continuous High-resolution Image Reconstruction using Patch priors, CHIRP por sus siglas, y junto con su equipo, comprobó su eficiencia antes de utilizarlo. Su equipo también se encarga de analizar la imagen para avanzar en el conocimiento de la relatividad general en un campo gravitacional fuerte.
+              <br><br>
+              En abril de 2019 se publicó finalmente la primera imagen un agujero negro, y poco después, la imagen de Katherine con expresión de entusiasmo ante este logro fue ampliamente difundida a través de medios de comunicación y redes sociales.
+              </p>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

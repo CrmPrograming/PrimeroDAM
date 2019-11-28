@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plantilla</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </style>
+  </head>
+  <body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/Kay.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Kathleen "Kay" McNulty Mauchly Antonelli</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Datos Básicos</span>
+                <dl class="resumen">
+                  <dt>Nacionalidad</dt>
+                  <dd>Irlandesa/Americana</dd>
+                  <dt>Fecha de nacimiento</dt>
+                  <dd>12 de febrero de 1921</dd>
+                  <dt>Fecha de fallecimiento</dt>
+                  <dd>20 de abril de 2006</dd>
+                  <dt>Estudios</dt>
+                  <dd>Matemáticas y ciencias de la computación</dd>
+                  <dt>Ocupacion</dt>
+                  <dd>Programadora, matemática e informática teórica</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>¿Quien fue?</a></li>
+                  <li><a href="#seccionB"><span>2</span>Juventud y educacion</a></li>
+                  <li><a href="#seccionC"><span>3</span>Carrera como informatica</a></li>
+                  <li><a href="#seccionD"><span>4</span>Programadora de ENIAC</a></li>
+                  <li><a href="#seccionE"><span>5</span>Proyecto Secreto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">Kathleen "Kay" McNulty Mauchly Antonelli</span>
+          <span class="tituloFecha">(1921 - 2006)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">¿Quien fue?</span>
+              <p>Kathleen "Kay" Rita McNulty Mauchly Antonelli, fue una matemática irlandesa y una de
+                 las seis programadoras originales de la ENIAC, la primera computadora digital
+                  electrónica de propósito general.</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Juventud y educacion</span>
+              <p>McNulty nació en el Condado de Donegal durante las guerras de independencia de su país.</br>
+                La noche de su nacimiento, su padre, James, que era un oficial del Ejército Republicano Irlandés,</br>
+                fue arrestado durante dos años.Tras su liberación, la familia emigró a los Estados Unidos en octubre de 1924 y se afincó en Pennsylvania</br>
+                 donde James McNulty estableció sus negocios. Para entonces, Kathleen no era capaz</br>
+                 de hablar inglés pues su lengua materna era el gaélico. De hecho, se sabe que recordaría sus oraciones en gaélico por el resto de sus días.
+               </br></br>
+
+                 Después de asistir a la escuela en Chestnut Hill y al Hallahan Catholic Girls High School en Filadelfia,</br>
+                 se graduó con un título en matemáticas en el Chestnut Hill College para mujeres en junio de 1942.</br>
+                 De un total de 92 estudiantes, Kathleen fue una de las tres que lograron graduarse en matemáticas ese año.</br>
+                 Todas ellas hicieron todos los cursos de matemáticas disponibles: dos semestres de álgebra,</br>
+                 historia de las matemáticas, cálculos integrales, trigonometria esférica, cálculo diferencial,</br>
+                 proyección geométrica, ecuaciones parciales diferenciales y estadísticas.
+               </br></br>
+
+                 Durante su tercer año de estudios, Kathleen comenzó su búsqueda de empleo, sabiendo que quería un empleo en
+                 matemáticas que no fuera la docencia. Sabía que los puestos en compañías de seguros requerían un grado de
+                 maestría y que de todos modos, rara vez contrataban mujeres. Sabiendo que los estudios de negocios
+                 la harían más empleable, tomo todos los cursos que pudo en la materia: contabilidad, finanzas y bancos, negocios, leyes, economía y estadísticas.
+                 </br></br>
+              </p>
+              <section>
+                <span id="seccionB1" class="tituloSubSeccion">Carrera como informatica</span>
+                <p>Una semana después de graduarse, encontró un aviso de empleo publicado en The Philadelphia Inquirer en el Servicio Civil de los EEUU. El título decía: Se busca: "Mujeres con título en matemáticas" y agregaba "La necesidad de mujeres ingenieras y científicas está creciendo tanto en la industria
+                  como en el gobierno... las mujeres están recibiendo propuestas de empleo en carreras científicas e ingenieriles...
+                  encontrará que allí, más que en ningún otro lado, el slogan es 'Se buscan mujeres'".</br>
+                  El ejército de los Estados Unidos estaba buscando mujeres con estudios de matemática justo donde ella vivía,
+                  en Filadelfia. De inmediado llamó a sus dos colegas de graduación, Frances Bilas y Josephine Benson.</br>
+                  La segunda no pudo llegar al encuentro, así que fueron Fran y Kathleen las que finalmente llegaron a una entrevista
+                  de trabajo en 1946, donde fueron informadas de los puestos vacantes. Muy pronto, ambas recibieron cartas pidiendo
+                  que se presenten en el Moore School of Electrical Engineering, en la Universidad de Pennsylvania, para comenzar a
+                  trabajar en julio de 1942. El puesto que figuraba en su ficha de empleo era el de "computadoras".</br>
+                  Allí trabajarían hasta formar parte del equipo de programación del ENIAC, que fue puesta en funcionamiento oficialmente en diciembre
+                  de 1946.</br></br>
+
+                  A pesar de todos sus estudios, su formación en matemática no la había preparado para su trabajo en cálculo de
+                  trayectorias balísticas.
+                  Ni Fran Spence ni ella estaban familiarizadas con los métodos de integración numérica
+                  usados para computar trayectorias.
+                   El libro que usaban para estudiar el tema ("Numerical Mathematical Analysis",
+                  1st Edition by James B. Scarborough, Oxford University Press, 1930) les ofreció pocas aclaraciones al respecto.
+                  Las dos nuevas matemáticas aprendieron cómo realizar sus cálculos paso a paso, a través de la práctica y con los
+                  buenos consejos de su supervisora Lila Todd. Cerca de 75 jóvenes mujeres computadoras fueron empleadas en el Moore
+                  School en ese período, muchas de ellas tomaron cursos con Adele Goldstine, Mary Mauchly y Mildred Kramer.</br>
+                  El trabajo fue muy tedioso, y muchas de ellas renunciaron por exceso de trabajo, pero Kay se volvió prominente
+                  entre las mujeres computadoras.</br></br>
+
+                  Dos o tres meses después, Fran y Kay fueron trasladadas para trabajar en el analizador diferencial ubicado en el
+                  sótano del Moore School, Ese era el más grande y sofisticado calculador analógico de su tiempo, de los cuales sólo
+                  había 3 en los Estados Unidos y 5 o 6 en el mundo entero (todos los demás en Gran Bretaña). Utilizando este equipo,
+                  inventado por Vannevar Bush en el MIT una década atrás y retocado para hacerlo más preciso por el equipo del Moore
+                  School, el cálculo de una trayectoria simple, cerca de 40 horas en una calculadora mecánica de escritorio,
+                  podía completarse en alrededor de 50 minutos. </p></br></br>
+
+              </section>
+
+
+              <section>
+                <span id="seccionB2" class="tituloSubSeccion">Programadora de ENIAC</span>
+                <p>La ENIAC fue desarrollada para realizar el mismo tipo de cálculos entre los años 1943-1946. En junio de 1945,
+                   Kay fue elegida para ser una de las primeras programadoras, junto con varias otras mujeres tales como Betty Snyder,
+                    Marlyn Wescoff y Ruth Lichterman, y una quinta computadora llamada Helen Greenman ("Greenie"). Cuando Greenie rechazó
+                     mudarse a Aberdeen para entrenarse porque tenía un bonito departamento en West Filadelfia y la siguiente suplente se
+                     negó a cortar sus vacaciones en Missouri, Betty Jean Jennings, la segunda suplente, obtuvo el empleo.</br></br>
+                     Entre junio y agosto
+                     de 1945, recibieron capacitación en Aberdeen Proving Ground en las máquinas de tarjetas perforadas de IBM que eran usadas
+                     como el I/O de la ENIAC. Poco tiempo después, la compañera de escuela de Kay, Fran Bilas, se uniría al equipo del ENIAC en
+                     el Moore School, pese a no haber asistido al entrenamiento previo en Aberdeen.</br></br>
+                     La computadora podía completar los mismos
+                     cálculos de trayectoria balística descriptos más arriba en sólo 10 segundos, pero para lograr eso, tomaba entre uno y dos
+                     días configurar la máquina con un nuevo grupo de problemas que resolver. Eran las mujeres las responsables de determinar
+                      la secuencia de paso requerida para completar los cálculos para cada problema y configurar la ENIAC de acuerdo a eso,
+                      aunque antes habían consultado también con algunos de los ingenieros de ENIAC tales como Arthur Burks para determinar
+                      cómo podrían programar la máquina.9​ </p></br></br>
+              </section>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Proyecto Secreto</span>
+              <p>Dado que la ENIAC era un proyecto secreto, las programadoras no tenían permitido siquiera ingresar a la sala donde se encontraba la máquina,
+                 pero se les daba acceso a planos desde los cuales trabajar en la programación en una sala adyacente. Programar la ENIAC implicaba trabajar
+                  sobre las ecuaciones diferenciales asociadas a un problema de trayectoria con la precisión permitida por la ENIAC y calcular la ruta con
+                  instrucciones que logren alcanzar la locación correcta entre 1/5.000to de segundo. Sólo cuando tenían diseñado un programa en papel, las
+                  mujeres tenían permiso para ingresar a la sala de ENIAC y programar físicamente la máquina.</br></br>
+
+                  Prácticamente toda la programación de la ENIAC consistía en diseñar y poner a funcionar programas de prueba que aseguraran la integridad
+                  de todo el sistema, cada tubo, cada conexión eléctrica necesitaba ser verificada antes de correr cada programa.</br></br>
+
+                  Kay fue trasladada al Aberdeen Proving Ground Ballistics Research Lab. junto con la ENIAC cuando la máquina fue mudada hacia allí en 1947,
+                  junto con Ruth Lichterman y Fran Bilas. Las otras tres programadoras formaron familias y se fueron a otros empleos y prefirieron quedarse en
+                  Filadelfia en vez de relocalizarse en la remota Aberdeen y vivir una vida de base militar. </br></br>
+              </p>
+            </section>
+
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

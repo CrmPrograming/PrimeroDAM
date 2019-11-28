@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Radia Joy Perlman</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </style>
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/radiajoy.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Radia Joy Perlman</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Datos Básicos</span>
+                <dl class="resumen">
+                  <dt>Fecha de nacimiento</dt>
+                  <dd>1 de enero de 1951</dd>
+                  <dt>Lugar de nacimiento</dt>
+                  <dd>Portsmouth, Virginia, Estados Unidos</dd>
+                  <dt>Educación</dt>
+                  <dd>Instituto Tecnológico de Massachusetts</dd>
+                  <dt>Campo</dt>
+                  <dd>Ciencias de la computación</dd>
+                  <dt>Ocupación</dt>
+                  <dd>Ingeniera de redes</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Carrera</a></li>
+                  <li><a href="#seccionB"><span>2</span>Spanning Tree Protocol</a></li>
+                  <li><a href="#seccionC"><span>3</span>Premios</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">Radia Joy Perlman</span>
+          <span class="tituloFecha">(1951)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Carrera</span>
+              <p>Famosa por ser la creadora del protocolo Spanning Tree (STP), mientras trabajó en Digital Equipment Corporation; el protocolo es fundamental para permitir la redundancia de caminos en las redes de área local (LAN). Perlman es autora de un libro de texto sobre redes y coautora de otro sobre seguridad de redes. Tiene más de 100 patentes emitidas. Fue miembro de Sun Microsystems y ha impartido cursos en la Universidad de Washington, la Universidad de Harvard y el MIT, y ha sido ponente principal en eventos en todo el mundo. Perlman ha sido galardonada con premios tales como los premios a los logros de toda una vida de USENIX y el SIGCOMM. Ha realizado numerosas contribuciones en otras áreas creando y estandarizando protocolos.</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Spanning Tree Protocol</span>
+              <p>Perlman inventó el algoritmo de Spanning Tree y el protocolo Spanning Tree (STP). Mientras trabajaba como consultora en Digital Equipment Corporation (DEC) en 1984, se le asignó la tarea de desarrollar un protocolo sencillo que permitiera a los puentes de la red ubicar bucles en una red de área local (LAN). Se requería que el protocolo usara una cantidad constante de memoria cuando se implementara en los dispositivos de la red, sin importar el tamaño de la red. Construir y expandir redes puenteadas fue difícil porque los bucles, donde más de una ruta lleva al mismo destino, podrían provocar el colapso de la red. Las rutas redundantes en la red significaban que un puente podría enviar un marco en múltiples direcciones. Por lo tanto, los bucles podrían hacer que las tramas Ethernet no lleguen a su destino, inundando la red. Perlman utilizó el hecho de que los puentes tenían direcciones MAC únicas de 48 bits, y diseñó un protocolo de red para que los puentes dentro de la LAN se comunicaran entre sí. El algoritmo implementado en todos los puentes de la red permitió que los puentes designaran un puente raíz en la red. Cada puente luego mapeo la red y determinó la ruta más corta al puente raíz, desactivando otras rutas redundantes. A pesar de las preocupaciones de Perlman porque el protocolo Spanning Tree tardo aproximadamente un minuto en reaccionar cuando ocurrían cambios en la topología de la red, en el momento en el que un bucle podía interrumpir la red, el Instituto de Ingeniería Eléctrica y Electrónica lo estandarizó como 802.1D (IEEE). Perlman dijo que los beneficios del protocolo equivalen al hecho de que "no hay que preocuparse por la topología de la red" al cambiar la forma en que una LAN está interconectada. Sin embargo, Perlman ha criticado que se hicieron cambios en el transcurso de la estandarización del protocolo. .
+              </p>
+            </section>
+
+            <section>
+              <span id="seccionC" class="tituloSeccion">Premios</span>
+              <p>-2017 – Fellow of the Association for Computing Machinery, clase de 2016.</p>
+              <p>-2016 – National Inventors Hall of Fame induction.</p>
+              <p>-2014 – Internet Hall of Fame induction.</p>
+              <p>-2010 – Premio SIGCOMM.</p>
+              <p>-2006 – Lifetime Achievement Award—“the Flame”—USENIX por En particular, reconoció el trabajo de la Dr. Perlman en el desarrollo del algoritmo de árbol de expansión que es de rigor en todos los productos de LAN hoy en día.</p>
+              <p>-2005 – Anita Borg Institute Women of Vision Award por Innovaciones en seguridad de redes, tecnologías de enrutamiento y otras contribuciones fundamentales para el funcionamiento y la expansión de Internet.</p>
+              <p>-2003 – Silicon Valley Intellectual Property Law Association, Inventors of the year.</p>
+              <p>-2000 – Royal Institute of Technology, Honorary Doctorate. - (28 de junio de 2000).</p>
+              <p>-1997 – Nombrada por segunda ocasión una de las 20 personas más influyentes en la industria en el 25 aniversario de la revista Data Communications (sólo ella ha sido nombrada en dos ocasiones). – (15 de enero de 1997).</p>
+              <p>-1992 – Nombrada una de las 20 personas más influyentes en la industria en el 20 aniversario de la revista Data Communications. – (15 de enero de 1992).</p>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <title>Ada Lovelace</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Merriweather&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/general.css">
+
+  </style>
+  </head>
+  <body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Biografías</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlobal" aria-controls="navbarGlobal" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icono"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGlobal">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-list-alt"></i> Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" aria-disabled="true"><i class="fas fa-address-card"></i> Acerca de</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline" action="index.html" method="GET">
+        <input class="form-control mr-md-2" type="search" placeholder="Buscar" aria-label="Buscar" name="iBuscarListado">
+        <button id="btnBuscar" class="btn btn-outline-success my-2 my-md-0" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Columna Navegación -->
+        <aside class="col-md-2 offset-md-2 colNavegacion">
+          <div class="row justify-content-center">
+            <!-- Foto -->
+            <div class="col-md-12">
+              <!-- CAMBIAR SRC POR LA FOTO CORRESPONDIENTE -->
+                <img src="imgs/AdaLovelace.jpg" alt="Foto" class="img-thumbnail">
+                <p class="pieFoto tituloMenor">Ada Lovelace</p>
+            </div>
+            <!-- Datos básicos -->
+            <div class="col-md-12">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">INFORMACIÓN PERSONAL</span>
+                <dl class="resumen">
+                  <dt>Nombre de nacimiento</dt>
+                  <dd>Augusta Ada Byron</dd>
+                  <dt>Nacimiento</dt>
+                  <dd>10 de diciembre de 1815, Piccadilly (Reino Unido)</dd>
+                  <dt>Fallecimiento</dt>
+                  <dd>27 de noviembre de 1852(36 años), Marylebone (Londres, Reino Unido)</dd>
+                  <dt>Causa de su muerte</dt>
+                  <dd>Cáncer de útero</dd>
+                  <dt>Lugar de estudio</dt>
+                  <dd>Universidad de Cambridge</dd>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Datos Secciones -->
+            <div class="col-md-12 indiceSecciones">
+              <div class="col-md-12 cajaAside card">
+                <span class="tituloMenor">Índice</span>
+                <ul>
+                  <li><a href="#seccionA"><span>1</span>Introducción</a></li>
+                  <li><a href="#seccionB"><span>2</span>Biografía</a>
+                    <ul>
+                      <li><a href="#seccionB1"><span>2.1</span>Infancia</a>
+                        <li><a href="#seccionB2"><span>2.2</span>Juventud</a>
+                    </ul>
+                  </li>
+                  <li><a href="#seccionC"><span>3</span>Primer Programa de Ordenador</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Columna Cuerpo -->
+        <div class="col-md-6 colCuerpo">
+          <span class="tituloNombre">ADA LOVELACE</span>
+          <span class="tituloFecha">(1815 - 1852)</span>
+          <hr>
+          <article>
+            <section>
+              <span id="seccionA" class="tituloSeccion">Introducción</span>
+              <p>Augusta Ada King, Condesa de Lovelace, registrada al nacer como Augusta Ada Byron y conocida popularmente como Ada Lovelace, fue una matemática, informática y escritora británica. Célebre sobre todo por su trabajo acerca de la máquina analítica, hoy en dia llamada calculadora de Charles Babbage. Entre sus notas sobre la máquina, se encuentra lo que se reconoce hoy como el primer algoritmo destinado a ser procesado por una máquina, por lo que se la considera como la primera programadora de ordenadores.</p>
+            </section>
+
+            <section>
+              <span id="seccionB" class="tituloSeccion">Biografía</span>
+              <p></p>
+              <section>
+                <span id="seccionB1" class="tituloSubSeccion">Infancia</span>
+                <p>Ada Lovelace era la única hija legítima de Anna Isabella y del poeta Lord Byron. El 5 de enero de 1816, a causa de las desavenencias con su marido, su madre abandonó el hogar llevándosela con ella mientras Byron dormía. Annabella se instaló con Ada en una casa que tenían sus padres en Seaham, Durham.</p>
+              </section>
+              <section>
+                <span id="seccionB2" class="tituloSubSeccion">Juventud</span>
+                <p>Ada conoció a Mary Somerville una conocida autora y científica del siglo diecinueve que le presentó a Charles Babbage (profesor Lucasiano de matemáticas en la Universidad de Cambridge y padre de las computadoras) el cinco de junio de 1833 cuando ella solo tenía diecisiete años. De inmediato comenzó una voluminosa correspondencia entre ambos sobre temas relacionados con las matemáticas, la lógica, y en última instancia, todas las materias.<br>
+                Charles Baggage quedó tan impresionado con la capacidad analítica de la joven Ada que la apodó como “La encantadora de números“.</p>
+              </section>
+            </section>
+            <section>
+              <span id="seccionC" class="tituloSeccion">Primer Programa de Ordenador</span>
+              <p>En 1834, Charles Babbage tenía planes para la construcción de un nuevo tipo de máquina de cálculo, una máquina analítica de carácter general. La máquina analítica es el diseño de un computador moderno de uso general que representó un importante paso adelante en la historia de la computación.<br><br>
+              En 1842 el matemático italiano Louis Menebrea, publicó una memoria en francés sobre la Máquina Analítica. Babbage alistó a Ada como traductora de la memoria en francés para adaptarla al Inglés, trabajo que realizó durante nueve meses entre 1842 y 1843. Ada no solo tradujo el artículo sino que le añadió un conjunto de notas más voluminoso que la memoria en si, esas notas son la fuente de su fama como primera programadora de la historia.<br><br>
+              Ada fue la primera persona en el mundo que describió un lenguaje de programación de carácter general al interpretar las ideas de Babbage incluso mejor que él mismo. En 1843 publicó una serie de notas sobre la máquina analítica de Babbage que firmó solo con sus iniciales por miedo a ser censurada por su condición de mujer.<br><br>
+              Ada escribió un completo plan donde se describe el algoritmo necesario que permita calcular los valores de los números de Bernoulli utilizando dos bucles, demostrando las capacidades de bifurcación de la máquina analítica. Asimismo describió como realizar operaciones trigonométricas que hacían uso de variables también en la máquina analítica de Babbage. También definió el uso de tarjetas perforadas para programar la máquina de Babbage.
+              </p>
+            </section>
+            
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>Diseñado por los alumnos de 1º A de Diseño de Aplicaciones Multiplataforma | Curso 2019 - 2020</p>
+    </footer>
+    
+    <!-- Librerías JQuery y Bootstrap -->
+    <script src="libs/jquery/jquery.min.js"></script>    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
