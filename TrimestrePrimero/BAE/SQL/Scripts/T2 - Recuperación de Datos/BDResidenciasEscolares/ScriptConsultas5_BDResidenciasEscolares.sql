@@ -75,3 +75,18 @@ SELECT codEstudiante, COUNT(DISTINCT codResidencia) AS 'Cantidad de residencias'
 	FROM estancias
 	GROUP BY codEstudiante
 GO
+
+-- 11. Visualiza el código de los estudiantes y la cantidad de residencias diferentes por las que ha pasado cada uno. Pero solo visualiza aquellos que han pasado por mas de 2 residencias
+SELECT codEstudiante, COUNT(DISTINCT codResidencia) AS 'Cantidad de residencias'
+	FROM estancias
+	GROUP BY codEstudiante
+	HAVING COUNT(DISTINCT codResidencia) > 2
+GO
+
+-- 12. Visualiza el código de los estudiantes y la cantidad de residencias diferentes por las que ha pasado cada uno. Pero solo las estancias del curso X. Ordenado por código de estudiante.
+SELECT codEstudiante, COUNT(DISTINCT codResidencia) AS 'Cantidad de residencias'
+	FROM estancias
+	WHERE YEAR(fechaInicio) = 2019 AND YEAR(fechaFin) = 2020
+	GROUP BY codEstudiante
+	ORDER BY codEstudiante
+GO
