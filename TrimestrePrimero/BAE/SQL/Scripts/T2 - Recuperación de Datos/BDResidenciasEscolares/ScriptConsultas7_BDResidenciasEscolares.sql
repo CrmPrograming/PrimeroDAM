@@ -57,5 +57,5 @@ SELECT u.nomUniversidad, COUNT(r.codResidencia) AS 'Cantidad Residencias'
 FROM universidades AS u
 INNER JOIN residencias AS r
 	ON u.codUniversidad = r.codUniversidad
-GROUP BY r.codResidencia
+GROUP BY u.nomUniversidad
 GO
