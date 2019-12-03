@@ -1,0 +1,25 @@
+.card {
+	background-color: inherit;
+	border: inherit;
+	padding-top: 1em;
+}
+
+.card:hover > .card-body {
+	background-color: #EBDBA8;
+}
+
+.card-body > .btn {
+	background-color: #573B3A;
+	border-color: #573B3A;
+	color: #EBDBA8;
+	font-weight: bold;
+}
+
+.card-body > .btn:hover {
+	background-color: #594949;
+}
+
+.card-img-top {
+	object-fit: fill;
+	height: 15em;
+}
