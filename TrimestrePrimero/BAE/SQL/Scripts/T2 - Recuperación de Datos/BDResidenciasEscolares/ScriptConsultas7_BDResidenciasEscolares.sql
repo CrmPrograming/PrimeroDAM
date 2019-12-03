@@ -7,9 +7,13 @@
 -- autor: César Ravelo Martínez
 -- fecha: 29/11/2019
 
+USE BDResidenciasEscolares
+GO
+
 -- 1. Visualiza todas las residencias y los nombres de las universidades en la que se encuentra cada una ordenada por nombre de universidades
 SELECT r.codResidencia, r.nomResidencia, u.nomUniversidad FROM residencias AS r
 INNER JOIN universidades AS u ON r.codUniversidad = u.codUniversidad
+ORDER BY u.nomUniversidad
 GO
 
 -- 2. Visualiza todas las residencias y los nombres de las universidades en la que se encuentra cada una ordenada por nombre de universidades, pero solo aquellas que pertenezcan a la universidad con nombre X
