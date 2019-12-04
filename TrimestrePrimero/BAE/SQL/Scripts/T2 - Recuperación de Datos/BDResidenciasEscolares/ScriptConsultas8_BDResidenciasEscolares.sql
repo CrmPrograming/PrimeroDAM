@@ -37,6 +37,7 @@ FROM universidades AS u
 	INNER JOIN residencias AS r ON u.codUniversidad = r.codUniversidad
 	INNER JOIN estancias AS e ON r.codResidencia = e.codResidencia
 GROUP BY u.nomUniversidad, r.genero
+ORDER BY u.nomUniversidad
 
 -- 5. Cual es el nombre de la universidad y genero con más estancias
 SELECT TOP 1 u.nomUniversidad, r.genero, COUNT(e.codResidencia) AS 'Cantidad plazas'
