@@ -51,3 +51,28 @@ ORDER BY COUNT(e.codResidencia) DESC
 SELECT u.nomUniversidad, r.nomResidencia
 FROM universidades AS u
 	LEFT JOIN residencias AS r ON u.codUniversidad = r.codUniversidad
+
+-- 7. Visualiza las universidades que no tienen ninguna residencia
+SELECT u.nomUniversidad
+FROM universidades AS u
+	LEFT JOIN residencias AS r ON u.codUniversidad = r.codUniversidad
+WHERE r.nomResidencia IS NULL
+
+-- 8. Cuántas universidades no tienen ninguna residencia
+SELECT COUNT(u.nomUniversidad) AS 'Universidades sin residencia'
+FROM universidades AS u
+	LEFT JOIN residencias AS r ON u.codUniversidad = r.codUniversidad
+WHERE r.nomResidencia IS NULL
+GROUP BY u.nomUniversidad
+
+-- 9. Visualiza los estudiantes que no han realizado ninguna estancias
+SELECT es.nomEstudiante, e.*
+FROM estudiantes AS es
+	LEFT JOIN estancias AS e ON es.codEstudiante = e.codEstudiante
+WHERE e.codResidencia IS NULL
+
+-- 10. De los estudiantes con sexo X, cuantos no han realizado ninguna estancia.
+SELECT COUNT(es.codEstudiante) AS 'Estudiantes femeninos sin estancia'
+FROM estudiantes AS es
+	LEFT JOIN estancias AS e ON es.codEstudiante = e.codEstudiante
+WHERE e.codResidencia IS NULL AND es.sexo = 'F'
