@@ -76,4 +76,3 @@ SELECT COUNT(es.codEstudiante) AS 'Estudiantes femeninos sin estancia'
 FROM estudiantes AS es
 	LEFT JOIN estancias AS e ON es.codEstudiante = e.codEstudiante
 WHERE e.codResidencia IS NULL AND es.sexo = 'F'
-GROUP BY es.codEstudiante
