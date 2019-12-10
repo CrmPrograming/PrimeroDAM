@@ -16,8 +16,13 @@ public class Matematicas {
 	public static float media(float[] v) {
 		int i;
 		float suma = 0f;
+		
 		for (i = 0; i < v.length; i++)
 			suma += v[i];
+		
+		if (v.length == 0)
+			throw new NullPointerException();
+		
 		return (suma / v.length);
 	}
 	
