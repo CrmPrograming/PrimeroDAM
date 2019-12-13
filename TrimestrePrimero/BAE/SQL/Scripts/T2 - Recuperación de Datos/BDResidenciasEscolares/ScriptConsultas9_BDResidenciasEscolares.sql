@@ -78,12 +78,11 @@ WHERE YEAR(e.fechaInicio) = 2017
 GROUP BY u.nomUniversidad
 
 -- 9. ¿Cuántas universidades no tienen ninguna estancia ?
-SELECT COUNT(u.nomUniversidad) AS 'Total universidades sin estancia'
+SELECT COUNT(DISTINCT u.nomUniversidad) AS 'Total universidades sin estancia'
 FROM universidades AS u
 	INNER JOIN residencias AS r ON u.codUniversidad = r.codUniversidad
 	LEFT JOIN estancias AS e ON r.codResidencia = e.codResidencia
 WHERE e.codResidencia IS NULL
-GROUP BY u.nomUniversidad
 
 -- 10. Visualiza los nombres de las universidades y los nombres de las residencias que les correspondan que no tengan director
 SELECT u.nomUniversidad, r.nomResidencia
