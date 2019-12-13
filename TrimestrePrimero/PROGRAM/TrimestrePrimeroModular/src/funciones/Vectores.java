@@ -26,4 +26,52 @@ public class Vectores {
 		return c;
 	}
 	
+	/**
+	 * Dada una tabla de enteros,
+	 * devuelve un String en el formato [d1, d2, ..., dn]
+	 * @param t Tabla de valores iniciales
+	 * @return String con la tabla de datos formateada
+	 */
+	public static String arrayToString(int[] t) {
+		int i;
+		String result = "";
+		
+		// Comprobamos en caso de que la tabla no contenga elementos
+		if (t.length > 0) {
+			result += "[";		
+			for (i = 0; i < t.length-1; i++)
+				result += t[i] + ", ";
+			result += t[t.length-1] + "]";
+		} else {
+			result += "[]";
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Dada una sequencia de al menos 2 elementos, se comprueba si está
+	 * casi ordenada (se puede quitar un único elemento y queda ordenada
+	 * de menor a mayor)
+	 * @param sequence Vector con la secuencia de valores
+	 * @return Booleano que confirma si es una secuencia casi ordenada
+	 */
+	public static boolean almostIncreasingSequence(int[] sequence) {
+		final int CANTIDAD_QUITABLE = 1;
+		boolean result = false;
+		int i = 0, quitables = 0;
+		
+		// Buscamos si se tiene que quitar más de un elemento
+		while ((quitables <= CANTIDAD_QUITABLE) && (i < sequence.length - 1)) {
+			if (sequence[i] - sequence[i+1] > 0)
+				quitables++;
+			i++;
+		}
+		
+		if (quitables <= CANTIDAD_QUITABLE)
+			result = true;
+		
+		return result;
+	}
+	
 }

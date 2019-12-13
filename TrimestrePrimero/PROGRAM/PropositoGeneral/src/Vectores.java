@@ -57,7 +57,7 @@ public class Vectores {
 			result += "[";		
 			for (i = 0; i < t.length-1; i++)
 				result += t[i] + ", ";
-			result += t[t.length-1] + "]\n";
+			result += t[t.length-1] + "]";
 		} else {
 			result += "[]";
 		}
