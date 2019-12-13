@@ -23,4 +23,22 @@ public class Vectores {
 		
 		return c;
 	}
+	
+	/**
+	 * Dado un vector de datos y una cantidad, devuelve otro vector con todos esos
+	 * datos del mismo tamaño que la cantidad indicada
+	 * 
+	 * @param datos    Vector con los valores a copiar
+	 * @param cantidad Tamaño del vector a copiar
+	 * @return Vector del tamaño indicado con los valores ya copiados
+	 */
+	public static float[] ajustarVector(float[] datos, int cantidad) {
+		float[] v = new float[cantidad];
+		int i;
+
+		for (i = 0; i < cantidad; i++)
+			v[i] = datos[i];
+
+		return (v);
+	}
 }
