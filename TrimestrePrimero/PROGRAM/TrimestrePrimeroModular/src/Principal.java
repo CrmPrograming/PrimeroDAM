@@ -43,8 +43,10 @@ public class Principal {
 			try {
 				System.out.printf("- Elemento %d: ", i + 1);
 				actual = teclado.nextFloat();
-				datos[i] = actual;
-				i++;
+				if (actual != 999) {
+					datos[i] = actual;
+					i++;
+				}
 			} catch (InputMismatchException e) {
 				// En caso de haber leído un valor no numérico
 				teclado.next();
