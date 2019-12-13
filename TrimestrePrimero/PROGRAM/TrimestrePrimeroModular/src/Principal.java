@@ -51,13 +51,9 @@ public class Principal {
 			} catch (NoSuchElementException e) {
 				// En caso de terminarse el flujo de datos, forzamos a parar
 				actual = PARADA;
+				System.out.println();
 			}
-		} while (i < LIMIT - 1 && actual != PARADA);
-
-		if (actual != PARADA) {
-			datos[i] = actual;
-			i++;
-		}
+		} while (i < LIMIT && actual != PARADA);
 
 		teclado.close();
 
