@@ -62,9 +62,8 @@ public class Vectores {
 		int i = 0, quitables = 0;
 		
 		// Buscamos si se tiene que quitar más de un elemento
-		while ((quitables <= CANTIDAD_QUITABLE) && (i < sequence.length - 1)) {
-			if (sequence[i] - sequence[i+1] > 0)
-				quitables++;
+		while ((quitables <= CANTIDAD_QUITABLE) && (i < sequence.length - 1)) {			
+			quitables += (sequence[i] > sequence[i+1])?1:0;
 			i++;
 		}
 		
