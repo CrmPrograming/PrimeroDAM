@@ -57,8 +57,7 @@ public class Vectores {
 	 * @return Booleano que confirma si es una secuencia casi ordenada
 	 */
 	public static boolean almostIncreasingSequence(int[] sequence) {
-		final int CANTIDAD_QUITABLE = 1;
-		boolean result = false;
+		final int CANTIDAD_QUITABLE = 1;		
 		int i = 0, quitables = 0;
 		
 		// Buscamos si se tiene que quitar más de un elemento
@@ -67,10 +66,7 @@ public class Vectores {
 			i++;
 		}
 		
-		if (quitables <= CANTIDAD_QUITABLE)
-			result = true;
-		
-		return result;
+		return (quitables <= CANTIDAD_QUITABLE);
 	}
 	
 }
