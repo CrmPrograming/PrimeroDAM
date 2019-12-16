@@ -1,5 +1,8 @@
 package funciones;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Vectores {
 	
 	/**
@@ -85,6 +88,19 @@ public class Vectores {
 		}
 		
 		return (quitables <= CANTIDAD_QUITABLE);
+	}
+	
+	/**
+	 * Método encargado de leer y almacenar 10 valores de tipo int,
+	 * utilizando recursividad, y guardarlos en un ArrayList
+	 * @param in Objeto Scanner para la lectura de datos
+	 * @param lista ArrayList con los datos almacenados
+	 */
+	public static void leer10Numeros(Scanner in, ArrayList<Integer> lista) {
+		if (lista.size() < 10) {
+			lista.add(in.nextInt());
+			leer10Numeros(in, lista);
+		}		
 	}
 	
 }
