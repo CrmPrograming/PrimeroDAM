@@ -30,14 +30,6 @@ ORDER BY COUNT(a.id_trabajador) DESC
 -- 15. De los edificios que no han tenido ninguna asignación visualiza sus categorías y las cantidades de edificios
 -- de cada categoría que hay.
 SELECT e.categoria, COUNT(*) AS 'Total edificios por categoria'
-FROM edificio AS e
-	LEFT JOIN asignacion AS a ON e.id_edificio = a.id_edificio
-	INNER JOIN trabajador AS t ON a.id_trabajador = t.id_trabajador
-WHERE a.id_edificio IS NULL
-GROUP BY e.categoria
-
--- ESTA ES LA CORRECTA
-SELECT e.categoria, COUNT(*) AS 'Total edificios por categoria'
 FROM trabajador as T
 	INNER JOIN asignacion AS a ON t.id_trabajador = a.id_trabajador
 	RIGHT JOIN edificio AS e ON a.id_edificio = e.id_edificio
