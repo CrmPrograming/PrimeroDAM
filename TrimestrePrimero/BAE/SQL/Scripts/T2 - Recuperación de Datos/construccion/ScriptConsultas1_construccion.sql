@@ -22,7 +22,7 @@ FROM trabajador AS t
 WHERE a.id_trabajador IS NULL
 
 -- 3. Cuantos trabajadores tienen asignación de trabajo
-SELECT COUNT(*) AS 'Trabajadores con asignación de trabajo'
+SELECT COUNT(DISTINCT t.id_trabajador) AS 'Trabajadores con asignación de trabajo'
 FROM trabajador AS t
 	INNER JOIN asignacion AS a ON t.id_trabajador = a.id_trabajador
 
@@ -39,7 +39,7 @@ SELECT t.nombre
 FROM trabajador AS t
 	INNER JOIN asignacion AS a ON t.id_trabajador = a.id_trabajador
 WHERE t.oficio = 'electricista'
-GROUP BY t.nombre
+GROUP BY t.nombre, t.id_trabajador
 HAVING SUM(a.num_dias) > 20
 
 -- 6. Visualiza todos los oficios y las cantidades de trabajadores diferentes que tienen 
