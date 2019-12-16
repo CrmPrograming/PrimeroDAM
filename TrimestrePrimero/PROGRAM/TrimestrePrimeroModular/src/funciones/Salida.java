@@ -1,5 +1,7 @@
 package funciones;
 
+import java.util.Scanner;
+
 /**
  * 
  * @author César Ravelo Martínez
@@ -47,5 +49,20 @@ public class Salida {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Método encargado de pedir datos por pantalla y mostrarlos de
+	 * manera inversa hasta leer 999
+	 * @param in Objeto Scanner encargado de leer los datos
+	 */
+	public static void mostrarRecursivo(Scanner in) {
+		int num;
+		num = in.nextInt();
+		if (num != 999) {
+			mostrarRecursivo(in);
+			System.out.print(num + " ");
+		}
+		
 	}
 }

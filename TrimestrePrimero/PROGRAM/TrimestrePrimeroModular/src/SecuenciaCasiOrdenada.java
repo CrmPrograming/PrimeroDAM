@@ -1,30 +1,5 @@
-package funciones;
 
-public class Vectores {
-	
-	/**
-	 * Dados dos vectores de tipo entero ordenados previamente de menor
-	 * a mayor, devolver un vector que mezcle ambos vectores
-	 * 
-	 * @param a Vector 1
-	 * @param b Vector 2
-	 * @return  Vector con la mezcla de ambos vectores
-	 */
-	public static int[] merge(int[] a, int[] b) {
-		int i, j;
-		int[] c = new int[b.length + a.length];
-		
-		i = j = 0;
-		while (i < a.length && j < b.length)
-			c[i + j] = (a[i] < b[j])?a[i++]:b[j++];
-			
-		while (i < a.length)
-			c[i + j] = a[i++];
-		while (j < b.length)
-			c[i + j] = b[j++];
-		
-		return c;
-	}
+public class SecuenciaCasiOrdenada {
 	
 	/**
 	 * Dada una tabla de enteros,
@@ -50,24 +25,6 @@ public class Vectores {
 	}
 	
 	/**
-	 * Dado un vector de datos y una cantidad, devuelve otro vector con todos esos
-	 * datos del mismo tamaño que la cantidad indicada
-	 * 
-	 * @param datos    Vector con los valores a copiar
-	 * @param cantidad Tamaño del vector a copiar
-	 * @return Vector del tamaño indicado con los valores ya copiados
-	 */
-	public static float[] ajustarVector(float[] datos, int cantidad) {
-		float[] v = new float[cantidad];
-		int i;
-
-		for (i = 0; i < cantidad; i++)
-			v[i] = datos[i];
-
-		return (v);
-	}
-	
-	/**
 	 * Dada una sequencia de al menos 2 elementos, se comprueba si está
 	 * casi ordenada (se puede quitar un único elemento y queda ordenada
 	 * de menor a mayor)
@@ -87,4 +44,24 @@ public class Vectores {
 		return (quitables <= CANTIDAD_QUITABLE);
 	}
 	
+	/**
+	 * Método principal de la aplicación
+	 * @param args Parámetros de entrada a la aplicación
+	 */
+	public static void main(String[] args) {
+		// Listado de pruebas a ejecutar
+		int[] pruebaValida = {1, 3, 5, 2, 7, 8},
+			  pruebaNoValida = {1, 3, 2, 5, 7, 4, 8},
+			  pruebaTam2 = {1, 3},
+			  pruebaTam2Invertida = {3, 1},
+			  pruebaExtremoFinal = {1, 3, 2, 5, 4};
+				
+			
+		System.out.println(arrayToString(pruebaValida) + " -> " + almostIncreasingSequence(pruebaValida));
+		System.out.println(arrayToString(pruebaNoValida) + " -> " + almostIncreasingSequence(pruebaNoValida));
+		System.out.println(arrayToString(pruebaTam2) + " -> " + almostIncreasingSequence(pruebaTam2));
+		System.out.println(arrayToString(pruebaTam2Invertida) + " -> " + almostIncreasingSequence(pruebaTam2Invertida));
+		System.out.println(arrayToString(pruebaExtremoFinal) + " -> " + almostIncreasingSequence(pruebaExtremoFinal));
+		
+	}
 }
