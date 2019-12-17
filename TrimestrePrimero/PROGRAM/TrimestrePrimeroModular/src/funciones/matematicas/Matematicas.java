@@ -63,6 +63,23 @@ public class Matematicas {
 	}
 	
 	/**
+	 * Dada un ArrayList bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve la media de los gastos
+	 * @param balance ArrayList de valores con los ingresos y gastos
+	 * @return	Media de los gastos
+	 */
+	public static float mediaGastos(ArrayList<ArrayList<Integer>> balance) {
+		final int GASTOS = 1;
+		int trim;
+		float result = 0f;
+		
+		for (trim = 0; trim < balance.size(); trim++)
+			result += balance.get(trim).get(GASTOS);
+		
+		return result / balance.size();
+	}
+	
+	/**
 	 * Dada una tabla bidimensional con los ingresos y gastos de unos trimestres,
 	 * devuelve el balance total, siendo la diferencia entre los ingresos totales
 	 * y los gastos totales

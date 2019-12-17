@@ -18,9 +18,11 @@ public class Vectores {
 		int[] c = new int[b.length + a.length];
 		
 		i = j = 0;
+		// Vamos insertando por orden los elementos
 		while (i < a.length && j < b.length)
 			c[i + j] = (a[i] < b[j])?a[i++]:b[j++];
 			
+		// Insertamos aquellos elementos que puedan faltar
 		while (i < a.length)
 			c[i + j] = a[i++];
 		while (j < b.length)
@@ -41,9 +43,11 @@ public class Vectores {
 		ArrayList<Integer> nT = new ArrayList<Integer>(t1.size() + t2.size());
 		int i = 0, j = 0;
 		
+		// Vamos insertando por orden los elementos
 		while (i < t1.size() && j < t2.size())
 			nT.add((t1.get(i) < t2.get(j))?t1.get(i++):t2.get(j++));
 			
+		// Insertamos aquellos elementos que puedan faltar
 		while (i < t1.size())
 			nT.add(t1.get(i++));
 		while (j < t2.size())
