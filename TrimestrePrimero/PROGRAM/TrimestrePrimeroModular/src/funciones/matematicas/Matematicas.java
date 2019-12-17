@@ -240,4 +240,18 @@ public class Matematicas {
 		System.out.println(tablaHTML);
 	}
 	
+	public static int addTwoDigits(int n) {
+		String num = "" + n;		
+		
+		return ((int)(num.charAt(0) - '0') + (int) (num.charAt(1) - '0'));
+		
+	}
+	
+	public static int addTwoDigitsBis(int n) {		
+		int decimal = n / 10;
+				
+		return (decimal + (n - decimal * 10));
+		
+	}
+	
 }
