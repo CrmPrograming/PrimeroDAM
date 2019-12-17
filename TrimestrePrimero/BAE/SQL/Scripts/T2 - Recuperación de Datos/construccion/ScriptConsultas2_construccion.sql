@@ -13,7 +13,7 @@ GO
 -- 13. De los edificios de categoría X visualiza las direcciones de los edificios que se ha trabajado menos de 10 días en total
 SELECT e.direccion
 FROM edificio AS e
-	LEFT JOIN asignacion AS a ON e.id_edificio = a.id_edificio
+	INNER JOIN asignacion AS a ON e.id_edificio = a.id_edificio
 WHERE e.categoria = 'A'
 GROUP BY e.direccion
 HAVING SUM(a.num_dias) < 10
@@ -30,8 +30,7 @@ ORDER BY COUNT(a.id_trabajador) DESC
 -- 15. De los edificios que no han tenido ninguna asignación visualiza sus categorías y las cantidades de edificios
 -- de cada categoría que hay.
 SELECT e.categoria, COUNT(*) AS 'Total edificios por categoria'
-FROM trabajador as T
-	INNER JOIN asignacion AS a ON t.id_trabajador = a.id_trabajador
+FROM asignacion AS a
 	RIGHT JOIN edificio AS e ON a.id_edificio = e.id_edificio
 WHERE a.id_edificio IS NULL
 GROUP BY e.categoria
@@ -51,8 +50,7 @@ WHERE a.id_edificio IS NULL AND e.categoria = 'A'
 
 -- 18. Cual es el año o años en los que han trabajado mas trabajadores diferentes
 SELECT TOP 1 WITH TIES YEAR(a.fecha_inicio) AS 'Año trabajado'
-FROM asignacion AS a
-	INNER JOIN trabajador AS t ON a.id_trabajador = t.id_trabajador
+FROM asignacion AS a	
 GROUP BY YEAR(a.fecha_inicio)
 ORDER BY COUNT(DISTINCT a.id_trabajador) DESC
 
@@ -67,7 +65,6 @@ ORDER BY COUNT(DISTINCT a.id_trabajador) DESC
 -- 20. Cual es el año o años en el que se ha trabajado en mas edificios diferentes
 SELECT TOP 1 WITH TIES YEAR(a.fecha_inicio) AS 'Año trabajado'
 FROM asignacion AS a
-	INNER JOIN trabajador AS t ON a.id_trabajador = t.id_trabajador
 GROUP BY YEAR(a.fecha_inicio)
 ORDER BY COUNT(DISTINCT a.id_edificio) DESC
 
