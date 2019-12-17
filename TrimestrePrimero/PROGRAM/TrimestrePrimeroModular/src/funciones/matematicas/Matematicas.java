@@ -1,5 +1,7 @@
 package funciones.matematicas;
 
+import java.util.ArrayList;
+
 /**
  * 
  * @author César Ravelo Martínez
@@ -75,6 +77,25 @@ public class Matematicas {
 		
 		for (trim = 0; trim < balance.length; trim++)
 			result += balance[trim][INGRESOS] - balance[trim][GASTOS]; 
+		
+		return result;
+	}
+	
+	/**
+	 * Dada una ArrayList bidimensional con los ingresos y gastos de unos trimestres,
+	 * devuelve el balance total, siendo la diferencia entre los ingresos totales
+	 * y los gastos totales
+	 * @param balance Tabla bidimensional de valores con los ingresos y gastos
+	 * @return	Balance total
+	 */
+	public static int totalBalance(ArrayList<ArrayList<Integer>> balance) {
+		final int INGRESOS = 0;
+		final int GASTOS = 1;
+		int trim;
+		int result = 0;
+		
+		for (trim = 0; trim < balance.size(); trim++)
+			result += balance.get(trim).get(INGRESOS) - balance.get(trim).get(GASTOS); 
 		
 		return result;
 	}

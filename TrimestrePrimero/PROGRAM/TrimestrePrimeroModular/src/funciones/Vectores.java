@@ -30,6 +30,29 @@ public class Vectores {
 	}
 	
 	/**
+	 * Dadas dos listas de tipo entero ordenadas previamente de menor
+	 * a mayor, devolver un vector que mezcle ambos vectores
+	 * 
+	 * @param t1 ArrayList de datos 1
+	 * @param t2 ArrayList de datos 2
+	 * @return ArrayList de datos mezclados
+	 */
+	public static ArrayList<Integer> merge(ArrayList<Integer> t1, ArrayList<Integer> t2) {
+		ArrayList<Integer> nT = new ArrayList<Integer>(t1.size() + t2.size());
+		int i = 0, j = 0;
+		
+		while (i < t1.size() && j < t2.size())
+			nT.add((t1.get(i) < t2.get(j))?t1.get(i++):t2.get(j++));
+			
+		while (i < t1.size())
+			nT.add(t1.get(i++));
+		while (j < t2.size())
+			nT.add(t2.get(j++));
+		
+		return nT;
+	}
+	
+	/**
 	 * Dada una tabla de enteros,
 	 * devuelve un String en el formato [d1, d2, ..., dn]
 	 * @param t Tabla de valores iniciales
