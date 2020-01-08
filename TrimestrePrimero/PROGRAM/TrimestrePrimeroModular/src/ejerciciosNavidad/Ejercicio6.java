@@ -81,9 +81,43 @@ public class Ejercicio6 {
 		System.out.printf("> Equiláteros: %d\n", tEqui);
 		System.out.printf("> Isósceles: %d\n", tIsos);
 		System.out.printf("> Escalenos: %d\n", tEsc);
+		System.out.printf("> Menor Tipo: ");
+		
+		switch (menor(tEqui, tIsos, tEsc)) {
+			case EQUILATERO:
+				System.out.println("Equilátero");
+				tEqui++;
+				break;
+			case ISOSCELES:
+				System.out.println("Isósceles");
+				tIsos++;
+				break;
+			case ESCALENO:
+				System.out.println("Escaleno");
+				tEsc++;
+				break;
+		}
 		
 		
+	}
+	
+	public static int menor(int tEquilateros, int tIsosceles, int tEscalenos) {
+		final int EQUILATERO = 0, ISOSCELES = 1, ESCALENO = 2;
+		int tipoMenor = -1;
 		
+		if (tEquilateros < tIsosceles) {
+			if (tEquilateros < tEscalenos)
+				tipoMenor = EQUILATERO;
+			else
+				tipoMenor = ESCALENO;
+		} else {
+			if (tIsosceles < tEscalenos)
+				tipoMenor = ISOSCELES;
+			else
+				tipoMenor = ESCALENO;
+		}
+		
+		return tipoMenor;		
 	}
 
 	public static void main(String[] args) {
