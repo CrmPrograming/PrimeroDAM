@@ -7,9 +7,9 @@ public class PruebasBotella1L {
 	public static void main(String[] args) {
 		Botella1L bot = new Botella1L();
 
-		System.out.println(bot);
+		System.out.println(bot);		
 		
-		bot.contenido = 0.5f;
+		bot.anadir(0.5f);
 		
 		System.out.println(bot);
 		
@@ -28,6 +28,8 @@ public class PruebasBotella1L {
 		System.out.printf("> Al intentar extraer 1.2L, faltó por extraer %.2fL\n", bot.extraer(1.2f));
 		
 		System.out.println(bot);
+		
+		
 	}
 
 }

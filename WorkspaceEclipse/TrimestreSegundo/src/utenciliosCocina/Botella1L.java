@@ -17,14 +17,14 @@ public class Botella1L {
 	 * Flotante con la cantidad de líquido dentro de la botella. 
 	 * Sus valores vienen delimitados por el rango [0, 1].
 	 */
-	public float contenido;
+	private float contenido;
 	
 	/**
 	 * Boolean indicativo del estado de la botella.
 	 * False -> Abierta
 	 * True -> Cerrada
 	 */
-	public boolean cerrado;
+	private boolean cerrado;
 	
 	/**
 	 * Método encargado de abrir la botella.
@@ -54,12 +54,21 @@ public class Botella1L {
 	}
 	
 	/**
-	 * Método encargado de comprobar si la botella se encuentra cerrada o abierta.
+	 * Método encargado de comprobar si la botella se encuentra cerrada.
 	 * 
 	 * @return Boolean con el estado de la botella
 	 */
 	public boolean estaCerrada() {
 		return cerrado;
+	}
+	
+	/**
+	 * Método encargado de comprobar si la botella se encuentra abierta.
+	 * 
+	 * @return Boolean con el estado de la botella
+	 */
+	public boolean estaAbierta() {
+		return !estaCerrada();
 	}
 	
 	/**
@@ -79,7 +88,7 @@ public class Botella1L {
 		if (!estaCerrada())
 			if (cant + contenido > CAPACIDAD_MAXIMA) {
 				sobra = (cant + contenido) - CAPACIDAD_MAXIMA;
-				contenido = CAPACIDAD_MAXIMA;			
+				contenido = CAPACIDAD_MAXIMA;
 			} else {
 				contenido += cant;
 				sobra = 0f;
@@ -102,12 +111,13 @@ public class Botella1L {
 		
 		if (!estaCerrada())
 			if (contenido - cant < 0f) {
-				sobra = cant - contenido;
-				contenido = 0f;			
+				sobra -= contenido;
+				contenido = 0f;
 			} else {
 				contenido -= cant;
 				sobra = 0f;
-			}		
+			}
 		return sobra;
 	}	
+	
 }
