@@ -10,16 +10,24 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
 
+	/*
+	 * Método encargado de calcular el área de un triángulo dadas la base y su altura
+	 */
 	public static float area(float b, float h) {
 		return (b*h) / 2;
 	}
 	
+	/*
+	 * Método encargado de mostrar los datos de los triángulos contenidos en t.
+	 * Además, también mostrará la cantidad de triángulos cuya superficie sea mayor al
+	 * límite establecido.
+	 */
 	public static void mostrarDatos(float[][] t) {
 		final int BASE = 0, ALTURA = 1, LIMITE_SUPERFICIE = 12;
 		int i, cantidadSuperiores = 0;
 		float superficieActual = 0f;
 		
-		
+		// Mostramos los triángulos y sus datos
 		for (i = 0; i < t.length; i++) {
 			System.out.printf("> Datos Triángulo %d\n", i + 1);
 			System.out.printf("- Base: %f\n", t[i][BASE]);			 
@@ -31,12 +39,18 @@ public class Ejercicio7 {
 			System.out.println();
 		}
 		
+		// En caso de haber algún triángulo cuya superficie sea mayor a la establecida,
+		// mostramos cuántos cumplen dicho requisito.
 		if (cantidadSuperiores > 0) {
-			System.out.printf("> Cantidad de triángulos con superficie superior a %d: %d\n", LIMITE_SUPERFICIE, cantidadSuperiores);
+			System.out.printf("> Cantidad de triángulos con superficie " +
+					"superior a %d: %d\n", LIMITE_SUPERFICIE, cantidadSuperiores);
 		}
 		
 	}
 	
+	/*
+	 * Método encargado de leer por la entrada estandar los datos de los triángulos.
+	 */
 	public static float[][] cargarDatos() {
 		final int BASE_ALTURA = 2, BASE = 0, ALTURA = 1;
 		float[][] datos = null;
@@ -63,7 +77,6 @@ public class Ejercicio7 {
 	}
 
 	public static void main(String[] args) {
-
 		float[][] triangulos = cargarDatos();
 		
 		mostrarDatos(triangulos);

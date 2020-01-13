@@ -11,17 +11,22 @@ import java.util.Scanner;
 
 public class Ejercicio6 {
 	
+	/*
+	 * Método encargado de leer los datos de los triángulos
+	 */
 	public static int[][] cargarTriangulos() {
 		final int LADOS = 3;
 		int[][] datos = null;
 		int cantidad, i, j;
 		Scanner in = new Scanner(System.in);
 		
+		// Leemos la cantidad de triángulos a estudiar, n
 		System.out.print("> Introduzca la cantidad de triángulos a estudiar: ");
 		cantidad = in.nextInt();
 		
 		datos = new int[cantidad][LADOS];
 		
+		// Leemos los lados de los n triángulos
 		for (i = 0; i < cantidad; i++) {
 			System.out.printf("> Triángulo %d\n", i + 1);
 			
@@ -36,6 +41,9 @@ public class Ejercicio6 {
 		return datos;
 	}
 	
+	/*
+	 * Método encargado de identificar el tipo de triángulo dado por parámetro.
+	 */
 	public static int identificarTriangulo(int[] t) {
 		final int EQUILATERO = 0, ISOSCELES = 1, ESCALENO = 2;
 		int tipo = -1;
@@ -50,11 +58,17 @@ public class Ejercicio6 {
 		return tipo;		
 	}
 	
+	/*
+	 * Método encargado de mostrar los datos de los triángulos
+	 * contenidos en t, además de sus tipos y la cantidad de cada uno
+	 * junto con especificar de qué tipo hay menos triángulos.
+	 */
 	public static void mostrarTriangulos(int[][] t) {
 		final int EQUILATERO = 0, ISOSCELES = 1, ESCALENO = 2;
 		int tEqui = 0, tIsos = 0, tEsc = 0;
 		int i;
 		
+		// Mostramos todos los triángulos y sus datos, además del tipo
 		for (i = 0; i < t.length; i++) {
 			System.out.printf("> Triángulo %d\n", i + 1);
 			System.out.printf("- Lados: [%d %d %d]\n", t[i][0], t[i][1], t[i][2]);
@@ -77,12 +91,14 @@ public class Ejercicio6 {
 			
 		}
 		
+		// Mostramos la cantidad de cada tipo de triángulo
 		System.out.println();
 		System.out.printf("> Equiláteros: %d\n", tEqui);
 		System.out.printf("> Isósceles: %d\n", tIsos);
 		System.out.printf("> Escalenos: %d\n", tEsc);
-		System.out.printf("> Menor Tipo: ");
 		
+		// Mostramos el triángulo del que menos hay
+		System.out.printf("> Menor Tipo: ");
 		switch (menor(tEqui, tIsos, tEsc)) {
 			case EQUILATERO:
 				System.out.println("Equilátero");
@@ -98,9 +114,11 @@ public class Ejercicio6 {
 				break;
 		}
 		
-		
 	}
 	
+	/*
+	 * Método encargado de determinar el tipo de triángulo del que hay menor cantidad.
+	 */
 	public static int menor(int tEquilateros, int tIsosceles, int tEscalenos) {
 		final int EQUILATERO = 0, ISOSCELES = 1, ESCALENO = 2;
 		int tipoMenor = -1;

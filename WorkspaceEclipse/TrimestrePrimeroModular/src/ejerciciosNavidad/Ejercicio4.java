@@ -14,6 +14,9 @@ import java.util.Scanner;
 
 public class Ejercicio4 {
 	
+	/*
+	 * Método encargado de leer la cadena a analizar.
+	 */
 	public static String leerCadena() {
 		String dato = "";
 		Scanner in = new Scanner(System.in);
@@ -27,6 +30,10 @@ public class Ejercicio4 {
 	}
 	
 
+	/*
+	 * Método encargado de mostrar todos los caracteres de la cadena
+	 * desde el principio hasta la mitad de la misma.
+	 */
 	public static void mostrarMitad(String c) {
 		int i;
 		
@@ -37,10 +44,20 @@ public class Ejercicio4 {
 		
 	}
 	
+	/*
+	 * Método encargado de mostrar el último caracter de la cadena dada.
+	 */
 	public static void mostrarUltimoCaracter(String c) {
 		System.out.println(c.charAt(c.length() - 1));
 	}
 	
+	/*
+	 * Método encargado de mostrar la cadena de manera inversa.
+	 * 
+	 * NOTA: Se podría haber implementado de manera recursiva. Sin embargo,
+	 * dado que no se conseguía una ventaja considerable, se ha preferido
+	 * la implementación iterativa del problema.
+	 */
 	public static void mostrarInversa(String c) {
 		int i;
 		
@@ -49,6 +66,9 @@ public class Ejercicio4 {
 		System.out.println();
 	}
 	
+	/*
+	 * Método encargado de mostrar los caracteres de la cadena separados con guiones.
+	 */
 	public static void mostrarGuiones(String c) {
 		int i;
 		
@@ -58,6 +78,9 @@ public class Ejercicio4 {
 		
 	}
 	
+	/*
+	 * Método encargado de mostrar la cantidad total de vocales en la cadena dada.
+	 */
 	public static void mostrarCantidadVocales(String c) {
 		int i, totalVocales = 0;
 		char actual;
@@ -72,6 +95,9 @@ public class Ejercicio4 {
 		System.out.println("> Total de vocales: " + totalVocales);
 	}
 	
+	/*
+	 * Método encargado de comprobar si la cadena dada es capicua o simétrica.
+	 */
 	public static boolean verificarCapicua(String c) {
 		int i = 0, j = c.length() - 1;
 		
@@ -80,7 +106,7 @@ public class Ejercicio4 {
 			j--;
 		}
 		
-		return !(i < j);		
+		return !(i < j);
 		
 	}
 	
@@ -92,7 +118,7 @@ public class Ejercicio4 {
 		mostrarInversa(cadena);
 		mostrarGuiones(cadena);
 		mostrarCantidadVocales(cadena);
-		System.out.println(verificarCapicua(cadena));		
+		System.out.println(verificarCapicua(cadena));
 		
 	}
 	
