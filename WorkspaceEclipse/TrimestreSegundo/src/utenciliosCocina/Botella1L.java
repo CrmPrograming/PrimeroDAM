@@ -54,6 +54,15 @@ public class Botella1L {
 	}
 	
 	/**
+	 * Método encargado de comprobar si la botella se encuentra cerrada o abierta.
+	 * 
+	 * @return Boolean con el estado de la botella
+	 */
+	public boolean estaCerrada() {
+		return cerrado;
+	}
+	
+	/**
 	 * Método encargado de introducir más líquido en la botella.
 	 * 
 	 * Sólo se podrá insertar si la botella se encuentra abierta.
@@ -66,7 +75,8 @@ public class Botella1L {
 	 */
 	public float anadir(float cant) {
 		float sobra = cant;
-		if (!cerrado)
+		
+		if (!estaCerrada())
 			if (cant + contenido > CAPACIDAD_MAXIMA) {
 				sobra = (cant + contenido) - CAPACIDAD_MAXIMA;
 				contenido = CAPACIDAD_MAXIMA;			
@@ -88,8 +98,9 @@ public class Botella1L {
 	 * @return Flotante con la cantidad extraída
 	 */
 	public float extraer(float cant) {
-		float sobra = cant;		
-		if (!cerrado)
+		float sobra = cant;
+		
+		if (!estaCerrada())
 			if (contenido - cant < 0f) {
 				sobra = cant - contenido;
 				contenido = 0f;			
