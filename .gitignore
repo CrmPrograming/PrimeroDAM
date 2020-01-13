@@ -29,3 +29,5 @@
 /WorkspaceEclipse/Entregas/.metadata
 /TrimestrePrimero/BAE/SQL/sql_server.exe
 /TrimestrePrimero/BAE/SQL/sql_server/
+*~
+*.autosave
