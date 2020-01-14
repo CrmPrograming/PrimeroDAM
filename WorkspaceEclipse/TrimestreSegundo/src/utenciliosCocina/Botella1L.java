@@ -187,7 +187,8 @@ public class Botella1L {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%.2f %s (%s)", getContenido(), (unidades == null)? "": unidades, (cerrado)?"cerrada":"abierta");
+		return String.format("%.2f %s (%s)", getContenido(), (unidades == null)? "": unidades,
+								(cerrado)?"cerrada":"abierta");
 	}
 	
 }
