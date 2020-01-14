@@ -1,13 +1,25 @@
 package testUnitarios;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import utenciliosCocina.Botella1L;
 
 public class TestsBotella1L {
+	
+	@Test
+	public void pruebasGetters() {
+		Botella1L tester = new Botella1L();
+		
+		assertEquals("Getter de contenido 1", 0f, tester.getContenido(), 0.001);
+		
+		tester.anadir(0.5f);
+		
+		assertEquals("Getter de contenido 1", 0.5f, tester.getContenido(), 0.001);
+		
+	}	
 
 	@Test
 	public void pruebasEstadoBotella() {
@@ -44,19 +56,40 @@ public class TestsBotella1L {
 	}
 	
 	@Test
+	public void pruebasCaja() {
+		final int TAM = 6, TAM_ERROR = 3;
+		Botella1L[] box = new Botella1L[TAM];
+		Botella1L[] box2 = null;
+		int i;
+		
+		for (i = 0; i < TAM; i++) {
+			box[i] = new Botella1L();
+			box[i].anadir(Botella1L.CAPACIDAD_MAXIMA);
+			box[i].cerrar();
+		}		
+		
+		box2 = Botella1L.caja(TAM);
+		
+		for (i = 0; i < TAM; i++)
+			assertEquals("> Comparando la caja " + (i + 1), box[i].getContenido(), box2[i].getContenido(), 0.001);
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {Botella1L.caja(TAM_ERROR);});
+	}
+	
+	@Test
 	public void pruebasToString() {
 		Botella1L tester = new Botella1L();
 		
-		assertEquals("ToString() botella inicial", "0,00 (abierta)", tester.toString());
+		assertEquals("ToString() botella inicial", "0,00  (abierta)", tester.toString());
 		tester.cerrar();
-		assertEquals("ToString() botella cerrada", "0,00 (cerrada)", tester.toString());
+		assertEquals("ToString() botella cerrada", "0,00  (cerrada)", tester.toString());
 		
 		tester.anadir(0.5f);
-		assertEquals("ToString() intento de añadir estando cerrada", "0,00 (cerrada)", tester.toString());
+		assertEquals("ToString() intento de añadir estando cerrada", "0,00  (cerrada)", tester.toString());
 		
 		tester.abrir();
 		tester.anadir(0.5f);
-		assertEquals("ToString() intento de añadir estando abierta", "0,50 (abierta)", tester.toString());
+		assertEquals("ToString() intento de añadir estando abierta", "0,50  (abierta)", tester.toString());
 		
 	}
 	
