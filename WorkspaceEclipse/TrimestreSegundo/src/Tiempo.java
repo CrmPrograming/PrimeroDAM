@@ -68,6 +68,22 @@ public class Tiempo {
 	}
 	
 	/**
+	 * Método encargado de cambiar los atributos de la clase.
+	 * 
+	 * Recibe como parámetro una hora en segundos.
+	 * @param t Entero con el tiempo expresado en segundos
+	 */
+	public void set (int t) {
+		int contador = t;
+		
+		segundos = contador % 60;
+		contador /= 60;
+		minutos = contador % 60;
+		contador /= 60;
+		horas = contador % 24;		
+	}
+	
+	/**
 	 * Método encargado de incrementar las horas en una unidad.
 	 */
 	public void incremHoras() {
