@@ -154,7 +154,7 @@ public class Tiempo {
 	 * Método encargado de incrementar los minutos en una unidad.
 	 */
 	public void incremMinutos() {
-		minutos += (minutos + 1 == MAX_MINUTOS) ? -(MAX_HORA - 1) : 1 ;
+		minutos += (minutos + 1 == MAX_MINUTOS) ? -(MAX_MINUTOS - 1) : 1 ;
 
 		if (minutos == 0)
 			incremHoras();
@@ -186,7 +186,16 @@ public class Tiempo {
 	 */
 	@Override
 	public String toString() {
-		return (formato24)?String.format("%02d:%02d:%02d", horas, minutos, segundos) :
-			String.format("%02d:%02d:%02d %s", horas % 12, minutos, segundos, (horas < 12)? "am" : "pm" );
+		String msg = "";
+		if (formato24)
+			msg = String.format("%02d:%02d:%02d", horas, minutos, segundos);
+		else if (horas < 12)
+				msg = String.format("%02d:%02d:%02d am", horas, minutos, segundos);
+			 else if (horas == 12)
+				 msg = String.format("%02d:%02d:%02d pm", horas, minutos, segundos);
+			 else
+				 msg = String.format("%02d:%02d:%02d pm", horas - 12, minutos, segundos);
+		
+		return msg;
 	}	
 }
