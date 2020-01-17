@@ -8,6 +8,12 @@
  */
 public class Tiempo {
 	
+	public final int MAX_HORA = 24;
+	
+	public final int MAX_MINUTOS = 60;
+	
+	public final int MAX_SEGUNDOS = 60;
+	
 	/**
 	 * Atributo estático representativo del modo de tiempo a mostrar en toString().
 	 * Si se encuentra a true, se mostrará el tiempo en formato 24 horas. En caso contrario,
@@ -56,7 +62,7 @@ public class Tiempo {
 	 * @param hh Entero con el valor de las horas
 	 */
 	public void setHoras(int hh) {
-		horas = (hh < 24 && hh >= 0)? hh : horas;
+		horas = (hh < MAX_HORA && hh >= 0)? hh : horas;
 	}
 
 	/**
@@ -74,7 +80,7 @@ public class Tiempo {
 	 * @param mm Entero con el valor de los minutos
 	 */
 	public void setMinutos(int mm) {
-		minutos = (mm < 60 && mm >= 0)? mm : minutos;
+		minutos = (mm < MAX_MINUTOS && mm >= 0)? mm : minutos;
 	}
 
 	/**
@@ -92,7 +98,7 @@ public class Tiempo {
 	 * @param ss Entero con el valor de los segundos
 	 */
 	public void setSegundos(int ss) {
-		segundos = (ss < 60 && ss >= 0)? ss : segundos;
+		segundos = (ss < MAX_SEGUNDOS && ss >= 0)? ss : segundos;
 	}
 
 	/**
@@ -113,7 +119,7 @@ public class Tiempo {
 	 */
 	public void set(int hh, int mm, int ss) throws IllegalArgumentException {
 		
-		if (hh < 0 || hh > 24 || mm < 0 || mm > 59 || ss < 0 || ss > 59)
+		if (hh < 0 || hh > MAX_HORA || mm < 0 || mm >= MAX_MINUTOS || ss < 0 || ss >= MAX_SEGUNDOS)
 			throw new IllegalArgumentException();
 		
 		horas = hh;
@@ -130,25 +136,25 @@ public class Tiempo {
 	public void set (int t) {
 		int contador = t;
 		
-		segundos = contador % 60;
-		contador /= 60;
-		minutos = contador % 60;
-		contador /= 60;
-		horas = contador % 24;		
+		segundos = contador % MAX_SEGUNDOS;
+		contador /= MAX_SEGUNDOS;
+		minutos = contador % MAX_MINUTOS;
+		contador /= MAX_MINUTOS;
+		horas = contador % MAX_HORA;		
 	}
 	
 	/**
 	 * Método encargado de incrementar las horas en una unidad.
 	 */
 	public void incremHoras() {
-		horas += (horas + 1 == 24) ? -23 : 1;
+		horas += (horas + 1 == MAX_HORA) ? -(MAX_HORA - 1) : 1;
 	}
 	
 	/**
 	 * Método encargado de incrementar los minutos en una unidad.
 	 */
 	public void incremMinutos() {
-		minutos += (minutos + 1 == 60) ? -59 : 1 ;
+		minutos += (minutos + 1 == MAX_MINUTOS) ? -(MAX_HORA - 1) : 1 ;
 
 		if (minutos == 0)
 			incremHoras();
@@ -159,7 +165,7 @@ public class Tiempo {
 	 * Método encargado de incrementar los segundos en una unidad.
 	 */
 	public void incremSeg() {
-		segundos += (segundos + 1 == 60) ? -59 : 1 ;
+		segundos += (segundos + 1 == MAX_SEGUNDOS) ? -(MAX_SEGUNDOS - 1) : 1 ;
 		
 		if (segundos == 0)
 			incremMinutos();
