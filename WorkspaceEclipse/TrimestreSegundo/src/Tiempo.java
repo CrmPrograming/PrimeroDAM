@@ -64,7 +64,7 @@ public class Tiempo {
 		
 		horas = hh;
 		minutos = mm;
-		segundos = ss;		
+		segundos = ss;
 	}
 	
 	/**

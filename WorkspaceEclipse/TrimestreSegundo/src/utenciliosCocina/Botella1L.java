@@ -64,6 +64,24 @@ public class Botella1L {
 	}
 	
 	/**
+	 * Método encargado de comprobar si la botella está llena
+	 * 
+	 * @return Boolean con el estado del contenido de la botella
+	 */
+	public boolean estaLlena() {
+		return contenido == CAPACIDAD_MAXIMA;
+	}
+	
+	/**
+	 * Método encargado de comprobar si la botella está vacía
+	 * 
+	 * @return Boolean con el estado del contenido de la botella
+	 */
+	public boolean estaVacia() {
+		return contenido == 0f;
+	}
+	
+	/**
 	 * Método encargado de introducir más líquido en la botella.
 	 * 
 	 * Sólo se podrá insertar si la botella se encuentra abierta.
