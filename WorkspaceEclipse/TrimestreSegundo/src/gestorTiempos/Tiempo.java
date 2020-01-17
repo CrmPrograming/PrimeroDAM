@@ -1,3 +1,4 @@
+package gestorTiempos;
 
 /**
  * Clase gestora de tiempo. Se ocupa de controlar las operaciones básicas de conteo,

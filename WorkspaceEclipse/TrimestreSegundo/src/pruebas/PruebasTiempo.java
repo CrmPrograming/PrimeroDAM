@@ -1,3 +1,5 @@
+package pruebas;
+import gestorTiempos.Tiempo;
 
 public class PruebasTiempo {
 
