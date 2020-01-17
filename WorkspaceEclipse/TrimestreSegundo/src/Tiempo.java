@@ -40,7 +40,61 @@ public class Tiempo {
 	public static boolean esBisiesto(int year) {
 		return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 	}
+
+	/**
+	 * Método getter del atributo horas.
+	 * 
+	 * @return Entero con el valor de las horas
+	 */
+	public int getHoras() {
+		return horas;
+	}
 	
+	/**
+	 * Método setter del atributo horas.
+	 * 
+	 * @param hh Entero con el valor de las horas
+	 */
+	public void setHoras(int hh) {
+		horas = (hh < 24 && hh >= 0)? hh : horas;
+	}
+
+	/**
+	 * Método getter del atributo minutos.
+	 * 
+	 * @return Entero con el valor de los minutos
+	 */
+	public int getMinutos() {
+		return minutos;
+	}
+	
+	/**
+	 * Método setter del atributo minutos.
+	 * 
+	 * @param mm Entero con el valor de los minutos
+	 */
+	public void setMinutos(int mm) {
+		minutos = (mm < 60 && mm >= 0)? mm : minutos;
+	}
+
+	/**
+	 * Método getter del atributo horas.
+	 * 
+	 * @return Entero con el valor de las horas
+	 */
+	public int getSegundos() {
+		return segundos;
+	}
+	
+	/**
+	 * Método setter del atributo segundos.
+	 * 
+	 * @param ss Entero con el valor de los segundos
+	 */
+	public void setSegundos(int ss) {
+		segundos = (ss < 60 && ss >= 0)? ss : segundos;
+	}
+
 	/**
 	 * Método encargado de cambiar los atributos de la clase.
 	 * 
