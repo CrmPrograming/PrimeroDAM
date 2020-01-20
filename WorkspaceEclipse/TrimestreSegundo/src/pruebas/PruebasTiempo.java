@@ -37,7 +37,7 @@ public class PruebasTiempo {
 		
 		t.set(TIEMPO_SEGUNDOS);
 		
-		System.out.printf("> Convertir 1:30:20 de segundos a hora completa (%d): %s\n", TIEMPO_SEGUNDOS, t);		
+		System.out.printf("> Convertir 1:30:20 de segundos a hora completa (%d): %s\n", TIEMPO_SEGUNDOS, t);
 
 	}
 
