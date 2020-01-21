@@ -18,6 +18,29 @@ public class PilaEnteros {
 	private int cima;
 	
 	/**
+	 * Método estático encargado de sacar todos los valores de 
+	 * una PilaEnteros, mostrarlos y además mostrar la suma total
+	 * de dichos valores.
+	 * 
+	 * @param p Instancia de la clase PilaEnteros
+	 */
+	public static void imprimirConTotal(PilaEnteros p) {
+		if (p == null)
+			throw new IllegalArgumentException("ERROR. Se esperaba una instancia de la clase PilaEnteros");
+		
+		int total = 0, actual;
+		
+		while (!p.vacia()) {
+			actual = p.desapilar();
+			total += actual;
+			System.out.println(actual);
+		}
+		
+		System.out.printf("> Total: %d\n", total);		
+		
+	}
+	
+	/**
 	 * Constructor de la clase. Inicializa la capacidad máxima de la pila
 	 * según el parámetro indicado, creando en el proceso una pila vacía.
 	 * 
