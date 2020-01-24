@@ -2,8 +2,8 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import funciones.Vectores;
-import funciones.matematicas.Matematicas;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.Vectores;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.matematicas.Matematicas;
 
 public class PruebasTryCatchMedia {
 

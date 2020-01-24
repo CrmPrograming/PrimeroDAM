@@ -1,4 +1,4 @@
-import funciones.Vectores;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.Vectores;
 
 public class PruebasAlmostIncreasingSequence {
 	

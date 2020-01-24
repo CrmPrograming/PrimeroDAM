@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import funciones.Vectores;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.Vectores;
 
 public class PruebasLeer10Numeros {
 

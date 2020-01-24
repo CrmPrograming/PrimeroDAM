@@ -1,4 +1,4 @@
-import funciones.matematicas.Matematicas;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.matematicas.Matematicas;
 
 public class PruebaSumar2Digitos {
 	

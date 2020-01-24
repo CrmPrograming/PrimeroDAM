@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import funciones.matematicas.Matematicas;
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.matematicas.Matematicas;
 
 public class PruebasBalance {
 

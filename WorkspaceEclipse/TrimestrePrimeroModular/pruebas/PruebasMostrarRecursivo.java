@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import funciones.Salida;
+
+import github.crmprograming.primerodam.trimestreprimeromodular.funciones.Salida;
 
 public class PruebasMostrarRecursivo {
 	
