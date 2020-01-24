@@ -1,5 +1,5 @@
-package pruebas;
-import estructurasDatos.PilaEnteros;
+package github.crmprograming.primerodam.trimestresegundo.pruebas;
+import github.crmprograming.primerodam.trimestresegundo.estructurasDatos.PilaEnteros;
 
 public class PruebasPilaEnteros {
 

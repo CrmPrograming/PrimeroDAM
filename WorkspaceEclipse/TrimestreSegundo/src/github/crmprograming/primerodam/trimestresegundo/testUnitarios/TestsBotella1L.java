@@ -1,11 +1,11 @@
-package testUnitarios;
+package github.crmprograming.primerodam.trimestresegundo.testUnitarios;
 
 import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import utenciliosCocina.Botella1L;
+import github.crmprograming.primerodam.trimestresegundo.utenciliosCocina.Botella1L;
 
 public class TestsBotella1L {
 	

@@ -1,8 +1,8 @@
-package pruebas;
+package github.crmprograming.primerodam.trimestresegundo.pruebas;
 
 import java.util.Scanner;
 
-import utenciliosCocina.Botella1L;
+import github.crmprograming.primerodam.trimestresegundo.utenciliosCocina.Botella1L;
 
 public class PruebasBotella1L {
 

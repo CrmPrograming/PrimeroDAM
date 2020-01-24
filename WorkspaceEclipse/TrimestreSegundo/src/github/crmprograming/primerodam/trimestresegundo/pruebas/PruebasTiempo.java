@@ -1,5 +1,5 @@
-package pruebas;
-import gestorTiempos.Tiempo;
+package github.crmprograming.primerodam.trimestresegundo.pruebas;
+import github.crmprograming.primerodam.trimestresegundo.gestorTiempos.Tiempo;
 
 public class PruebasTiempo {
 

@@ -1,4 +1,4 @@
-package estructurasDatos;
+package github.crmprograming.primerodam.trimestresegundo.estructurasDatos;
 
 /**
  * Clase gestora de una estructura pila para datos de tipo entero
