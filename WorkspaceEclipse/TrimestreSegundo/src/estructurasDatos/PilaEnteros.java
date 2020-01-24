@@ -1,3 +1,4 @@
+package estructurasDatos;
 
 /**
  * Clase gestora de una estructura pila para datos de tipo entero

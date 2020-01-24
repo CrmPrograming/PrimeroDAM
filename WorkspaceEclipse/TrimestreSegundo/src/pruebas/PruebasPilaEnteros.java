@@ -1,3 +1,5 @@
+package pruebas;
+import estructurasDatos.PilaEnteros;
 
 public class PruebasPilaEnteros {
 
