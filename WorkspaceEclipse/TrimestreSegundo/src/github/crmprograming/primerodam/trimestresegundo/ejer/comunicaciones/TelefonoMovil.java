@@ -57,8 +57,8 @@ public class TelefonoMovil {
 	}
 	
 	public void ponDigito(char dig) {
-		if (cont < MAX_DIGITOS)
-			if (cont > 1 || (cont == 1 && (dig == '0' || dig == '1' || dig == '6' || dig == '9')))
+		if (cont < MAX_DIGITOS) {
+			if (cont > 0 || (cont == 0 && (dig == '0' || dig == '1' || dig == '6' || dig == '9')))
 				switch (dig) {
 				case '0':
 					digito0();
@@ -103,7 +103,7 @@ public class TelefonoMovil {
 				default:
 					System.out.println("> ERROR: El valor introducido no se corresponde al de un dígito");
 				}
-		else
+		} else
 			System.out.println("> ERROR: Capacidad máxima alcanzada, imposible añadir más dígitos");
 		
 	}
