@@ -18,6 +18,16 @@ public class TelefonoMovil {
 	private static ArrayList<String> listado;
 	
 	/**
+	 * Constante entera para el límite de dígitos permitidos.
+	 */
+	private static final int MAX_DIGITOS = 20;
+	
+	/**
+	 * Constante entera con el tamaño mínimo válido para cualquier número de teléfono.
+	 */
+	private static final int TAM_TLF_VALIDO = 9;
+	
+	/**
 	 * String con el número de teléfono asociado a la instancia.
 	 */
 	private String miNumero;
@@ -30,17 +40,7 @@ public class TelefonoMovil {
 	/**
 	 * Entero representativo de la cantidad de dígitos almacenados en el atributo digitos.
 	 */
-	private int cont;
-	
-	/**
-	 * Constante entera para el límite de dígitos permitidos.
-	 */
-	private final int MAX_DIGITOS = 20;
-	
-	/**
-	 * Constante entera con el tamaño mínimo válido para cualquier número de teléfono.
-	 */
-	private final int TAM_TLF_VALIDO = 9;
+	private int cont;	
 	
 	/**
 	 * Inicializador estático del listado.
@@ -77,7 +77,7 @@ public class TelefonoMovil {
 		if (cont < TAM_TLF_VALIDO)
 			System.out.println("...número erroneo");
 		else {
-			if (miNumero.length() == digitos.length && Arrays.equals(digitos, miNumero.toCharArray()))
+			if (miNumero.length() == cont && new String(digitos, 0, cont).equals(miNumero))
 				System.out.println("...llamada fallida: intentando llamar a si mismo.");
 			else {
 				System.out.print("...llamada realizada al: ");
@@ -103,7 +103,7 @@ public class TelefonoMovil {
 	 */
 	public void anularDigito() {
 		if (cont > 0) {
-			System.out.println('\b');		
+			System.out.println('\b');
 			cont--;
 		}
 	}
@@ -116,55 +116,9 @@ public class TelefonoMovil {
 	 * @param dig char con el último dígito introducido
 	 */
 	private void ponDigito(char dig) {
-		if (cont < MAX_DIGITOS) {
-			if (cont > 0 || (cont == 0 && (dig == '0' || dig == '1' || dig == '6' || dig == '9')))
-				switch (dig) {
-				case '0':
-					digitos[cont] = '0';
-					cont++;
-					break;
-				case '1':
-					digitos[cont] = '1';
-					cont++;
-					break;
-				case '2':
-					digitos[cont] = '2';
-					cont++;
-					break;
-				case '3':
-					digitos[cont] = '3';
-					cont++;
-					break;
-				case '4':
-					digitos[cont] = '4';
-					cont++;
-					break;
-				case '5':
-					digitos[cont] = '5';
-					cont++;
-					break;
-				case '6':
-					digitos[cont] = '6';
-					cont++;
-					break;
-				case '7':
-					digitos[cont] = '7';
-					cont++;
-					break;
-				case '8':
-					digitos[cont] = '8';
-					cont++;
-					break;
-				case '9':
-					digitos[cont] = '9';
-					cont++;
-					break;
-				default:
-					System.out.println("> ERROR: El valor introducido no se corresponde al de un dígito");
-				}
-		} else
-			System.out.println("> ERROR: Capacidad máxima alcanzada, imposible añadir más dígitos");
-		
+		if (cont < MAX_DIGITOS)
+			if (cont > 0 || (dig == '0' || dig == '1' || dig == '6' || dig == '9'))
+				digitos[cont++] = dig;
 	}
 	
 	/**
