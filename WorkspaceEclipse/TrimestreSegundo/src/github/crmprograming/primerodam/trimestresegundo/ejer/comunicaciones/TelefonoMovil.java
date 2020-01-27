@@ -56,48 +56,48 @@ public class TelefonoMovil {
 		}
 	}
 	
-	public void ponDigito(char dig) {
+	private void ponDigito(char dig) {
 		if (cont < MAX_DIGITOS) {
 			if (cont > 0 || (cont == 0 && (dig == '0' || dig == '1' || dig == '6' || dig == '9')))
 				switch (dig) {
 				case '0':
-					digito0();
+					digitos[cont] = '0';
 					cont++;
 					break;
 				case '1':
-					digito1();
+					digitos[cont] = '1';
 					cont++;
 					break;
 				case '2':
-					digito2();
+					digitos[cont] = '2';
 					cont++;
 					break;
 				case '3':
-					digito3();
+					digitos[cont] = '3';
 					cont++;
 					break;
 				case '4':
-					digito4();
+					digitos[cont] = '4';
 					cont++;
 					break;
 				case '5':
-					digito5();
+					digitos[cont] = '5';
 					cont++;
 					break;
 				case '6':
-					digito6();
+					digitos[cont] = '6';
 					cont++;
 					break;
 				case '7':
-					digito7();
+					digitos[cont] = '7';
 					cont++;
 					break;
 				case '8':
-					digito8();
+					digitos[cont] = '8';
 					cont++;
 					break;
 				case '9':
-					digito9();
+					digitos[cont] = '9';
 					cont++;
 					break;
 				default:
@@ -108,44 +108,44 @@ public class TelefonoMovil {
 		
 	}
 	
-	private void digito0() {
-		digitos[cont] = '0';
+	public void digito0() {
+		ponDigito('0');
 	}
 	
-	private void digito1() {
-		digitos[cont] = '1';
+	public void digito1() {
+		ponDigito('1');
 	}
 	
-	private void digito6() {
-		digitos[cont] = '6';
+	public void digito6() {
+		ponDigito('6');
 	}
 	
-	private void digito9() {
-		digitos[cont] = '9';
+	public void digito9() {
+		ponDigito('9');
 	}
 	
-	private void digito2() {
-		digitos[cont] = '2';
+	public void digito2() {
+		ponDigito('2');
 	}
 	
-	private void digito3() {
-		digitos[cont] = '3';
+	public void digito3() {
+		ponDigito('3');
 	}
 	
-	private void digito4() {
-		digitos[cont] = '4';
+	public void digito4() {
+		ponDigito('4');
 	}
 	
-	private void digito5() {
-		digitos[cont] = '5';
+	public void digito5() {
+		ponDigito('5');
 	}
 	
-	private void digito7() {
-		digitos[cont] = '7';
+	public void digito7() {
+		ponDigito('7');
 	}
 	
-	private void digito8() {
-		digitos[cont] = '8';
+	public void digito8() {
+		ponDigito('8');
 	}
 	
 }

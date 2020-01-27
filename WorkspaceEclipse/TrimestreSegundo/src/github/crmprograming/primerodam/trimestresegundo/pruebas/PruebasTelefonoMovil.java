@@ -34,7 +34,40 @@ public class PruebasTelefonoMovil {
 			else if (actual == '.')
 				t1.cancelar();
 			else if (actual != '-')
-				t1.ponDigito(actual);
+				switch (actual) {
+				case '0':
+					t1.digito0();
+					break;
+				case '1':
+					t1.digito1();
+					break;
+				case '2':
+					t1.digito2();
+					break;
+				case '3':
+					t1.digito3();
+					break;
+				case '4':
+					t1.digito4();
+					break;
+				case '5':
+					t1.digito5();
+					break;
+				case '6':
+					t1.digito6();
+					break;
+				case '7':
+					t1.digito7();
+					break;
+				case '8':
+					t1.digito8();
+					break;
+				case '9':
+					t1.digito9();
+					break;
+				default:
+					System.out.println("> ERROR: El valor introducido no se corresponde al de un dígito");
+				}
 			
 		} while (actual != '-');
 		
