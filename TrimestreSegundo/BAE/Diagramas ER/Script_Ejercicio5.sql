@@ -1,15 +1,10 @@
 ﻿/*
 Created: 18/01/2020
-Modified: 25/01/2020
+Modified: 27/01/2020
 Model: Microsoft SQL Server 2014
 Database: MS SQL Server 2014
 */
 
-CREATE DATABASE Startrek
-GO
-
-USE Startrek
-GO
 
 -- Create tables section -------------------------------------------------
 
@@ -266,8 +261,14 @@ go
 CREATE TABLE [Humanos]
 (
  [anoNacimiento] Int NOT NULL,
- [codPersonaje] Char(5) NOT NULL
+ [codPersonaje] Char(5) NOT NULL,
+ [codCiudad] Char(5) NULL
 )
+go
+
+-- Create indexes for table Humanos
+
+CREATE INDEX [IX_Relationship31] ON [Humanos] ([codCiudad])
 go
 
 -- Add keys for table Humanos
@@ -301,28 +302,28 @@ CREATE TABLE [Viajan]
 (
  [codCap] Char(5) NOT NULL,
  [codPlaneta] Char(5) NOT NULL,
+ [codNave] Char(5) NOT NULL,
  [problema] Varchar(255) NULL
 )
 go
 
 -- Add keys for table Viajan
 
-ALTER TABLE [Viajan] ADD CONSTRAINT [PK_Viajan] PRIMARY KEY ([codCap],[codPlaneta])
+ALTER TABLE [Viajan] ADD CONSTRAINT [PK_Viajan] PRIMARY KEY ([codCap],[codPlaneta],[codNave])
 go
 
--- Table Viajado en
+-- Table Ciudades Terráqueas
 
-CREATE TABLE [Viajado en]
+CREATE TABLE [Ciudades Terráqueas]
 (
- [codCap] Char(5) NOT NULL,
- [codPlaneta] Char(5) NOT NULL,
- [codNave] Char(5) NOT NULL
+ [codCiudad] Char(5) NOT NULL,
+ [descripcion] Varchar(30) NOT NULL
 )
 go
 
--- Add keys for table Viajado en
+-- Add keys for table Ciudades Terráqueas
 
-ALTER TABLE [Viajado en] ADD CONSTRAINT [PK_Viajado en] PRIMARY KEY ([codCap],[codPlaneta],[codNave])
+ALTER TABLE [Ciudades Terráqueas] ADD CONSTRAINT [PK_Ciudades Terráqueas] PRIMARY KEY ([codCiudad])
 go
 
 -- Create foreign keys (relationships) section ------------------------------------------------- 
@@ -418,12 +419,12 @@ go
 
 
 
-ALTER TABLE [Viajado en] ADD CONSTRAINT [Relationship28] FOREIGN KEY ([codCap], [codPlaneta]) REFERENCES [Viajan] ([codCap], [codPlaneta]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [Humanos] ADD CONSTRAINT [Relationship31] FOREIGN KEY ([codCiudad]) REFERENCES [Ciudades Terráqueas] ([codCiudad]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 
 
-ALTER TABLE [Viajado en] ADD CONSTRAINT [Relationship29] FOREIGN KEY ([codNave]) REFERENCES [Naves] ([codNave]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [Viajan] ADD CONSTRAINT [Relationship32] FOREIGN KEY ([codNave]) REFERENCES [Naves] ([codNave]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 
