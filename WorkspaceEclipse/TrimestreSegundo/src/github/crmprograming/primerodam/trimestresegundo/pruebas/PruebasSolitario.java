@@ -1,0 +1,16 @@
+package github.crmprograming.primerodam.trimestresegundo.pruebas;
+
+import github.crmprograming.primerodam.trimestresegundo.ejer.solitario.Mazo;
+
+public class PruebasSolitario {
+
+	public static void main(String[] args) {
+		Mazo m = new Mazo();
+		
+		for (int i = 0; i < 40; i++)
+			System.out.println(m.sacarCarta());
+				
+
+	}
+
+}

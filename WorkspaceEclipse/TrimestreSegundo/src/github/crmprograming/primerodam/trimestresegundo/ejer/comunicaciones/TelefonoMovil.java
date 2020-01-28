@@ -1,7 +1,6 @@
 package github.crmprograming.primerodam.trimestresegundo.ejer.comunicaciones;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Clase gestora de simular un teléfono móvil.
