@@ -36,7 +36,7 @@ public class ColumnaCartas {
 		// Mientras se tenga espacio y se pueda colocar la carta, se inserta
 		if ((result) &&
 				((cont == 0) || 
-				 (cartas[cont - 1].getNumero() > c.getNumero() && !cartas[cont - 1].getPalo().equals(c.getPalo()))))
+				 (cartas[cont - 1].getNumero() == c.getNumero() + 1 && !cartas[cont - 1].getPalo().equals(c.getPalo()))))
 			cartas[cont++] = c;
 		else
 			result = false;
