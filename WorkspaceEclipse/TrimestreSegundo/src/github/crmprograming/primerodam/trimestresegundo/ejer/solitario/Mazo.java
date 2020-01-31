@@ -66,5 +66,16 @@ public class Mazo {
 	public boolean estaVacia() {
 		return (cont < 0);
 	}
+	
+	/**
+	 * Sobrecarga del método toString() de la clase para mostrar el estado
+	 * del objeto con el siguiente formato:
+	 * 
+	 * Mazo: <cantidad de cartas en el mazo>
+	 */
+	@Override
+	public String toString() {
+		return String.format("Mazo: %d", cont);
+	}
 
 }

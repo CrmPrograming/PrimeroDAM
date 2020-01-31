@@ -11,10 +11,16 @@ package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
 public class ColumnaCartas {
 	
 	/**
+	 * Constante entera con el tamaño máximo de cartas que pueden
+	 * haber en un montón.
+	 */
+	private static final int MAX_CARTAS = 10;
+	
+	/**
 	 * Tabla de instancias de la clase Carta, controla las cartas
 	 * almacenadas en el objeto.
 	 */
-	private Carta[] cartas = new Carta[10]; // [1, 10]
+	private Carta[] cartas = new Carta[MAX_CARTAS]; // [1, 10]
 	
 	/**
 	 * Entero con la cantidad de cartas contenidas en la columna.
@@ -31,17 +37,46 @@ public class ColumnaCartas {
 	 * @return Booleano indicativo de si se pudo o no almacenar la carta
 	 */
 	public boolean ponerCarta(Carta c) {
-		boolean result = cont < cartas.length;
+		boolean result = !estaLleno();
 		
 		// Mientras se tenga espacio y se pueda colocar la carta, se inserta
-		if ((result) &&
-				((cont == 0) || 
+		if (result &&
+				(estaVacia() || 
 				 (cartas[cont - 1].getNumero() == c.getNumero() + 1 && !cartas[cont - 1].getPalo().equals(c.getPalo()))))
 			cartas[cont++] = c;
 		else
 			result = false;
 		
 		return result;
+	}
+	
+	/**
+	 * Método encargado de indicar si la columna está llena o no.
+	 * 
+	 * @return Booleano con el estado de la columna
+	 */
+	private boolean estaLleno() {
+		return (cont >= MAX_CARTAS);
+	}
+	
+	/**
+	 * Método encargado de indicar si la columna está vacía por completo o no.
+	 * 
+	 * @return Booleano con el estado de la columna
+	 */
+	private boolean estaVacia() {
+		return (cont == 0);
+	}
+	
+	/**
+	 * Sobrecarga del método toString() de la clase para mostrar el estado
+	 * del objeto con el siguiente formato:
+	 * 
+	 * Columna: <última carta introducida>
+	 */
+	@Override
+	public String toString() {
+		return String.format("Columna: %s", (cont == 0)?"No hay cartas en ella" : cartas[cont - 1]);
 	}
 
 }

@@ -12,7 +12,7 @@ public class PruebasSolitario {
 			System.out.println(m.sacarCarta());
 		*/
 		
-		MontonPalo mPalo = new MontonPalo();
+		FamiliaCartas mPalo = new FamiliaCartas();
 		
 		for (int i = 0; i < 40; i++)
 			mPalo.ponerCarta(m.sacarCarta());
