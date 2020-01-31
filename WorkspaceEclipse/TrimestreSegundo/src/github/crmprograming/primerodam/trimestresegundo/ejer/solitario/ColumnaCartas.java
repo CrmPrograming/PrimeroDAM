@@ -60,7 +60,7 @@ public class ColumnaCartas {
 	 * @return ArrayList<Carta> listado de cartas contenidas
 	 */
 	public ArrayList<Carta> listaCartas() {		
-		return new ArrayList<Carta>(Arrays.asList(CARTAS));
+		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
 	}
 	
 	/**
