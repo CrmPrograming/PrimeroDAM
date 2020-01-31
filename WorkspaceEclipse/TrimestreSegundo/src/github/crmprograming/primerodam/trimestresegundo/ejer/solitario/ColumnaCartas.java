@@ -20,7 +20,7 @@ public class ColumnaCartas {
 	 * Tabla de instancias de la clase Carta, controla las cartas
 	 * almacenadas en el objeto.
 	 */
-	private Carta[] cartas = new Carta[MAX_CARTAS]; // [1, 10]
+	private final Carta[] CARTAS = new Carta[MAX_CARTAS]; // [1, 10]
 	
 	/**
 	 * Entero con la cantidad de cartas contenidas en la columna.
@@ -42,8 +42,8 @@ public class ColumnaCartas {
 		// Mientras se tenga espacio y se pueda colocar la carta, se inserta
 		if (result &&
 				(estaVacia() || 
-				 (cartas[cont - 1].getNumero() == c.getNumero() + 1 && !cartas[cont - 1].getPalo().equals(c.getPalo()))))
-			cartas[cont++] = c;
+				 (CARTAS[cont - 1].getNumero() == c.getNumero() + 1 && !CARTAS[cont - 1].getPalo().equals(c.getPalo()))))
+			CARTAS[cont++] = c;
 		else
 			result = false;
 		
@@ -76,7 +76,7 @@ public class ColumnaCartas {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Columna: %s", (estaVacia())? "No hay cartas en ella" : cartas[cont - 1]);
+		return String.format("Columna: %s", (estaVacia())? "No hay cartas en ella" : CARTAS[cont - 1]);
 	}
 
 }

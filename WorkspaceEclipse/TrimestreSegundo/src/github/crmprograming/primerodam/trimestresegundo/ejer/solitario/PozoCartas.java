@@ -18,21 +18,12 @@ public class PozoCartas {
 	/**
 	 * Tabla de instancias de la clase Carta con las cartas almacenadas.
 	 */
-	private Carta[] cartas;
+	private final Carta[] CARTAS = new Carta[MAX_CARTAS];
 	
 	/**
 	 * Entero con la cantidad de cartas almacenadas en la familia de cartas.
 	 */
-	private int cont;
-	
-	/**
-	 * Constructor de la clase, inicializa la tabla cartas y el
-	 * contador cont.
-	 */
-	public PozoCartas() {
-		cartas = new Carta[MAX_CARTAS];
-		cont = 0;
-	}
+	private int cont = 0;
 	
 	/**
 	 * Método encargado de insertar una carta dada al final del pozo.
@@ -40,7 +31,7 @@ public class PozoCartas {
 	 * @param c Instancia de la clase Carta a almacenar
 	 */
 	public void ponerCarta(Carta c) {
-		cartas[cont++] = c;
+		CARTAS[cont++] = c;
 	}
 	
 	/**
@@ -53,7 +44,7 @@ public class PozoCartas {
 		Carta sacada = null;
 		
 		if (!estaVacia())
-			sacada = cartas[cont--];	
+			sacada = CARTAS[cont--];	
 		
 		return sacada;
 	}
@@ -74,7 +65,7 @@ public class PozoCartas {
 	 * @return Instancia de la clase Carta o null
 	 */
 	public final Carta getCarta() {	
-		return (estaVacia())? null : cartas[cont - 1];
+		return (estaVacia())? null : CARTAS[cont - 1];
 	}
 	
 	/**

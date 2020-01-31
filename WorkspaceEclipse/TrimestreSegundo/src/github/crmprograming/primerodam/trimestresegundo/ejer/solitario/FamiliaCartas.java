@@ -18,21 +18,12 @@ public class FamiliaCartas {
 	/**
 	 * Tabla de instancias de la clase Carta con las cartas almacenadas.
 	 */
-	private Carta[] cartas;
+	private final Carta[] CARTAS = new Carta[MAX_CARTAS];
 	
 	/**
 	 * Entero con la cantidad de cartas almacenadas en la familia de cartas.
 	 */
-	private int cont;
-	
-	/**
-	 * Constructor de la clase, inicializa la tabla cartas y el
-	 * contador cont.
-	 */
-	public FamiliaCartas() {
-		cartas = new Carta[MAX_CARTAS];
-		cont = 0;
-	}
+	private int cont = 0;
 	
 	/**
 	 * Método encargado de insertar una nueva carta al final
@@ -52,9 +43,9 @@ public class FamiliaCartas {
 		
 		if (result // Queda espacio para poner más cartas
 			&& ((estaVacia() && c.getNumero() == 1) // Si no hay cartas, aseguramos que c sea un uno
-				|| (cont > 0 && (cartas[cont - 1].getPalo().equals(c.getPalo())
-					&& cartas[cont - 1].getNumero() == c.getNumero() - 1)))) // Si hay cartas, aseguramos que sea mismo palo y la siguiente
-			cartas[cont++] = c;
+				|| (cont > 0 && (CARTAS[cont - 1].getPalo().equals(c.getPalo())
+					&& CARTAS[cont - 1].getNumero() == c.getNumero() - 1)))) // Si hay cartas, aseguramos que sea mismo palo y la siguiente
+			CARTAS[cont++] = c;
 		else
 			result = false;
 		
@@ -86,7 +77,7 @@ public class FamiliaCartas {
 	 * @return Instancia de la clase Carta o null
 	 */
 	public final Carta getCarta() {	
-		return (estaVacia())? null : cartas[cont - 1];
+		return (estaVacia())? null : CARTAS[cont - 1];
 	}
 	
 	/**
@@ -97,7 +88,7 @@ public class FamiliaCartas {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Familia: %s", (estaVacia())? "No hay cartas en ella" : cartas[cont - 1]);
+		return String.format("Familia: %s", (estaVacia())? "No hay cartas en ella" : CARTAS[cont - 1]);
 	}
 
 }

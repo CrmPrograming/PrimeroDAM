@@ -15,7 +15,7 @@ public class Mazo {
 	/**
 	 * Tabla de objetos de la clase Carta con las cartas almacenadas en el mazo.
 	 */
-	private Carta[] cartas;
+	private Carta[] CARTAS;
 	
 	/**
 	 * Entero con la posición de la última carta existente en el mazo.
@@ -29,13 +29,13 @@ public class Mazo {
 	public Mazo() {		
 		int i, j;
 		String[] palos = {Carta.PALO_BASTOS, Carta.PALO_COPAS, Carta.PALO_ESPADAS, Carta.PALO_OROS};
-		cartas = new Carta[MAX_CARTAS];
+		CARTAS = new Carta[MAX_CARTAS];
 		
 		for (i = 0; i < palos.length; i++) {
 			for (j = 1; j < 8; j++)
-				cartas[cont++] = new Carta(j, palos[i]);
+				CARTAS[cont++] = new Carta(j, palos[i]);
 			for (j = 10; j <= 12; j++)
-				cartas[cont++] = new Carta(j, palos[i]);
+				CARTAS[cont++] = new Carta(j, palos[i]);
 		}
 		cont--;
 	}
@@ -52,8 +52,8 @@ public class Mazo {
 		
 		if (!estaVacia()) {
 			pos = (int) (Math.random() * (cont + 1));
-			sacada = cartas[pos];
-			cartas[pos] = cartas[cont--];
+			sacada = CARTAS[pos];
+			CARTAS[pos] = CARTAS[cont--];
 		}		
 		
 		return sacada;
