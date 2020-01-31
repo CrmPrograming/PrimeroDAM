@@ -68,8 +68,8 @@ public class ColumnaCartas {
 	 * 
 	 * @return Booleano con el estado de la columna
 	 */
-	private boolean estaLleno() {
-		return (cont >= MAX_CARTAS);
+	public boolean estaLleno() {
+		return (cont == MAX_CARTAS);
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public class ColumnaCartas {
 	 * 
 	 * @return Booleano con el estado de la columna
 	 */
-	private boolean estaVacia() {
+	public boolean estaVacia() {
 		return (cont == 0);
 	}
 	

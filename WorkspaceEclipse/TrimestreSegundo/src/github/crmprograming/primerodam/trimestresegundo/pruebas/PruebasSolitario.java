@@ -5,20 +5,9 @@ import github.crmprograming.primerodam.trimestresegundo.ejer.solitario.*;
 public class PruebasSolitario {
 
 	public static void main(String[] args) {
-		Mazo m = new Mazo();
+		Solitario sol = new Solitario();
 		
-		/*
-		for (int i = 0; i < 40; i++)
-			System.out.println(m.sacarCarta());
-		*/
-		
-		FamiliaCartas mPalo = new FamiliaCartas();
-		
-		for (int i = 0; i < 40; i++)
-			mPalo.ponerCarta(m.sacarCarta());
-		
-		System.out.println();
-				
+		sol.jugar();
 
 	}
 

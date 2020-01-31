@@ -1,5 +1,8 @@
 package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Clase gestora de una familia de cartas del mismo palo apiladas
  * desde el 1 hasta el 10.
@@ -57,8 +60,8 @@ public class FamiliaCartas {
 	 * 
 	 * @return Booleano con el estado de la familia
 	 */
-	private boolean estaLleno() {
-		return (cont >= MAX_CARTAS);
+	public boolean estaLleno() {
+		return (cont == MAX_CARTAS);
 	}
 	
 	/**
@@ -66,8 +69,18 @@ public class FamiliaCartas {
 	 * 
 	 * @return Booleano con el estado de la familia
 	 */
-	private boolean estaVacia() {
+	public boolean estaVacia() {
 		return (cont == 0);
+	}
+	
+	/**
+	 * Método encargado de generar un ArrayList<Carta> con las cartas
+	 * almacenadas en el momento de su invocación.
+	 * 
+	 * @return ArrayList<Carta> listado de cartas contenidas
+	 */
+	public ArrayList<Carta> listaCartas() {		
+		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
 	}
 	
 	/**

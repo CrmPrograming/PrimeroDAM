@@ -1,5 +1,8 @@
 package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Clase gestora de un pozo de cartas. En él, se almacenarán instancias
  * de la clase Carta sin tener en cuenta ni su número ni su palo.
@@ -47,6 +50,20 @@ public class PozoCartas {
 			sacada = CARTAS[cont--];	
 		
 		return sacada;
+	}
+	
+	public void vaciarPozo() {
+		cont = 0;
+	}
+	
+	/**
+	 * Método encargado de generar un ArrayList<Carta> con las cartas
+	 * almacenadas en el momento de su invocación.
+	 * 
+	 * @return ArrayList<Carta> listado de cartas contenidas
+	 */
+	public ArrayList<Carta> listaCartas() {		
+		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
 	}
 	
 	/**

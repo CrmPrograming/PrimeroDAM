@@ -1,5 +1,7 @@
 package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
 
+import java.util.ArrayList;
+
 /**
  * Clase gestora del comportamiento de un mazo de 40 cartas para el juego Solitario.
  * @author César Ravelo Martínez
@@ -59,13 +61,18 @@ public class Mazo {
 		return sacada;
 	}
 	
+	public void barajar(ArrayList<Carta> listado) {
+		for (cont = 0; cont < listado.size(); cont++)
+			CARTAS[cont] = listado.get(cont);
+	}
+	
 	/**
 	 * Método encargado de indicar si el mazo está vacío.
 	 * 
 	 * @return Booleano con el estado del mazo
 	 */
 	public boolean estaVacia() {
-		return (cont == 0);
+		return (cont < 0);
 	}
 	
 	/**
@@ -76,7 +83,7 @@ public class Mazo {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Mazo: %s", (estaVacia())? "No hay cartas en el mazo" : "" + cont);
+		return String.format("Mazo: %s", (estaVacia())? "No hay cartas en el mazo" : "" + (cont + 1));
 	}
 
 }
