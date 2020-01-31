@@ -41,7 +41,7 @@ public class ColumnaCartas {
 		else
 			result = false;
 		
-		return result;				
+		return result;
 	}
 
 }

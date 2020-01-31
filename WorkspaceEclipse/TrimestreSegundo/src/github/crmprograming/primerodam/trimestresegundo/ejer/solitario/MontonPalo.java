@@ -50,7 +50,7 @@ public class MontonPalo {
 	public boolean ponerCarta(Carta c) {
 		boolean result = true;
 		
-		if (cont < MAX_CARTAS // Queda espacio para poner más cartas
+		if (estaLleno() // Queda espacio para poner más cartas
 			&& ((cont == 0 && c.getNumero() == 1) // Si no hay cartas, aseguramos que c sea un uno
 				|| (cont > 0 && (cartas[cont - 1].getPalo().equals(c.getPalo())
 					&& cartas[cont - 1].getNumero() == c.getNumero() - 1)))) // Si hay cartas, aseguramos que sea mismo palo y la siguiente
@@ -59,6 +59,15 @@ public class MontonPalo {
 			result = false;
 		
 		return result;
+	}
+	
+	/**
+	 * Método encargado de indicar si el montón está lleno o no.
+	 * 
+	 * @return Booleano con el estado del montón
+	 */
+	public boolean estaLleno() {
+		return (cont < MAX_CARTAS);
 	}
 
 }
