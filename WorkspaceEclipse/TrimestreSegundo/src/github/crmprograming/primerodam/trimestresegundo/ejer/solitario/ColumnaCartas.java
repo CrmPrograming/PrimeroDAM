@@ -76,7 +76,7 @@ public class ColumnaCartas {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Columna: %s", (cont == 0)?"No hay cartas en ella" : cartas[cont - 1]);
+		return String.format("Columna: %s", (estaVacia())? "No hay cartas en ella" : cartas[cont - 1]);
 	}
 
 }

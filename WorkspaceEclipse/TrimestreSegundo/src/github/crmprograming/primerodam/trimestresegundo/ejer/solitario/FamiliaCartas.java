@@ -81,11 +81,12 @@ public class FamiliaCartas {
 	
 	/**
 	 * Método encargado de dar la última carta almacenada. En caso de
-	 * no haber ninguna carta, 
-	 * @return
+	 * no haber ninguna carta, devuelve null.
+	 * 
+	 * @return Instancia de la clase Carta o null
 	 */
 	public final Carta getCarta() {	
-		return (cont == 0)? null : cartas[cont - 1];
+		return (estaVacia())? null : cartas[cont - 1];
 	}
 	
 	/**
@@ -96,7 +97,7 @@ public class FamiliaCartas {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Familia: %s", (cont == 0)? "No hay cartas en ella" : cartas[cont - 1]);
+		return String.format("Familia: %s", (estaVacia())? "No hay cartas en ella" : cartas[cont - 1]);
 	}
 
 }

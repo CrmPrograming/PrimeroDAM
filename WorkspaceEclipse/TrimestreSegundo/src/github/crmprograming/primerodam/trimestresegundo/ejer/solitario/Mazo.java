@@ -42,20 +42,21 @@ public class Mazo {
 	
 	/**
 	 * Método encargado de extraer una carta al azar del mazo.
-	 * Si el mazo está vacío, lanzará una IllegalStateException.
+	 * Si el mazo está vacío, devolverá null.
 	 * 
-	 * @return Instancia de Carta sacada al azar. 
+	 * @return Instancia de Carta sacada al azar o null 
 	 */
 	public Carta sacarCarta() {
-		if (estaVacia())
-			throw new IllegalStateException("ERROR: Mazo de cartas vacío.");
+		Carta sacada = null;
+		int pos = -1;
 		
-		int pos = (int) (Math.random() * (cont + 1));
-		Carta sacada = cartas[pos];
+		if (!estaVacia()) {
+			pos = (int) (Math.random() * (cont + 1));
+			sacada = cartas[pos];
+			cartas[pos] = cartas[cont--];
+		}		
 		
-		cartas[pos] = cartas[cont--];		
-		
-		return sacada;		
+		return sacada;
 	}
 	
 	/**
@@ -64,7 +65,7 @@ public class Mazo {
 	 * @return Booleano con el estado del mazo
 	 */
 	public boolean estaVacia() {
-		return (cont < 0);
+		return (cont == 0);
 	}
 	
 	/**
@@ -75,7 +76,7 @@ public class Mazo {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Mazo: %d", cont);
+		return String.format("Mazo: %s", (estaVacia())? "No hay cartas en el mazo" : "" + cont);
 	}
 
 }
