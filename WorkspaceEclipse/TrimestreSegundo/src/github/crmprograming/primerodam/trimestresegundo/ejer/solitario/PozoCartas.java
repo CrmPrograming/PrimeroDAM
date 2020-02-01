@@ -47,7 +47,7 @@ public class PozoCartas {
 		Carta sacada = null;
 		
 		if (!estaVacia())
-			sacada = CARTAS[cont--];	
+			sacada = CARTAS[--cont];	
 		
 		return sacada;
 	}

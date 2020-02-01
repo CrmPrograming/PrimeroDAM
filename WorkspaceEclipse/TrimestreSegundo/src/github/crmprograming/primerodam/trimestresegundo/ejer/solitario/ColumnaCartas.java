@@ -45,12 +45,27 @@ public class ColumnaCartas {
 		// Mientras se tenga espacio y se pueda colocar la carta, se inserta
 		if (result &&
 				(estaVacia() || 
-				 (CARTAS[cont - 1].getNumero() == c.getNumero() + 1 && !CARTAS[cont - 1].getPalo().equals(c.getPalo()))))
+				 (getCarta().getNumero() == c.getNumero() + 1 && !getCarta().getPalo().equals(c.getPalo()))))
 			CARTAS[cont++] = c;
 		else
 			result = false;
 		
 		return result;
+	}
+	
+	/**
+	 * Método encargado de sacar la última carta almacenada. En caso de
+	 * no haber ninguna, retorna null.
+	 * 
+	 * @return Instancia de la clase Carta o null
+	 */
+	public Carta sacarCarta() {
+		Carta sacada = null;
+		
+		if (!estaVacia())
+			sacada = CARTAS[--cont];	
+		
+		return sacada;
 	}
 	
 	/**
@@ -79,6 +94,16 @@ public class ColumnaCartas {
 	 */
 	public boolean estaVacia() {
 		return (cont == 0);
+	}
+	
+	/**
+	 * Método encargado de dar la última carta almacenada. En caso de
+	 * no haber ninguna carta, devuelve null.
+	 * 
+	 * @return Instancia de la clase Carta o null
+	 */
+	public final Carta getCarta() {	
+		return (estaVacia())? null : CARTAS[cont - 1];
 	}
 	
 	/**
