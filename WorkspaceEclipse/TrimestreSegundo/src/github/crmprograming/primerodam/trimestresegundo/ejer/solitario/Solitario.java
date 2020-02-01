@@ -78,6 +78,7 @@ public class Solitario {
 		if (actual != null)
 			pozo.ponerCarta(actual);
 		if (mazoPartida.estaVacia()) {
+			System.out.println("- Mazo sin cartas. Moviendo cartas del pozo al mazo.");
 			mazoPartida.barajar(pozo.listaCartas());
 			pozo.vaciarPozo();
 		}
@@ -139,7 +140,7 @@ public class Solitario {
 			destino = in.nextLine().charAt(0);
 			
 			if (destino == 'f' || destino == 'F') {				
-				System.out.print("\n ¿En qué familia quiere colocarla? [1, 4]: ");
+				System.out.print("> ¿En qué familia quiere colocarla? [1, 4]: ");
 				posNueva = in.nextInt() - 1;
 				
 				if (posNueva >= 0 && posNueva < 4 && familias[posNueva].ponerCarta(c)) 
@@ -149,7 +150,7 @@ public class Solitario {
 					columnas[columnaOriginal].ponerCarta(c);					
 				}				
 			} else {
-				System.out.print("\n ¿En qué columna quiere colocarla? [1, 4]: ");
+				System.out.print("> ¿En qué columna quiere colocarla? [1, 4]: ");
 				posNueva = in.nextInt() - 1;
 				
 				if (posNueva >= 0 && posNueva < 4 && columnas[posNueva].ponerCarta(c)) 

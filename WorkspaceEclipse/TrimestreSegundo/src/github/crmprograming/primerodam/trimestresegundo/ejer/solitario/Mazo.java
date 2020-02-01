@@ -64,6 +64,7 @@ public class Mazo {
 	public void barajar(ArrayList<Carta> listado) {
 		for (cont = 0; cont < listado.size(); cont++)
 			CARTAS[cont] = listado.get(cont);
+		cont--;
 	}
 	
 	/**
