@@ -52,6 +52,10 @@ public class PozoCartas {
 		return sacada;
 	}
 	
+	/**
+	 * Método encargado de vaciar el pozo indicando que no quedan
+	 * cartas almacenadas en él.
+	 */
 	public void vaciarPozo() {
 		cont = 0;
 	}

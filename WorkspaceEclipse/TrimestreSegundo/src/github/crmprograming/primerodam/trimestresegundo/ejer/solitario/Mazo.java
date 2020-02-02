@@ -61,6 +61,12 @@ public class Mazo {
 		return sacada;
 	}
 	
+	/**
+	 * Método encargado de guardar en el mazo las cartas
+	 * almacenadas en la lista indicada por parámetro.
+	 * 
+	 * @param listado ArrayList de la clase Carta con las cartas a almacenar
+	 */
 	public void barajar(ArrayList<Carta> listado) {
 		for (cont = 0; cont < listado.size(); cont++)
 			CARTAS[cont] = listado.get(cont);

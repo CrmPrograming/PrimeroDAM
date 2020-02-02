@@ -3,13 +3,48 @@ package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase gestora de simular una partida de Solitario. Para ello, se debe
+ * invocar al único método público jugar().
+ * 
+ * Gestiona la interfaz por consola, además de regular el flujo de la partida.
+ * Un juego puede interrumpirse a mitad de partida y al acabar una se puede
+ * preguntar empezar una nueva.
+ * 
+ * @author César Ravelo Martínez
+ *
+ */
 public class Solitario {
 	
+	/**
+	 * Instancia de la clase Mazo gestora del mazo de cartas.
+	 */
 	private Mazo mazoPartida;
+	
+	/**
+	 * Tabla de ColumnaCartas donde se irán guardando las cartas que
+	 * no puedan ir en una familia, pero sí tengan lugar en columnas.
+	 */
 	private ColumnaCartas[] columnas;
+	
+	/**
+	 * Tabla de FamiliaCartas donde se irán almacenando las cartas ya colocadas
+	 * en sus correspondientes palos por orden ascendente.
+	 */
 	private FamiliaCartas[] familias;
+	
+	/**
+	 * Instancia de la clase Pozo donde ir guardando las cartas sin lugar posible.
+	 */
 	private PozoCartas pozo;
 	
+	/**
+	 * Método encargado de inicializar el objeto a una nueva partida desde cero:
+	 * 
+	 * - Mazo nuevo al completo barajado
+	 * - Columnas, Familias y Pozo nuevos creados
+	 * - Colocada una Carta del Mazo sacada al azar en cada columna 
+	 */
 	private void reset() {
 		int i;
 		mazoPartida = new Mazo();
@@ -19,10 +54,16 @@ public class Solitario {
 										new FamiliaCartas(), new FamiliaCartas()};
 		pozo = new PozoCartas();
 		
+		// Insertamos una carta en cada columna
 		for (i = 0; i < columnas.length; i++)
 			columnas[i].ponerCarta(mazoPartida.sacarCarta());		
 	}
 	
+	/**
+	 * Método encargado de mostrar el menú principal de la aplicación.
+	 * 
+	 * @param cActual Instancia de Carta con la carta actualmente robada del Mazo
+	 */
 	private void mostrarMenuPrincipal(Carta cActual) {
 		System.out.println("########### SOLITARIO ###########\n");
 		System.out.println("1) Mostrar Columnas");
@@ -36,14 +77,16 @@ public class Solitario {
 		System.out.print("> Seleccione una opción: ");
 	}
 	
+	/**
+	 * Método encargado de mostrar el contenido de todas las columnas.
+	 */
 	private void mostrarColumnas() {
 		ArrayList<ArrayList<Carta>> cols = new ArrayList<ArrayList<Carta>>();
 		int i, j;
 		
+		// Extraemos las columnas de cartas en un ArrayList para un mejor manejo
 		for (i = 0; i < columnas.length; i++)
-			cols.add(columnas[i].listaCartas());
-		
-		System.out.println("########### COLUMNAS ###########\n");		
+			cols.add(columnas[i].listaCartas());		
 		
 		for (i = 0; i < cols.size(); i++) {
 			System.out.printf("%s %d: ", "COL", i + 1);
@@ -55,14 +98,16 @@ public class Solitario {
 		System.out.println();		
 	}
 	
+	/**
+	 * Método encargado de mostrar el contenido de todas las familias de cartas.
+	 */
 	private void mostrarFamilias() {
 		ArrayList<ArrayList<Carta>> fam = new ArrayList<ArrayList<Carta>>();
 		int i, j;
 		
+		// Extraemos las familias de cartas en un ArrayList para un mejor manejo
 		for (i = 0; i < familias.length; i++)
-			fam.add(familias[i].listaCartas());
-		
-		System.out.println("########### FAMILIAS ###########\n");		
+			fam.add(familias[i].listaCartas());				
 		
 		for (i = 0; i < fam.size(); i++) {
 			System.out.printf("%s %d: ", "FAM", i + 1);
@@ -74,6 +119,18 @@ public class Solitario {
 		System.out.println();	
 	}
 	
+	/**
+	 * Método encargado de robar una carta del Mazo.
+	 * - Si la carta actualmente robada del mazo no es null,
+	 * se guardará en el Pozo.
+	 * 
+	 * - Si el Mazo está vacío, mostrará un mensaje indicando que
+	 * se mueven todas las cartas del Pozo al Mazo antes de poder sacar
+	 * una carta del mismo. En este caso, el Pozo quedará vacío.
+	 * 
+	 * @param actual Instancia de Carta con la carta actualmente robada
+	 * @return Instancia de Carta con la nueva carta robada
+	 */
 	private Carta robarCarta(Carta actual) {
 		if (actual != null)
 			pozo.ponerCarta(actual);
@@ -86,48 +143,49 @@ public class Solitario {
 		return mazoPartida.sacarCarta();		
 	}
 	
-	private boolean colocarCartaColumna(Scanner in, Carta actual) {
-		boolean insertada = false;
-		int col = -1;
+	/**
+	 * Método encargado de colocar una carta en una columna válida.
+	 * 
+	 * @param in
+	 * @param actual
+	 * @return Booleano con el estado de la inserción
+	 */
+	private boolean colocarCartaColumna(int col, Carta actual) {
+		boolean insertada = false;		
 		
-		System.out.println("######## COLOCAR EN COLUMNA ########\n");
-		
-		System.out.print("> Indique en qué columna quiere intentar colocar la carta [1, 4]: ");
-		col = in.nextInt() - 1;		
-		
-		if (col >= 0 && col < 4 && columnas[col].ponerCarta(actual)) {
-			System.out.println("- Carta colocada\n");
+		if (col >= 0 && col < columnas.length && columnas[col].ponerCarta(actual))			
 			insertada = true;
-		} else
-			System.out.println("- Columna no válida\n");
-		
+
 		return insertada;
 	}
 	
-	private boolean colocarCartaFamilia(Scanner in, Carta actual) {
-		boolean insertada = false;
-		int fam = -1;
+	/**
+	 * Método encargado de colocar una carta en una familia válida.
+	 * 
+	 * @param in
+	 * @param actual
+	 * @return Booleano con el estado de la inserción
+	 */
+	private boolean colocarCartaFamilia(int fam, Carta actual) {
+		boolean insertada = false;		
 		
-		System.out.println("######## COLOCAR EN FAMILIA ########\n");
-		
-		System.out.print("> Indique en qué familia quiere intentar colocar la carta [1, 4]: ");
-		fam = in.nextInt() - 1;
-		
-		if (fam >= 0 && fam < 4 && familias[fam].ponerCarta(actual)) {
-			System.out.println("- Carta colocada\n");
+		if (fam >= 0 && fam < familias.length && familias[fam].ponerCarta(actual))
 			insertada = true;
-		} else
-			System.out.println("- Columna no válida\n");
-		
+				
 		return insertada;
 	}
 	
+	/**
+	 * Método encargado de mover una carta desde una columna a una columna o familia válida.
+	 * 
+	 * @param in
+	 * @param actual
+	 * @return Booleano con el estado de la inserción
+	 */
 	private void moverCarta(Scanner in) {
 		int posNueva = -1, columnaOriginal = -1;
 		Carta c;
-		char destino = 'c';
-		
-		System.out.println("######## MOVER CARTA ########\n");
+		char destino = 'c';	
 		
 		System.out.print("> Indique de qué columna quiere mover la carta [1, 4]: ");
 		columnaOriginal = in.nextInt() - 1;
@@ -166,10 +224,19 @@ public class Solitario {
 		}
 	}
 	
+	/**
+	 * Método encargado de calcular si la partida ha terminado con victoria.
+	 * Se considera victoria cuando todas las familias tienen las cartas 
+	 * del mismo palo y en orden ascendente.
+	 * 
+	 * @return Booleano con el indicador del estado de la partida
+	 */
 	private boolean comprobarVictoria() {
 		boolean resultado = true;
 		int i = 0;
 		
+		// Si todas las familias se encuentran llenas,
+		// significa que la partida se acabó y resultó en victoria
 		while (i < familias.length && resultado) {
 			resultado = resultado && familias[i].estaLleno();
 			i++;
@@ -178,7 +245,18 @@ public class Solitario {
 		return resultado;
 	}
 
-	// TODO: Hacer opción de menú "Sacar carta de columna"
+	/**
+	 * Método encargado de gestionar la simulación de partidas de solitario.
+	 * Único método público, se le debe invocar a él para empezar una partida.
+	 * 
+	 * Una partida terminará por dos razones:
+	 * - El usuario indica finalizar en el menú.
+	 * - Una partida acabó como ganada y no quiere jugar otra
+	 * 
+	 * Cada vez que empieza una nueva partida, se reinicia el estado de todo
+	 * el sistema (Mazo, Pozo, Familia y Columna) mediante la invocación
+	 * al método reset().
+	 */
 	public void jugar() {
 		final int ESTADO_TERMINAR = 0, ESTADO_SEGUIR = 1, ESTADO_GANADA = 2;
 		int modo = 0, opcion = 0;
@@ -201,23 +279,46 @@ public class Solitario {
 						modo = ESTADO_TERMINAR;
 						break;
 					case 1: // Mostrar Columnas
+						System.out.println("########### COLUMNAS ###########\n");						
 						mostrarColumnas();
 						break;
 					case 2: // Mostrar Familias
+						System.out.println("########### FAMILIAS ###########\n");
 						mostrarFamilias();
 						break;
 					case 3: // Robar Carta del Mazo
 						actual = robarCarta(actual);
 						break;
 					case 4: // Colocar carta en Columna
-						if (colocarCartaColumna(in, actual))
-							actual = null;
+						System.out.println("######## COLOCAR EN COLUMNA ########\n");
+						
+						if (actual != null) {
+							System.out.print("> Indique en qué columna quiere intentar colocar la carta [1, 4]: ");						
+							
+							if (colocarCartaColumna(in.nextInt() - 1, actual)) {
+								actual = null;
+								System.out.println("- Carta colocada\n");
+							} else
+								System.out.println("- Columna no válida\n");
+						} else
+							System.out.println("- No hay ninguna carta actualmente robada\n");
 						break;
 					case 5: // Colocar Carta en Familia
-						if (colocarCartaFamilia(in, actual))
-							actual = null;
+						System.out.println("######## COLOCAR EN FAMILIA ########\n");
+						
+						if (actual != null) {
+							System.out.print("> Indique en qué familia quiere intentar colocar la carta [1, 4]: ");
+							if (colocarCartaFamilia(in.nextInt() - 1, actual)) {
+								actual = null;
+								System.out.println("- Carta colocada\n");
+							} else {
+								System.out.println("- Familia no válida\n");
+							}
+						} else
+							System.out.println("- No hay ninguna carta actualmente robada\n");
 						break;
 					case 6: // Mover Carta de Columna a Columna o Familia
+						System.out.println("######## MOVER CARTA ########\n");
 						moverCarta(in);
 						break;
 					default:
