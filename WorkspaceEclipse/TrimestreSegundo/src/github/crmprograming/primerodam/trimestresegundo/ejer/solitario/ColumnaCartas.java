@@ -74,7 +74,7 @@ public class ColumnaCartas {
 	 * 
 	 * @return ArrayList<Carta> listado de cartas contenidas
 	 */
-	public ArrayList<Carta> listaCartas() {		
+	public ArrayList<Carta> listaCartas() {
 		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
 	}
 	
@@ -102,7 +102,7 @@ public class ColumnaCartas {
 	 * 
 	 * @return Instancia de la clase Carta o null
 	 */
-	public final Carta getCarta() {	
+	public final Carta getCarta() {
 		return (estaVacia())? null : CARTAS[cont - 1];
 	}
 	

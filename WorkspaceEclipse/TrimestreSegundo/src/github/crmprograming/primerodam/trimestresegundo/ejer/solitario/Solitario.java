@@ -56,7 +56,7 @@ public class Solitario {
 		
 		// Insertamos una carta en cada columna
 		for (i = 0; i < columnas.length; i++)
-			columnas[i].ponerCarta(mazoPartida.sacarCarta());		
+			columnas[i].ponerCarta(mazoPartida.sacarCarta());
 	}
 	
 	/**
@@ -86,7 +86,7 @@ public class Solitario {
 		
 		// Extraemos las columnas de cartas en un ArrayList para un mejor manejo
 		for (i = 0; i < columnas.length; i++)
-			cols.add(columnas[i].listaCartas());		
+			cols.add(columnas[i].listaCartas());
 		
 		for (i = 0; i < cols.size(); i++) {
 			System.out.printf("%s %d: ", "COL", i + 1);
@@ -95,7 +95,7 @@ public class Solitario {
 			System.out.println("/");
 		}
 		
-		System.out.println();		
+		System.out.println();
 	}
 	
 	/**
@@ -107,7 +107,7 @@ public class Solitario {
 		
 		// Extraemos las familias de cartas en un ArrayList para un mejor manejo
 		for (i = 0; i < familias.length; i++)
-			fam.add(familias[i].listaCartas());				
+			fam.add(familias[i].listaCartas());
 		
 		for (i = 0; i < fam.size(); i++) {
 			System.out.printf("%s %d: ", "FAM", i + 1);
@@ -116,7 +116,7 @@ public class Solitario {
 			System.out.println("/");
 		}
 		
-		System.out.println();	
+		System.out.println();
 	}
 	
 	/**
@@ -140,20 +140,20 @@ public class Solitario {
 			pozo.vaciarPozo();
 		}
 		
-		return mazoPartida.sacarCarta();		
+		return mazoPartida.sacarCarta();
 	}
 	
 	/**
 	 * Método encargado de colocar una carta en una columna válida.
 	 * 
-	 * @param in
-	 * @param actual
+	 * @param col Entero con el indicador de la columna donde se intentará insertar la carta
+	 * @param actual Instancia de Carta con la carta a colocar
 	 * @return Booleano con el estado de la inserción
 	 */
 	private boolean colocarCartaColumna(int col, Carta actual) {
-		boolean insertada = false;		
+		boolean insertada = false;
 		
-		if (col >= 0 && col < columnas.length && columnas[col].ponerCarta(actual))			
+		if (col >= 0 && col < columnas.length && columnas[col].ponerCarta(actual))
 			insertada = true;
 
 		return insertada;
@@ -162,8 +162,8 @@ public class Solitario {
 	/**
 	 * Método encargado de colocar una carta en una familia válida.
 	 * 
-	 * @param in
-	 * @param actual
+	 * @param fam Entero con el indicador de la columna donde se intentará insertar la carta
+	 * @param actual Instancia de Carta con la carta a colocar
 	 * @return Booleano con el estado de la inserción
 	 */
 	private boolean colocarCartaFamilia(int fam, Carta actual) {
@@ -177,9 +177,18 @@ public class Solitario {
 	
 	/**
 	 * Método encargado de mover una carta desde una columna a una columna o familia válida.
+	 * Para ello, preguntará al usuario:
 	 * 
-	 * @param in
-	 * @param actual
+	 * - Desde qué columna se quiere mover la carta
+	 * - A dónde se quiere mover la carta, ¿columna o familia?
+	 * - Indicador de la columna o familia destino
+	 * 
+	 * NOTA: A la hora de indicar si se mueve a columna o familia,
+	 * por defecto se asume que se moverá a una columna. De esta manera
+	 * si se introduce mal el caracter, se intentará insertar por
+	 * defecto en una columna, sea la misma u otra distinta.
+	 * 
+	 * @param in Instancia de Scanner dedicado a la petición de datos para el movimiento.
 	 * @return Booleano con el estado de la inserción
 	 */
 	private void moverCarta(Scanner in) {
@@ -193,11 +202,13 @@ public class Solitario {
 		if (columnaOriginal >= 0 && columnaOriginal < 4 && !columnas[columnaOriginal].estaVacia()) {
 			c = columnas[columnaOriginal].sacarCarta();
 			
+			// A dónde se quiere mover la carta, ¿columna o familia?
 			System.out.print("> ¿Dónde quiere moverla? (Columna|Familia): ");
 			in.nextLine();
 			destino = in.nextLine().charAt(0);
 			
-			if (destino == 'f' || destino == 'F') {				
+			// Mover la carta a una familia
+			if (destino == 'f' || destino == 'F') {
 				System.out.print("> ¿En qué familia quiere colocarla? [1, 4]: ");
 				posNueva = in.nextInt() - 1;
 				
@@ -205,9 +216,10 @@ public class Solitario {
 					System.out.println("- Carta colocada\n");
 				else {
 					System.out.println("- Movimiento no válido\n");
-					columnas[columnaOriginal].ponerCarta(c);					
-				}				
+					columnas[columnaOriginal].ponerCarta(c);
+				}
 			} else {
+				// Mover la carta a una columna
 				System.out.print("> ¿En qué columna quiere colocarla? [1, 4]: ");
 				posNueva = in.nextInt() - 1;
 				
@@ -215,10 +227,10 @@ public class Solitario {
 					System.out.println("- Carta colocada\n");
 				else {
 					System.out.println("- Movimiento no válido\n");
-					columnas[columnaOriginal].ponerCarta(c);					
+					columnas[columnaOriginal].ponerCarta(c);
 				}
 				
-			}			
+			}
 		} else {
 			System.out.println("- Movimiento no válido\n");
 		}
@@ -240,7 +252,7 @@ public class Solitario {
 		while (i < familias.length && resultado) {
 			resultado = resultado && familias[i].estaLleno();
 			i++;
-		}				
+		}
 		
 		return resultado;
 	}
@@ -279,7 +291,7 @@ public class Solitario {
 						modo = ESTADO_TERMINAR;
 						break;
 					case 1: // Mostrar Columnas
-						System.out.println("########### COLUMNAS ###########\n");						
+						System.out.println("########### COLUMNAS ###########\n");
 						mostrarColumnas();
 						break;
 					case 2: // Mostrar Familias
@@ -293,7 +305,7 @@ public class Solitario {
 						System.out.println("######## COLOCAR EN COLUMNA ########\n");
 						
 						if (actual != null) {
-							System.out.print("> Indique en qué columna quiere intentar colocar la carta [1, 4]: ");						
+							System.out.print("> Indique en qué columna quiere intentar colocar la carta [1, 4]: ");
 							
 							if (colocarCartaColumna(in.nextInt() - 1, actual)) {
 								actual = null;
@@ -322,7 +334,7 @@ public class Solitario {
 						moverCarta(in);
 						break;
 					default:
-						System.out.println("- Opción introducida no válida");						
+						System.out.println("- Opción introducida no válida");
 				}
 				
 				if (comprobarVictoria())

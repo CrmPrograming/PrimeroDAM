@@ -46,7 +46,7 @@ public class FamiliaCartas {
 		
 		if (result // Queda espacio para poner más cartas
 			&& ((estaVacia() && c.getNumero() == 1) // Si no hay cartas, aseguramos que c sea un uno
-				|| (cont > 0 && (getCarta().getPalo().equals(c.getPalo())
+				|| (!estaVacia() && (getCarta().getPalo().equals(c.getPalo())
 					&& getCarta().getNumero() == c.getNumero() - 1)))) // Si hay cartas, aseguramos que sea mismo palo y la siguiente
 			CARTAS[cont++] = c;
 		else
@@ -79,7 +79,7 @@ public class FamiliaCartas {
 	 * 
 	 * @return ArrayList<Carta> listado de cartas contenidas
 	 */
-	public ArrayList<Carta> listaCartas() {		
+	public ArrayList<Carta> listaCartas() {
 		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
 	}
 	

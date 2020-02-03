@@ -28,7 +28,7 @@ public class Mazo {
 	 * Constructor de la clase Mazo el cual inicializará sus valores con
 	 * todas las cartas existentes de cada palo hasta tener el mazo lleno.
 	 */
-	public Mazo() {		
+	public Mazo() {
 		int i, j;
 		String[] palos = {Carta.PALO_BASTOS, Carta.PALO_COPAS, Carta.PALO_ESPADAS, Carta.PALO_OROS};
 		CARTAS = new Carta[MAX_CARTAS];
