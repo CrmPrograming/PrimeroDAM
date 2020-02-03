@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.solitario;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class PozoCartas {
 	/**
 	 * Tabla de instancias de la clase Carta con las cartas almacenadas.
 	 */
-	private final Carta[] CARTAS = new Carta[MAX_CARTAS];
+	private Carta[] cartas = new Carta[MAX_CARTAS];
 	
 	/**
 	 * Entero con la cantidad de cartas almacenadas en la familia de cartas.
@@ -34,7 +34,7 @@ public class PozoCartas {
 	 * @param c Instancia de la clase Carta a almacenar
 	 */
 	public void ponerCarta(Carta c) {
-		CARTAS[cont++] = c;
+		cartas[cont++] = c;
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class PozoCartas {
 		Carta sacada = null;
 		
 		if (!estaVacia())
-			sacada = CARTAS[--cont];
+			sacada = cartas[--cont];
 		
 		return sacada;
 	}
@@ -67,7 +67,7 @@ public class PozoCartas {
 	 * @return ArrayList<Carta> listado de cartas contenidas
 	 */
 	public ArrayList<Carta> listaCartas() {
-		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
+		return new ArrayList<Carta>(Arrays.asList(cartas).subList(0, cont));
 	}
 	
 	/**
@@ -85,8 +85,8 @@ public class PozoCartas {
 	 * 
 	 * @return Instancia de la clase Carta o null
 	 */
-	public final Carta getCarta() {	
-		return (estaVacia())? null : CARTAS[cont - 1];
+	public Carta getCarta() {	
+		return (estaVacia())? null : cartas[cont - 1];
 	}
 	
 	/**

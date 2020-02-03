@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.solitario;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -89,7 +89,7 @@ public class FamiliaCartas {
 	 * 
 	 * @return Instancia de la clase Carta o null
 	 */
-	public final Carta getCarta() {	
+	public Carta getCarta() {	
 		return (estaVacia())? null : CARTAS[cont - 1];
 	}
 	

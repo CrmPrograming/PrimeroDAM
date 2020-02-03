@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.solitario;
 
 import java.util.ArrayList;
 import java.util.Scanner;

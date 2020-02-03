@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.solitario;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ public class ColumnaCartas {
 	 * Tabla de instancias de la clase Carta, controla las cartas
 	 * almacenadas en el objeto.
 	 */
-	private final Carta[] CARTAS = new Carta[MAX_CARTAS]; // [1, 10]
+	private Carta[] cartas = new Carta[MAX_CARTAS]; // [1, 10]
 	
 	/**
 	 * Entero con la cantidad de cartas contenidas en la columna.
@@ -46,7 +46,7 @@ public class ColumnaCartas {
 		if (result &&
 				(estaVacia() || 
 				 (getCarta().getNumero() == c.getNumero() + 1 && !getCarta().getPalo().equals(c.getPalo()))))
-			CARTAS[cont++] = c;
+			cartas[cont++] = c;
 		else
 			result = false;
 		
@@ -63,7 +63,7 @@ public class ColumnaCartas {
 		Carta sacada = null;
 		
 		if (!estaVacia())
-			sacada = CARTAS[--cont];	
+			sacada = cartas[--cont];	
 		
 		return sacada;
 	}
@@ -75,7 +75,7 @@ public class ColumnaCartas {
 	 * @return ArrayList<Carta> listado de cartas contenidas
 	 */
 	public ArrayList<Carta> listaCartas() {
-		return new ArrayList<Carta>(Arrays.asList(CARTAS).subList(0, cont));
+		return new ArrayList<Carta>(Arrays.asList(cartas).subList(0, cont));
 	}
 	
 	/**
@@ -102,8 +102,8 @@ public class ColumnaCartas {
 	 * 
 	 * @return Instancia de la clase Carta o null
 	 */
-	public final Carta getCarta() {
-		return (estaVacia())? null : CARTAS[cont - 1];
+	public Carta getCarta() {
+		return (estaVacia())? null : cartas[cont - 1];
 	}
 	
 	/**
@@ -114,7 +114,7 @@ public class ColumnaCartas {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Columna: %s", (estaVacia())? "No hay cartas en ella" : CARTAS[cont - 1]);
+		return String.format("Columna: %s", (estaVacia())? "No hay cartas en ella" : cartas[cont - 1]);
 	}
 
 }

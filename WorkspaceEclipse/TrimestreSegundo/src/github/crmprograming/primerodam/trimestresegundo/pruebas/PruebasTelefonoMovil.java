@@ -2,7 +2,7 @@ package github.crmprograming.primerodam.trimestresegundo.pruebas;
 
 import java.util.Scanner;
 
-import github.crmprograming.primerodam.trimestresegundo.ejer.comunicaciones.TelefonoMovil;
+import github.crmprograming.primerodam.trimestresegundo.ejerc.comunicaciones.TelefonoMovil;
 
 public class PruebasTelefonoMovil {
 	

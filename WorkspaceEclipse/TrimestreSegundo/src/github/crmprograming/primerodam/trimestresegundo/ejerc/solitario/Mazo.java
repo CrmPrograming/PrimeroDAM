@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.solitario;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.solitario;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ public class Mazo {
 	/**
 	 * Tabla de objetos de la clase Carta con las cartas almacenadas en el mazo.
 	 */
-	private Carta[] CARTAS;
+	private Carta[] cartas;
 	
 	/**
 	 * Entero con la posición de la última carta existente en el mazo.
@@ -31,13 +31,13 @@ public class Mazo {
 	public Mazo() {
 		int i, j;
 		String[] palos = {Carta.PALO_BASTOS, Carta.PALO_COPAS, Carta.PALO_ESPADAS, Carta.PALO_OROS};
-		CARTAS = new Carta[MAX_CARTAS];
+		cartas = new Carta[MAX_CARTAS];
 		
 		for (i = 0; i < palos.length; i++) {
 			for (j = 1; j < 8; j++)
-				CARTAS[cont++] = new Carta(j, palos[i]);
+				cartas[cont++] = new Carta(j, palos[i]);
 			for (j = 10; j <= 12; j++)
-				CARTAS[cont++] = new Carta(j, palos[i]);
+				cartas[cont++] = new Carta(j, palos[i]);
 		}
 		cont--;
 	}
@@ -54,8 +54,8 @@ public class Mazo {
 		
 		if (!estaVacia()) {
 			pos = (int) (Math.random() * (cont + 1));
-			sacada = CARTAS[pos];
-			CARTAS[pos] = CARTAS[cont--];
+			sacada = cartas[pos];
+			cartas[pos] = cartas[cont--];
 		}		
 		
 		return sacada;
@@ -69,7 +69,7 @@ public class Mazo {
 	 */
 	public void barajar(ArrayList<Carta> listado) {
 		for (cont = 0; cont < listado.size(); cont++)
-			CARTAS[cont] = listado.get(cont);
+			cartas[cont] = listado.get(cont);
 		cont--;
 	}
 	

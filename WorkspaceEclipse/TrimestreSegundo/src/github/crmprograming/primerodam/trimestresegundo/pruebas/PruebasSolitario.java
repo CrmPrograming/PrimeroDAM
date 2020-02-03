@@ -1,6 +1,6 @@
 package github.crmprograming.primerodam.trimestresegundo.pruebas;
 
-import github.crmprograming.primerodam.trimestresegundo.ejer.solitario.*;
+import github.crmprograming.primerodam.trimestresegundo.ejerc.solitario.*;
 
 public class PruebasSolitario {
 

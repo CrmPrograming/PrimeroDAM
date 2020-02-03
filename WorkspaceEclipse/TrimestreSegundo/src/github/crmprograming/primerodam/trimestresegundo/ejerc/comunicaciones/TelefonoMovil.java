@@ -1,4 +1,4 @@
-package github.crmprograming.primerodam.trimestresegundo.ejer.comunicaciones;
+package github.crmprograming.primerodam.trimestresegundo.ejerc.comunicaciones;
 
 import java.util.ArrayList;
 
