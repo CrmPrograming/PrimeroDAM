@@ -75,7 +75,7 @@ public class PozoCartas {
 	 * 
 	 * @return Booleano con el estado de la familia
 	 */
-	private boolean estaVacia() {
+	public boolean estaVacia() {
 		return (cont == 0);
 	}
 	
