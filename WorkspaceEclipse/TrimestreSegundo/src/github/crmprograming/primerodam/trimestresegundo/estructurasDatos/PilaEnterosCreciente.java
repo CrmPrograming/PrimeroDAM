@@ -28,7 +28,7 @@ public class PilaEnterosCreciente extends PilaEnteros {
 	 * @param x Entero con el valor a almacenar
 	 */
 	public void apilar(int x) {
-		if (x < cima())
+		if (!vacia() && x < cima())
 			throw new IllegalStateException("ERROR. Valor dado superior al último en la pila");
 		
 		super.apilar(x);
