@@ -99,6 +99,15 @@ public class PilaEnteros {
 	}
 	
 	/**
+	 * Método encargado de obtener el valor último de la pila.
+	 * 
+	 * @return Entero con el último elemento almacenado
+	 */
+	public int cima() {
+		return datos[cima];
+	}
+	
+	/**
 	 * Sobrecarga del método toString encargado de mostrar el estado del objeto con el
 	 * siguiente formato:
 	 * 
