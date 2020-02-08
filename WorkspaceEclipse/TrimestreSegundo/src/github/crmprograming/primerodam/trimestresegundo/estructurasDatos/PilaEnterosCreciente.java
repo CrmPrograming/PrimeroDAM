@@ -17,9 +17,8 @@ public class PilaEnterosCreciente extends PilaEnteros {
 	 */
 	public PilaEnterosCreciente(int tam) {
 		super(tam);
-	}
+	}	
 	
-	@Override
 	/**
 	 * Método encargado de insertar un valor al final de la pila.
 	 * Si la pila se encuentra llena o el valor es menor
@@ -27,6 +26,7 @@ public class PilaEnterosCreciente extends PilaEnteros {
 	 * 
 	 * @param x Entero con el valor a almacenar
 	 */
+	@Override
 	public void apilar(int x) {
 		if (!vacia() && x < cima())
 			throw new IllegalStateException("ERROR. Valor dado superior al último en la pila");
