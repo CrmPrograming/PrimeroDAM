@@ -24,13 +24,24 @@ public class Tranvia {
 	
 	public int subir(Pasajero p, int vagon) {
 		int i = vagon - 1;
+		boolean ubicado = false;
 		
 		if (i < 0 || i >= vagones.length)
 			throw new RuntimeException("ERROR: El vagón solicitado no existe.");
 		
-				
+		do {
+			try {
+				vagones[i % vagones.length].subir(p);
+				ubicado = true;
+			} catch(Exception e) {
+				i++;
+			}			
+		} while (!ubicado && i % vagones.length != vagon - 1);
 		
-		return i;
+		if (!ubicado)
+			throw new RuntimeException("ERROR: No quedan vagones libres para ubicar al pasajero.");
+		
+		return i % vagones.length;
 	}
 	
 }
