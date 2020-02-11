@@ -90,7 +90,7 @@ public class Tranvia {
 		if (!ubicado)
 			throw new RuntimeException("ERROR: No quedan vagones libres para ubicar al pasajero.");
 		
-		return i % vagones.length;
+		return i + 1;
 	}
 	
 }
