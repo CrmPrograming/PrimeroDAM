@@ -80,12 +80,12 @@ public class Tranvia {
 		// Mientras queden vagones, buscamos un asiento para el pasajero
 		do {
 			try {
-				vagones[i % vagones.length].subir(p);
+				vagones[i].subir(p);
 				ubicado = true;
 			} catch(Exception e) {
-				i++;
+				i = (i + 1) % vagones.length;
 			}			
-		} while (!ubicado && i % vagones.length != vagon - 1);	
+		} while (!ubicado && i != vagon - 1);	
 
 		if (!ubicado)
 			throw new RuntimeException("ERROR: No quedan vagones libres para ubicar al pasajero.");
