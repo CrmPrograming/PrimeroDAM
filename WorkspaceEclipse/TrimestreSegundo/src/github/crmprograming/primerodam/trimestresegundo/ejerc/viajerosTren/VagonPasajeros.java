@@ -47,6 +47,9 @@ public class VagonPasajeros {
 	 * @param pasajero Instancia de Pasajero a almacenar
 	 */
 	public void subir(Pasajero pasajero) {
+		if (pasajero == null)
+			throw new RuntimeException("ERROR: Intento de subir un pasajero nulo.");
+		
 		int i = 0;
 		
 		while (i < asientos.length && asientos[i] != null)
