@@ -94,7 +94,7 @@ public class Tranvia {
 			} catch(Exception e) {
 				i++;
 			}
-		} while (!ubicado && i % vagones.length != vagon);
+		} while (!ubicado && i % vagones.length != vagon - 1);
 		
 		if (!ubicado)
 			throw new RuntimeException("ERROR: No quedan vagones libres para ubicar al pasajero.");
