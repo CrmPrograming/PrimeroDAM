@@ -70,6 +70,9 @@ public class Vagon {
 	 * @param persona Instancia de Persona a almacenar
 	 */
 	public void subir(Persona persona) {
+		if (persona == null)
+			throw new RuntimeException("ERROR: Intento de subir una persona nula.");
+		
 		int i = 0;
 		
 		while (i < asientos.length && asientos[i] != null)
