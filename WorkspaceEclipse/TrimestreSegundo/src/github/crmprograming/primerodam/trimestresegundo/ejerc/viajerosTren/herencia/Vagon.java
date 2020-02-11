@@ -2,7 +2,31 @@ package github.crmprograming.primerodam.trimestresegundo.ejerc.viajerosTren.here
 
 /**
  * Clase gestora de un vagón genérico, junto
- * con sus métodos asociados al movimiento de pasajeros. 
+ * con sus métodos asociados al movimiento de pasajeros.
+ * 
+ * Las personas se almacenan según la siguiente lógica:
+ * 
+ * - Las personas se colocan de manera consecutiva, una tras otra,
+ * en el primer hueco libre que se encuentre.
+ * - Al extraer una persona del vagón, se dejará su hueco libre
+ * disponible para otro pasajero.
+ * 
+ * A modo de ejemplo, supongamos el siguiente estado de valores:
+ * 
+ * ["Pedro", "Paco", "Laura", "Anna", null, null]
+ * 
+ * Si queremos insertar a "Carlos", iría en la última posición:
+ * 
+ * ["Pedro", "Paco", "Laura", "Anna", "Carlos", null]
+ * 
+ * Ahora queremos extraer a "Paco", quedando de la siguiente manera:
+ * 
+ * ["Pedro", null, "Laura", "Anna", "Carlos", null]
+ * 
+ * Si finalmente fueramos a insertar a "Helena", se colocaría en la
+ * primera posición libre:
+ * 
+ * ["Pedro", "Helena", "Laura", "Anna", "Carlos", null]
  * 
  * @author César Ravelo Martínez
  */
