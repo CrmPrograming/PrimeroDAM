@@ -67,6 +67,9 @@ public class Tranvia {
 	 * @return Entero con la posición del vagón donde se guardó el pasajero
 	 */
 	public int subir(Pasajero p, int vagon) {
+		if (p == null)
+			throw new RuntimeException("ERROR: Intento de insertar una persona nula.");
+		
 		int i = vagon - 1;
 		boolean ubicado = false;
 		
