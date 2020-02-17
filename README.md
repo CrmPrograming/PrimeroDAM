@@ -1,5 +1,3 @@
-![logo_IES_DomingoPerezMinik](https://user-images.githubusercontent.com/3464624/74527346-52cc7b80-4f1d-11ea-9341-86e5707e6377.jpg)
-
 Repositorio con el código fuente de todo lo dado en el primer año del ciclo formativo de grado superior en **Diseño de Aplicaciones Multiplataforma** en el centro **[IES Domingo Pérez Minik](https://www.iesdomingoperezminik.es/wordpress/)**. 
 
 Se divide en las siguientes secciones:
