@@ -1,7 +1,7 @@
 package github.crmprograming.primerodam.trimestresegundo.ejerc.figuras;
 
 /**
- * Clase gestora de triángulos. Se caracteriza por:
+ * Clase gestora de triángulos isósceles. Se caracteriza por:
  * - Estar formado por su base y su altura.
  * - Capaz de calcular su área: base * altura / 2. 
  * 
@@ -43,12 +43,30 @@ public class Triangulo extends Figura {
 	
 	/**
 	 * Sobreescritura del método area heredado de la clase Figura.
+	 * La fórmula empleada es:
 	 * 
-	 * @return Long con el área correspondiente de la figura
+	 * base * SQRT(altura^2 - base^2 ) / 2
+	 * 
+	 * @return double con el área correspondiente de la figura
 	 */
 	@Override
-	public long area() {
-		return getBase() * getAltura() / 2l;
+	public double area() {
+		return (getBase() * Math.sqrt(Math.pow(getAltura(), 2d) - Math.pow(getBase(), 2d) / 4d)) / 2d;
+	}
+	
+	/**
+	 * Sobreescritura del método perimetro heredado de la clase Figura.
+	 * Para ello, antes tenemos que calcular el valor de los lados iguales
+	 * aplicando el Teorema de Pitágoras.
+	 * 
+	 * @return double con el perímetro correspondiente de la figura
+	 */
+	@Override
+	public double perimetro() {
+		double b = getBase() / 2l;
+		
+		// Aplicamos Teorema de Pitágoras para calcular el perímetro
+		return getBase() + (Math.sqrt(Math.pow(b, 2) + Math.pow(getAltura(), 2))) * 2;
 	}
 
 	/**
