@@ -47,14 +47,24 @@ public class Rectangulo extends Figura {
 	 * @return Long con el área correspondiente de la figura
 	 */
 	@Override
-	public long area() {		
+	public double area() {		
 		return getL1() * getL2();
+	}
+	
+	/**
+	 * Sobreescritura del método perimetro heredado de la clase Figura.
+	 * 
+	 * @return double con el perímetro correspondiente de la figura
+	 */
+	@Override
+	public double perimetro() {
+		return getL1() * 2 + getL2() * 2;
 	}
 
 	/**
 	 * Método getter del lado 1 del rectángulo.
 	 * 
-	 * @return Long con la medida del lado 1 del rectángulo.
+	 * @return long con la medida del lado 1 del rectángulo.
 	 */
 	public long getL1() {
 		return l1;
@@ -63,7 +73,7 @@ public class Rectangulo extends Figura {
 	/**
 	 * Método getter del lado 2 del rectángulo.
 	 * 
-	 * @return Long con la medida del lado 2 del rectángulo.
+	 * @return long con la medida del lado 2 del rectángulo.
 	 */
 	public long getL2() {
 		return l2;

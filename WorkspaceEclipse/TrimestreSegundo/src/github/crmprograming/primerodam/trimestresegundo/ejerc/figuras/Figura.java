@@ -38,9 +38,18 @@ public abstract class Figura {
 	 * Cada especificación de Figura deberá implementarlo en base
 	 * al método de cálculo asociado a dicha figura geométrica.
 	 * 
-	 * @return Long con el área correspondiente de la figura
+	 * @return double con el área correspondiente de la figura
 	 */
-	public abstract long area();
+	public abstract double area();
+	
+	/**
+	 * Método abstracto para el cálculo del perímetro de una Figura.
+	 * Cada especificación de Figura deberá implementarlo en base
+	 * al método de cálculo asociado a dicha figura geométrica.
+	 * 
+	 * @return double con el perímetro correspondiente de la figura
+	 */
+	public abstract double perimetro();
 
 	/**
 	 * Método getter del atributo x.
