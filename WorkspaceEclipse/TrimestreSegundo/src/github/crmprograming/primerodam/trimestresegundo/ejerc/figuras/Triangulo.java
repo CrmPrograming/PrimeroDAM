@@ -63,10 +63,10 @@ public class Triangulo extends Figura {
 	 */
 	@Override
 	public double perimetro() {
-		double b = getBase() / 2l;
+		double b = getBase() / 2d;
 		
 		// Aplicamos Teorema de Pitágoras para calcular el perímetro
-		return getBase() + (Math.sqrt(Math.pow(b, 2) + Math.pow(getAltura(), 2))) * 2;
+		return getBase() + (Math.sqrt(Math.pow(b, 2d) + Math.pow(getAltura(), 2d))) * 2d;
 	}
 
 	/**
