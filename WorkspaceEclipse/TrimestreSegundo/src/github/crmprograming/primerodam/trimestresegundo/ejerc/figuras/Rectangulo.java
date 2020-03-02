@@ -60,6 +60,12 @@ public class Rectangulo extends Figura {
 	public double perimetro() {
 		return getL1() * 2 + getL2() * 2;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return (this == obj) ||
+				((obj instanceof Rectangulo) && (getL1() == ((Rectangulo) obj).getL1() && getL2() == ((Rectangulo) obj).getL2()));
+	}
 
 	/**
 	 * Método getter del lado 1 del rectángulo.

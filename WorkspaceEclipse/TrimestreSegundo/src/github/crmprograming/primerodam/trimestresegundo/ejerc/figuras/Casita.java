@@ -66,5 +66,19 @@ public class Casita extends Figura {
 		
 		return result - tejado.getBase() - cuerpo.getL1();
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return (this == obj) ||
+				((obj instanceof Casita) && (getCuerpo().equals(((Casita) obj).getCuerpo()) && getTejado().equals(((Casita) obj).getTejado())));
+	}
+	
+	public Rectangulo getCuerpo() {
+		return cuerpo;
+	}
+	
+	public Triangulo getTejado() {
+		return tejado;
+	}
 
 }

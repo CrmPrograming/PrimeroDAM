@@ -68,6 +68,12 @@ public class Triangulo extends Figura {
 		// Aplicamos Teorema de Pitágoras para calcular el perímetro
 		return getBase() + (Math.sqrt(Math.pow(b, 2d) + Math.pow(getAltura(), 2d))) * 2d;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return (this == obj) ||
+				((obj instanceof Triangulo) && (getBase() == ((Triangulo) obj).getBase() && getAltura() == ((Triangulo) obj).getAltura()));
+	}
 
 	/**
 	 * Método getter de la base del triángulo.

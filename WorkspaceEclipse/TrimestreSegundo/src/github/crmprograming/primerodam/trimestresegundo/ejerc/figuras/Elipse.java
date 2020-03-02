@@ -65,6 +65,12 @@ public class Elipse extends Figura {
 	public double perimetro() {		
 		return 2 * Math.PI * Math.sqrt((Math.pow(getRadioMayor(), 2) + Math.pow(getRadioMayor(), 2)) / 2);
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return (this == obj) || 
+				((obj instanceof Elipse) && (getRadioMayor() == ((Elipse) obj).getRadioMayor() && getRadioMenor() == ((Elipse) obj).getRadioMenor()));
+	}
 
 	/**
 	 * Método getter del radio mayor de la elipse.
