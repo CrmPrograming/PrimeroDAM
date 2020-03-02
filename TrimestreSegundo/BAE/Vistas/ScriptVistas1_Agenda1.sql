@@ -110,11 +110,70 @@ GO
 -- Hazla con select *., Añádele a la tabla provincias un atributo que sea numhabitantes entero. Visualiza la vista. Modifica la vista ponle la opción
 -- with schemabinding. Añádele a la tabla provincias un campo capital de hasta 20 caracteres.
 
-CREATE VIEW dbo.v_contactos5 AS
+CREATE VIEW dbo.v_provincias AS
 	SELECT * FROM provincias
 GO
 
-SELECT * FROM v_contactos5
+SELECT * FROM v_provincias
 GO
 
-ALTER TABLE provincias
+-- Añadimos la nueva columna numhabitantes
+ALTER TABLE provincias ADD numhabitantes INT
+GO
+
+-- Visualizamos la vista tanto con select como con exec
+SELECT * FROM v_provincias
+GO
+
+EXEC sp_helptext v_provincias
+GO
+
+-- Modificamos la vista con la opción schemabinding (en este caso no podemos usar SELECT * con SCHEMABINDING)
+ALTER VIEW dbo.v_provincias
+WITH SCHEMABINDING
+AS
+	SELECT Provincia, NombreProvincia, numhabitantes FROM dbo.provincias
+GO
+
+SELECT * FROM v_provincias
+GO
+
+-- Añádele a la tabla provincias un campo capital de hasta 20 caracteres.
+ALTER TABLE provincias ADD capital VARCHAR(20)
+GO
+
+SELECT * FROM provincias
+GO
+
+SELECT * FROM v_provincias
+GO
+
+-- Como podemos ver, al añadir campos a la tabla si no actualizamos la vista, no
+-- se verán las nuevas columnas
+
+
+-- 13. Crea una vista con todas las Categorias. Visualiza el texto de la vista. Ejecuta la vista.
+-- Modifica la vista añadiéndole with encryption, visualiza el texto de la vista, ejecuta la vista.
+
+CREATE VIEW dbo.v_categorias AS
+	SELECT * FROM dbo.categorias
+GO
+
+EXEC sp_helptext v_categorias
+GO
+
+SELECT * FROM v_categorias
+GO
+
+ALTER VIEW dbo.v_categorias
+WITH ENCRYPTION
+AS
+	SELECT * FROM categorias
+GO
+
+EXEC sp_helptext v_categorias
+GO
+-- Al intentar mostrar el texto de la vista, éste se encuentra cifrado luego no se puede mostrar
+
+SELECT * FROM v_categorias
+GO
