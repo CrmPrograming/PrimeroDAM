@@ -26,6 +26,5 @@ public class Asociado {
 	private void transmiteOpinion(String opinion, String nombre) {
 		System.out.printf("De parte de %s: %s\n", nombre, opinion);
 	}
-	
 
 }
