@@ -50,6 +50,26 @@ public abstract class Figura {
 	 * @return double con el perímetro correspondiente de la figura
 	 */
 	public abstract double perimetro();
+	
+	/**
+	 * Método encargado de buscar una Figura en una tabla de Figura.
+	 * Retornará la posición en la cual se encuentre la figura indicada
+	 * en la tabla o -1 en caso de no encontrarla.
+	 * 
+	 * Para ello utiliza la búsqueda lineal.
+	 * 
+	 * @param figuras Tabla de Figura con los valores a comparar
+	 * @param f Instancia de Figura a buscar en la tabla figuras
+	 * @return Entero con la posición de la figura en la tabla
+	 */
+	public static int buscar(Figura[] figuras, Figura f) {
+		int pos = 0;
+		
+		while (pos < figuras.length - 1 && !figuras[pos].equals(f))
+			pos++;
+			
+		return (figuras[pos].equals(f))? pos : -1;
+	}
 
 	/**
 	 * Método getter del atributo x.

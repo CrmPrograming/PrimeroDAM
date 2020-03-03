@@ -67,16 +67,35 @@ public class Casita extends Figura {
 		return result - tejado.getBase() - cuerpo.getL1();
 	}
 	
+	/**
+	 * Sobreescritura del método equals heredado de la clase Object.
+	 * 
+	 * Se entiende que una Casita es igual a otra según los siguientes casos:
+	 * - Ambos hacen referencia al mismo objeto.
+	 * - Ambos son instancias de Casita y sus partes, cuerpo y tejado, son iguales.
+	 * 
+	 * @return boolean con el resultado de la comparación
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		return (this == obj) ||
 				((obj instanceof Casita) && (getCuerpo().equals(((Casita) obj).getCuerpo()) && getTejado().equals(((Casita) obj).getTejado())));
 	}
 	
+	/**
+	 * Método getter del cuerpo de la casita.
+	 * 
+	 * @return Rectangulo con el cuerpo de la casita
+	 */
 	public Rectangulo getCuerpo() {
 		return cuerpo;
 	}
 	
+	/**
+	 * Método getter del tejado de la casita.
+	 * 
+	 * @return Triangulo con el tejado de la casita
+	 */
 	public Triangulo getTejado() {
 		return tejado;
 	}

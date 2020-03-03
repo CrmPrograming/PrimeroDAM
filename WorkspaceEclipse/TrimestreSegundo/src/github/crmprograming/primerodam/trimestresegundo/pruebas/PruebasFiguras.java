@@ -51,8 +51,8 @@ public class PruebasFiguras {
 		System.out.println();
 		
 		//Pruebas de búsqueda
-		System.out.println(FuncionesFiguras.buscar(figuras, h3));
-		System.out.println(FuncionesFiguras.buscar(figuras, r3));
+		System.out.println(Figura.buscar(figuras, h3));
+		System.out.println(Figura.buscar(figuras, r3));
 	}
 
 }
