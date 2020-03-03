@@ -9,7 +9,7 @@ package github.crmprograming.primerodam.trimestresegundo.ejerc.figuras;
  * @author César Ravelo Martínez
  *
  */
-public abstract class Figura {
+public abstract class Figura implements Comparable<Figura>{
 	
 	/**
 	 * Long con la coordenada X de la figura.
@@ -69,6 +69,23 @@ public abstract class Figura {
 			pos++;
 			
 		return (figuras[pos].equals(f))? pos : -1;
+	}
+	
+	@Override
+	public int compareTo(Figura o) {
+		int result = -1;
+		double area1, area2;
+		
+		if (o != null) {
+			area1 = area();
+			area2 = o.area();
+			if (area1 == area2)
+				result = 0;
+			else if (area1 > area2)
+				result = 1;
+		}
+		
+		return result;
 	}
 
 	/**
