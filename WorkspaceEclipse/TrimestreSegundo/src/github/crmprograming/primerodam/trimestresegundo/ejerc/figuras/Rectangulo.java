@@ -61,6 +61,15 @@ public class Rectangulo extends Figura {
 		return getL1() * 2 + getL2() * 2;
 	}
 	
+	/**
+	 * Sobreescritura del método equals heredado de la clase Object.
+	 * 
+	 * Se entiende que un Rectangulo es igual a otro según los siguientes casos:
+	 * - Ambos hacen referencia al mismo objeto.
+	 * - Ambos son instancias de Rectangulo y sus pares de lados son iguales.
+	 * 
+	 * @return boolean con el resultado de la comparación
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		return (this == obj) ||

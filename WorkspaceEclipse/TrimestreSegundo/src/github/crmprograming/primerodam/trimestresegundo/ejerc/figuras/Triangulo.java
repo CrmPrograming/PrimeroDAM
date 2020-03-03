@@ -69,10 +69,20 @@ public class Triangulo extends Figura {
 		return getBase() + (Math.sqrt(Math.pow(b, 2d) + Math.pow(getAltura(), 2d))) * 2d;
 	}
 	
+	/**
+	 * Sobreescritura del método equals heredado de la clase Object.
+	 * 
+	 * Se entiende que un Triangulo es igual a otro según los siguientes casos:
+	 * - Ambos hacen referencia al mismo objeto.
+	 * - Ambos son instancias de Triangulo y sus bases y alturas son iguales.
+	 * 
+	 * @return boolean con el resultado de la comparación
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		return (this == obj) ||
-				((obj instanceof Triangulo) && (getBase() == ((Triangulo) obj).getBase() && getAltura() == ((Triangulo) obj).getAltura()));
+				((obj instanceof Triangulo) &&
+						(getBase() == ((Triangulo) obj).getBase() && getAltura() == ((Triangulo) obj).getAltura()));
 	}
 
 	/**

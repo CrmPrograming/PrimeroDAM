@@ -66,10 +66,20 @@ public class Elipse extends Figura {
 		return 2 * Math.PI * Math.sqrt((Math.pow(getRadioMayor(), 2) + Math.pow(getRadioMayor(), 2)) / 2);
 	}
 	
+	/**
+	 * Sobreescritura del método equals heredado de la clase Object.
+	 * 
+	 * Se entiende que una Elipse es igual a otra según los siguientes casos:
+	 * - Ambos hacen referencia al mismo objeto.
+	 * - Ambos son instancias de Elipse y sus pares de radios son iguales.
+	 * 
+	 * @return boolean con el resultado de la comparación
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		return (this == obj) || 
-				((obj instanceof Elipse) && (getRadioMayor() == ((Elipse) obj).getRadioMayor() && getRadioMenor() == ((Elipse) obj).getRadioMenor()));
+				((obj instanceof Elipse) &&
+						(getRadioMayor() == ((Elipse) obj).getRadioMayor() && getRadioMenor() == ((Elipse) obj).getRadioMenor()));
 	}
 
 	/**
