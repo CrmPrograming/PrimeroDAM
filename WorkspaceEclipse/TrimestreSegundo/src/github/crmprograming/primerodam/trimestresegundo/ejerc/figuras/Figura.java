@@ -71,6 +71,13 @@ public abstract class Figura implements Comparable<Figura>{
 		return (figuras[pos].equals(f))? pos : -1;
 	}
 	
+	/**
+	 * Implementación del método compareTo de la interfaz Comparable.
+	 * El criterio de comparación utilizado es el área de las figuras.
+	 * 
+	 * @param o Instancia de Figura a comparar
+	 * @return Entero con el resultado de la comparación
+	 */
 	@Override
 	public int compareTo(Figura o) {
 		int result = -1;
