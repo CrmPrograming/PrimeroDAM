@@ -85,7 +85,7 @@ GO
 SELECT * FROM v_contactos4
 GO
 
-UPDATE v_contactos4 SET deuda = deuda + 10 WHERE Provincia = 0
+UPDATE v_contactos4 SET deuda = deuda + 10
 GO
 
 SELECT * FROM v_contactos4
@@ -100,19 +100,14 @@ UPDATE v_contactos2 SET deuda = deuda - 20 WHERE Provincia = 10
 SELECT * FROM v_contactos2
 GO
 
--- 11. Modifica la vista del ejercicio 6 añadiéndole el with check option. Vuelve a ejecutar el ejercicio 7 y el 8
-ALTER VIEW dbo.v_contactos3 (Nombre, Apellidos, Telefono, email) AS
-	SELECT Nombre, Apellidos, Telefono, Ecorreo FROM contactos
+-- 11. Modifica la vista del ejercicio 8 añadiéndole el with check option. Vuelve a ejecutar el ejercicio 7 y el 8
+ALTER VIEW dbo.v_contactos4 AS
+	SELECT * FROM contactos WHERE Provincia = 10
 WITH CHECK OPTION
 GO
 
--- ?????
-EXEC sp_depends v_contactos3
-GO
-
--- ?????
-CREATE VIEW dbo.v_contactos4 AS
-	SELECT * FROM contactos WHERE Provincia = 10
+-- Al intentar actualizar la Provincia, no se puede realizar debido al WITH CHECK OPTION
+UPDATE v_contactos4 SET Provincia = 20
 GO
 
 -- 12. Crea una vista con todas las provincias sus códigos y sus descripciones.
