@@ -232,7 +232,7 @@ public class Botella1L implements Comparable<Botella1L> {
 	}
 	
 	/**
-	 * Sobrecarga del método toString de la clase Object para generar un String
+	 * Sobreescritura del método toString de la clase Object para generar un String
 	 * con el siguiente formato:
 	 * 
 	 * 0.00 [unidades] (abierta/cerrada)
