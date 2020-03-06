@@ -6,7 +6,7 @@ package github.crmprograming.primerodam.trimestresegundo.utenciliosCocina;
  * @author César Ravelo Martínez
  *
  */
-public class Botella1L {
+public class Botella1L implements Comparable<Botella1L> {
 	
 	/**
 	 * Constante entera con el límite de litros disponibles en la botella.
@@ -187,6 +187,42 @@ public class Botella1L {
 	}
 	
 	/**
+	 * Implementación del método compareTo de la interfaz Comparable.
+	 * Se utiliza como criterio de comparación el contenido de las botellas.
+	 * 
+	 * @param obj Instancia de Botella1L a comparar
+	 * @return Entero con el resultado de la comparación
+	 */
+	@Override
+	public int compareTo(Botella1L obj) {
+		int result;
+		
+		if (obj.contenido == contenido)
+			result = 0;
+		else if (this.contenido < obj.contenido)
+			result = -1;
+		else
+			result = 1;
+		
+		return result;
+	}
+	
+	/**
+	 * Sobreescritura del método equals de la clase Object.
+	 * Se entiende que dos botellas son iguales si tienen el mismo
+	 * contenido y ambas tienen el mismo estado (cerrada o abierta).
+	 * 
+	 * @param obj Instancia de Botella1L a comparar
+	 * @return Booleano con el resultado de la comparación
+	 */
+	@Override
+	public boolean equals(Object obj) {		
+		return this == obj ||
+				(obj instanceof Botella1L &&
+						((contenido == ((Botella1L) obj).contenido) && (cerrado == ((Botella1L) obj).cerrado)));
+	}
+	
+	/**
 	 * Método getter del contenido de la botella.
 	 * 
 	 * @return float con el contenido actual de la botella
@@ -196,7 +232,7 @@ public class Botella1L {
 	}
 	
 	/**
-	 * Sobrecarga del método toString de la clase Object para generar un String
+	 * Sobreescritura del método toString de la clase Object para generar un String
 	 * con el siguiente formato:
 	 * 
 	 * 0.00 [unidades] (abierta/cerrada)
