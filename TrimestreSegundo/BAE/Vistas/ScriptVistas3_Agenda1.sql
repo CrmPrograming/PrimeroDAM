@@ -12,7 +12,7 @@ GO
 
 -- 20. Sobre la vista anterior queremos conocer:
 -- a) los datos del contacto con más edad
-SELECT Nombre, Fechacumple FROM v_provincias19 ORDER BY Fechacumple
+SELECT TOP 1 Nombre, Fechacumple FROM v_provincias19 ORDER BY Fechacumple
 GO
 
 -- b) Cual es el contacto o contactos que están más próximos a cumplir años
@@ -29,7 +29,7 @@ ORDER BY Total DESC
 GO
 
 -- d) Cual o cuales son la provincia con contactos de la categoría X y más de 1 contacto
-SELECT TOP 1 WITH TIES NombreProvincia, COUNT(Nombre) AS Total FROM v_provincias19
+SELECT NombreProvincia, COUNT(Nombre) AS Total FROM v_provincias19
 WHERE Descripcion = 'Social'
 GROUP BY NombreProvincia
 HAVING COUNT(Nombre) > 1
