@@ -32,7 +32,7 @@ GO
 -- 24. Crea una vista con los nombres de las categorías y la cantidad de contactos en cada una de las categorías
 CREATE VIEW dbo.v_agenda24 AS
 	SELECT ca.Descripcion, COUNT(c.id_contacto) AS [Total Contactos] FROM categorias AS ca
-		INNER JOIN contactos AS c ON ca.Categoria = c.Categoria
+		LEFT JOIN contactos AS c ON ca.Categoria = c.Categoria
 	GROUP BY ca.Descripcion
 GO
 
