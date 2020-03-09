@@ -25,7 +25,7 @@ GO
 
 -- 4. Visualiza con subconsultas todos los datos de los contactos de la provincia con nombre X
 SELECT * FROM contactos
-WHERE Provincia IN
+WHERE Provincia =
 	(SELECT Provincia FROM provincias
 	WHERE NombreProvincia = 'Santa Cruz de Tenerife')
 GO
