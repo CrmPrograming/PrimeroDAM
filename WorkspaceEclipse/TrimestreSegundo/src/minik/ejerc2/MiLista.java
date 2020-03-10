@@ -49,21 +49,29 @@ public class MiLista {
 		return String.format("[%s]", (mensaje.length() > 1)? mensaje.substring(0, mensaje.length() - 2) : "");
 	}
 	
-}
-
-class Dato {
-	
-	private String cadena;
-	private int historial;
-
-	public Dato(String c, int h) {
-		cadena = c;
-		historial = h;
+	public int cuantosHabia(int pos) {
+		return (listado[pos] == null)? -1 : listado[pos].getHistorial();	
 	}
+	
+	private class Dato {
+		
+		private String cadena;
+		private int historial;
 
-	@Override
-	public String toString() {
-		return String.format("\"%s\"(%d)", cadena, historial);
+		public Dato(String c, int h) {
+			cadena = c;
+			historial = h;
+		}
+
+		@Override
+		public String toString() {
+			return String.format("\"%s\"(%d)", cadena, historial);
+		}
+		
+		public int getHistorial() {
+			return historial;
+		}
+		
 	}
 	
 }
