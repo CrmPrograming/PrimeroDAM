@@ -33,5 +33,5 @@ GO
 -- 5. Crea una consulta utilizando subconsultas con los nombres de las provincias en las que tengo contactos, sin repetir las provincias.
 SELECT NombreProvincia FROM provincias
 WHERE Provincia IN
-	(SELECT DISTINCT Provincia FROM contactos)
+	(SELECT Provincia FROM contactos)
 GO
