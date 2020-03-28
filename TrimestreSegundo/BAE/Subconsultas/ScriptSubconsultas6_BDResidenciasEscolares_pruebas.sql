@@ -1,6 +1,6 @@
 -- ###################################
 
---		     SUBCONSULTAS 5
+--		     SUBCONSULTAS 6
 
 -- ###################################
 
@@ -94,14 +94,11 @@ WHERE codResidencia = ANY (
 GO
 
 -- 7. Visualiza las universidades que todas sus residencias no tienen estancias
-SELECT nomUniversidad
-FROM Universidades
-	INNER JOIN residencias ON Universidades.codUniversidad = residencias.codUniversidad
-WHERE codResidencia = ALL (
-							SELECT codResidencia
-							FROM residencias
-							WHERE codResidencia NOT IN (
-														SELECT codResidencia FROM estancias
-														)
-						 )
+SELECT nomuniversidad
+FROM universidades
+WHERE coduniversidad NOT IN (
+							 SELECT DISTINCT coduniversidad
+							 FROM residencias
+							 INNER JOIN estancias ON residencias.codresidencia=estancias.codresidencia
+							)
 GO
