@@ -72,7 +72,7 @@ public class Lista {
 		insertarPosicion(new Nodo<String>(d), pos);
 	}
 	
-	public void insertarPosicion(Nodo<String> n, int pos) {
+	public void insertarPosicion(Nodo<String> n, int pos) throws IndexOutOfBoundsException {
 		Nodo<String> actual = getCabecera();
 		int posActual = 0;
 		
@@ -84,10 +84,39 @@ public class Lista {
 				posActual++;
 			}
 			
-			n.setNext(actual.getNext());
-			actual.setNext(n);
-			total++;
+			if (posActual == pos) {
+				n.setNext(actual.getNext());
+				actual.setNext(n);
+				total++;
+			} else
+				throw new IndexOutOfBoundsException();			
 		}
+	}
+	
+	public String extraerDato(int pos) throws EmptyStackException {
+		if (estaVacia()) throw new EmptyStackException();
+				
+		Nodo<String> actual = getCabecera();
+		int posActual = 0;
+		String dato = null;
+		
+		while (actual.getNext() != null && posActual < pos - 1)
+			actual = actual.getNext();
+		
+		if (posActual == pos - 1) {
+			dato = actual.getNext().getDato();
+			actual.setNext(actual.getNext().getNext());
+			total--;
+		}		
+		return dato;
+	}
+	
+	public String extraerDatoCabecera() throws EmptyStackException {
+		return extraerDato(0);
+	}
+	
+	public String extraerDatoFinal() throws EmptyStackException {
+		return extraerDato(total);
 	}
 	
 	public boolean estaVacia() {
