@@ -95,7 +95,8 @@ AS
 	ELSE
 		BEGIN
 			UPDATE estancias SET fechaFin = @fin WHERE codEstudiante = @estudiante AND codResidencia = @residencia AND fechaInicio = @inicio
-			SET @resultado = 0
+			IF @@ERROR = 0
+				SET @resultado = 0
 		END
 GO
 
@@ -141,7 +142,9 @@ AS
 		BEGIN
 			UPDATE estancias SET fechaFin = @fin
 			WHERE codEstudiante = (SELECT codEstudiante FROM estudiantes WHERE dni = @estudiante)
-				AND codResidencia = @residencia AND fechaInicio = @inicio			
+				AND codResidencia = @residencia AND fechaInicio = @inicio
+			IF @@ERROR <> 0
+				SET @resultado = 1
 		END
 GO
 

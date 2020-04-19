@@ -7,18 +7,18 @@ import github.crmprograming.primerodam.trimestretercero.estructuras.lista.Nodo;
 public class Pila implements Apilable<String> {
 	
 	private Nodo<String> top;
-	private int size;
+	private int tam;
 	
 	public Pila() {
 		top = null;
-		size = 0;
+		tam = 0;
 	}
 
 	@Override
 	public void push(String o) {
 		Nodo<String> n = new Nodo<String>(o, top);
 		top = n;
-		size++;
+		tam++;
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class Pila implements Apilable<String> {
 		
 		String dato = top.getDato();
 		top = top.getNext();
-		size--;
+		tam--;
 		
 		return dato;
 	}
@@ -41,7 +41,7 @@ public class Pila implements Apilable<String> {
 
 	@Override
 	public int size() {
-		return size;
+		return tam;
 	}
 
 	@Override
