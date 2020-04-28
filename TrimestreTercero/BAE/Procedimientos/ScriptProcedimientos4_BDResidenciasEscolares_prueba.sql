@@ -151,7 +151,6 @@ AS
 								SELECT COUNT(codResidencia)
 								FROM residencias
 								WHERE codUniversidad = @universidad
-								GROUP BY codUniversidad								
 							  )
 			SET @total = @@ROWCOUNT
 		END
