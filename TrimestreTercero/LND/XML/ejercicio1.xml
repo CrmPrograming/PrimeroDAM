@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE factura SYSTEM "ejercicio1.dtd">
 <factura n_fac="f123">
+	<!-- Añadido el elemento "alumno" con el nombre y apellidos -->
 	<alumno>César Ravelo Martínez</alumno>
+	<!-- Datos empresa -->
 	<datos_empresa>
 		<nombre>IES Domingo Pérez Minik</nombre>
 		<dir>Curva de Gracia</dir>
@@ -10,14 +12,17 @@
 		<cif>S 3511001-D</cif>
 		<telefono>922631444</telefono>
 	</datos_empresa>
+	<!-- Datos cliente -->
 	<datos_cliente n_cli="c879">
 		<nombre>Darío, Gutiérrez</nombre>
 		<dir_env>Avda. Los Menceyes nº7 1ºd</dir_env>
 		<poblacion cod_postal="38123">Santa Cruz de Tenerife</poblacion>
 		<provincia>Santa Cruz de Tenerife</provincia>
 	</datos_cliente>
+	<!-- Datos Factura -->
 	<datos_factura n_ped="p731" igi="7" f_pago="efectivo" moneda="euro">
 		<fecha>04-04-2017</fecha>
+		<!-- Línea 1 -->
 		<linea>
 			<ref>MII93000F/8</ref>
 			<desc>MICRO AMD QUAD-CORE</desc>
@@ -25,6 +30,7 @@
 			<precio>230</precio>
 			<importe>266,80</importe>
 		</linea>
+		<!-- Línea 2 -->
 		<linea>
 			<ref>MB8QDIA4</ref>
 			<desc>PLACA BASE QDI AMD A4</desc>
@@ -32,6 +38,7 @@
 			<precio>180</precio>
 			<importe>208,80</importe>
 		</linea>
+		<!-- Línea 3 -->
 		<linea>
 			<ref>MEDDR34G</ref>
 			<desc>DIMM DDR3 4Gb</desc>
@@ -39,6 +46,7 @@
 			<precio>40</precio>
 			<importe>92.80</importe>
 		</linea>
+		<!-- Línea 4 -->
 		<linea>
 			<ref>HD500GSA7</ref>
 			<desc>DISCO DURO 500GB HDD</desc>
