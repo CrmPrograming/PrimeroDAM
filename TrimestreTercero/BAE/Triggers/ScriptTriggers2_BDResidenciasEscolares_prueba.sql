@@ -17,20 +17,9 @@ CREATE TRIGGER tr_insertUpdate_Residencias_FechaInicioPosterior
 ON estancias
 FOR INSERT, UPDATE
 AS
-
 	IF (SELECT COUNT(*) FROM inserted WHERE fechaInicio > fechaFin) > 0
 		BEGIN
-			DECLARE @fechaInicioBuena DATE, @fechaFinBuena DATE, @estudiante INT, @residencia INT
-
-			-- A fin de evitar tener que hacer varias subconsultas a la hora de actualizar, 
-			-- guardamos temporalmente los campos necesarios en variables reduciendo así el número de consultas
-			-- requeridas para la operación
-
-			SELECT @estudiante = codEstudiante, @residencia = codResidencia, @fechaInicioBuena = fechaFin, @fechaFinBuena = fechaInicio
-			FROM inserted
-
-			UPDATE estancias SET fechaInicio = @fechaInicioBuena, fechaFin = @fechaFinBuena
-			WHERE codEstudiante = @estudiante AND codResidencia = @residencia AND fechaInicio = @fechaFinBuena
+			ROLLBACK
 		END
 GO
 
@@ -72,31 +61,21 @@ AS
 	-- Update
 	IF (EXISTS(SELECT * FROM inserted) AND EXISTS(SELECT * FROM deleted))
 		BEGIN
-			-- Guardamos datos originales para poder referirnos más cómodamente a ellos luego
-			DECLARE @estudiante INT, @residencia INT, @inicio DATE
-			SELECT @estudiante = codEstudiante, @residencia = codResidencia, @inicio = fechaInicio FROM deleted
-
-			IF (SELECT COUNT(*) FROM inserted WHERE fechaInicio > fechaFin) > 0				
-				UPDATE estancias SET estancias.codEstudiante = inserted.codEstudiante, estancias.codResidencia = inserted.codResidencia,
-					estancias.fechaInicio = inserted.fechaFin, estancias.fechaFin = inserted.fechaInicio, estancias.preciopagado = inserted.preciopagado,
-					estancias.observaciones = inserted.observaciones, estancias.numhabitacion = inserted.numhabitacion
-				FROM inserted
-				WHERE estancias.codEstudiante = @estudiante AND estancias.codResidencia = @residencia AND estancias.fechaInicio = @inicio
-			ELSE				
-				UPDATE estancias SET estancias.codEstudiante = inserted.codEstudiante, estancias.codResidencia = inserted.codResidencia,
-					estancias.fechaInicio = inserted.fechaInicio, estancias.fechaFin = inserted.fechaFin, estancias.preciopagado = inserted.preciopagado,
-					estancias.observaciones = inserted.observaciones, estancias.numhabitacion = inserted.numhabitacion
-				FROM inserted
-				WHERE estancias.codEstudiante = @estudiante AND estancias.codResidencia = @residencia AND estancias.fechaInicio = @inicio
+			UPDATE e SET e.fechafin = i.fechaInicio, e.fechainicio = i.fechaFin
+			FROM estancias e
+			INNER JOIN inserted i ON i.codestudiante=e.codestudiante AND i.codresidencia=e.codresidencia AND e.fechainicio=i.fechainicio
+			WHERE i.fechainicio >= i.fechaFin
+		
+			UPDATE e SET e.fechafin = i.fechaFin, e.fechaInicio = i.fechaInicio
+			FROM estancias e
+			INNER JOIN inserted i ON i.codestudiante=e.codestudiante and i.codresidencia=e.codresidencia and e.fechainicio=i.fechainicio
+			WHERE i.fechainicio < i.fechaFin
 		END
 	-- Insert
 	ELSE
-		BEGIN
-			IF (SELECT COUNT(*) FROM inserted WHERE fechaInicio > fechaFin) > 0
-				INSERT estancias SELECT codEstudiante, codResidencia, fechaFin, fechaInicio, precioPagado, observaciones, numhabitacion
-				FROM inserted
-			ELSE
-				INSERT estancias SELECT * FROM inserted
+		BEGIN			
+			INSERT estancias SELECT * FROM inserted WHERE fechaInicio <= fechaFin
+			INSERT estancias SELECT codEstudiante, codREsidencia, fechafin, fechainicio, preciopagado, observaciones, numhabitacion FROM inserted WHERE fechaInicio > fechaFin
 		END
 GO
 
