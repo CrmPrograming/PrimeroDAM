@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recetas
+	xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+	xs:noNamespaceSchemaLocation="recetas.xsd">
+	<receta>
+		<tipo definicion="entrante"/>
+		<dificultad>Fácil</dificultad>
+		<nombre>almogrote</nombre>
+		<ingredientes>
+			<ingrediente nombre="queso muy curado y duro" cantidad="500 gramos"/>
+			<ingrediente nombre="pimentón" cantidad="4 cucharadas"/>
+			<ingrediente nombre="pimienta picona" cantidad="1"/>
+			<ingrediente nombre="aceite de oliva" cantidad="1 vaso"/>
+			<ingrediente nombre="diente de ajo" cantidad="8"/>
+		</ingredientes>
+		<calorias>600</calorias>
+		<pasos>
+			<paso orden="1">Se majan todos estos ingredientes en el mortero o en una batidora de hojas fuertes, preferiblemente después de haber rallado, 
+			al menos ligeramente, el queso, hasta lograr una pasta espesa y fina que se puede untar con facilidad en el pan.</paso>
+		</pasos>
+		<tiempo>10 minutos</tiempo>
+		<elaboracion>Cazo</elaboracion>
+	</receta>
+	
+	<receta>
+		<tipo definicion="primero"/>
+		<dificultad>Media</dificultad>
+		<nombre>cazuela de pescado</nombre>
+		<ingredientes>
+			<ingrediente nombre="pescado de roca en rodajas" cantidad="2000 gramos"/>
+			<ingrediente nombre="papas" cantidad="2000 gramos"/>
+			<ingrediente nombre="cebolla" cantidad="1"/>
+			<ingrediente nombre="pimiento rojo" cantidad="1"/>
+			<ingrediente nombre="tomate maduro" cantidad="3"/>
+			<ingrediente nombre="aceite de oliva" cantidad="1 vaso"/>
+			<ingrediente nombre="cilantro" cantidad="1"/>
+			<ingrediente nombre="perejil" cantidad="1"/>
+			<ingrediente nombre="pimentón" cantidad="1 cucharada"/>
+			<ingrediente nombre="diente de ajo" cantidad="3"/>
+			<ingrediente nombre="azafrán" cantidad="1"/>
+			<ingrediente nombre="comino" cantidad="1"/>
+			<ingrediente nombre="vinagre" cantidad="1 cucharada"/>
+			<ingrediente nombre="sal" cantidad="1 cucharada"/>
+			<ingrediente nombre="pimienta blanca molida" cantidad="1 cucharadita"/>
+			<ingrediente nombre="colorante alimenticio" cantidad="media cucharada"/>
+		</ingredientes>
+		<calorias></calorias>
+		<pasos>
+			<paso orden="1">Se salpimentan los trozos de pescado separando la cabeza y la ventrisca.</paso>
+			<paso orden="2">En una sartén se pone el aceite y se fríen, primeramente, ventrisca y cabeza, muy ligeramente.</paso>
+			<paso orden="3">Se salpimentan los trozos de pescado separando la cabeza y la ventrisca.</paso>
+			<paso orden="4">Cuando estén, se llevan a un caldero con abundante agua, sal y un ramito de cilantro, dejarlo hervir todo durante 
+			media hora aproximadamente.</paso>
+			<paso orden="5">Freir en la misma sartén el resto de pescado que, una vez listo, se separa de una fuente para utilizarlo más adelante.</paso>
+			<paso orden="6">Se majan dos de los dientes de ajo. El tomate se pela, se le quitan las semillas y se pica finamente, al igual que la 
+			cebolla y el pimiento y unas hojas del manojo de perejil.</paso>
+			<paso orden="7">El aceite ya empleado se pasa por un colador y en él se prepara una fritura con la cebolla y el pimiento hasta ablandarlos. 
+			Luego, se suma el tomate y el perejil. Cuando la fritura esté se le agrega el pimentón procurando no quemarlo. Esta fritura 
+			se echa en el agua donde cuece la cabeza y se deja hervir otros quince minutos. Una vez pasado ese tiempo, se filtra el caldo.</paso>
+			<paso orden="8">En otro recipiente de tamaño adecuado se colocan las papas -peladas y cortadas en lascas- y, encima, los trozos de pescado 
+			frito. Se baña todo con el caldo, se prueba de sal y se lleva al fuego, dejándolo cocer lentamente hasta que las papas se hagan.</paso>
+			<paso orden="9">Momentos antes de servir, se prepara un sofrito con el ajo que tenemos ya majado, comino y azafrán, que se añade al guiso, 
+			junto con un poco de colorante disuelto en la cucharadita de vinagre. Se mantiene el hervor un par de minutos y se retira 
+			para dejar reposar la cazuela antes de servirla.</paso>
+		</pasos>
+		<tiempo>45 minutos</tiempo>
+		<elaboracion>Caldero</elaboracion>
+	</receta>
+	
+	<receta>
+		<tipo definicion="postre"/>
+		<dificultad>Fácil</dificultad>
+		<nombre>huevos mole</nombre>
+		<ingredientes>
+			<ingrediente nombre="azucar" cantidad="500 gramos"/>
+			<ingrediente nombre="huevos" cantidad="20"/>
+			<ingrediente nombre="agua" cantidad="1 vaso"/>
+			<ingrediente nombre="canela en polvo" cantidad="1 cucharada"/>
+			<ingrediente nombre="piel del limón" cantidad="1"/>
+		</ingredientes>
+		<calorias>600</calorias>
+		<pasos>
+			<paso orden="1">Hacer un almíbar espeso con el agua, el azúcar, la canela y la piel de limón. Cuando esté con la hebra espesa, se aparta el 
+			fuego y se deja entibiar.</paso>
+			<paso orden="2">Se retira la canela y la piel de limón.</paso>
+			<paso orden="3">Batir bien las yemas e ir añadiendo a las mismas el almíbar, a cucharadas, poco a poco, removiendo bien.</paso>
+			<paso orden="4">Si es necesario se pone a fuego suave, siempre removiendo, para que se espese un poco, pero nunca debe llegar a hervir.</paso>
+			<paso orden="5">Colocar en copas y enfriar.</paso>
+		</pasos>
+		<tiempo>5 minutos</tiempo>
+		<elaboracion>Cazo</elaboracion>
+	</receta>
+</recetas>
