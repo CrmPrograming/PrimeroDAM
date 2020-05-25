@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="recetas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="receta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipo">
+                <xs:complexType>
+                  <xs:attribute name="definicion" use="required">
+                  	<xs:simpleType>
+                  		<xs:restriction base="xs:string">
+							<xs:enumeration value="entrante"/>
+							<xs:enumeration value="primero"/>
+							<xs:enumeration value="segundo"/>
+							<xs:enumeration value="postre"/>
+                  		</xs:restriction>
+                  	</xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="dificultad">
+              	<xs:simpleType>
+              		<xs:restriction base="xs:string">
+              			<xs:enumeration value="Fácil"/>
+              			<xs:enumeration value="Media"/>
+              			<xs:enumeration value="Difícil"/>
+              		</xs:restriction>
+              	</xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" type="xs:string" />
+              <xs:element name="ingredientes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="ingrediente">
+                      <xs:complexType>
+                        <xs:attribute name="nombre" type="xs:string" use="required" />
+                        <xs:attribute name="cantidad" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="calorias" type="xs:positiveInteger" nillable="true"/>
+              <xs:element name="pasos">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="paso">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="orden" type="xs:unsignedByte" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="tiempo" type="xs:string" />
+              <xs:element name="elaboracion" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
